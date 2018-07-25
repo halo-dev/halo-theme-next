@@ -32,6 +32,9 @@
                     <li>
                         <a href="#style" data-toggle="tab">样式设置</a>
                     </li>
+					<li>
+						<a href="#other" data-toggle="tab">其他设置</a>
+					</li>
                     <li>
                         <a href="#about" data-toggle="tab">关于</a>
                     </li>
@@ -42,6 +45,7 @@
                         <form method="post" class="form-horizontal" id="nextGeneralOptions">
                             <input type="hidden" name="next-version" value="5.1.4">
                             <div class="box-body">
+								<!-- scheme -->
                                 <div class="form-group">
                                     <label for="nextGeneralScheme" class="col-sm-4 control-label">Scheme：</label>
                                     <div class="col-sm-8">
@@ -67,6 +71,17 @@
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextStyleOptions')">保存设置</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--其他设置-->
+                    <div class="tab-pane" id="other">
+                        <form method="post" class="form-horizontal" id="nextOtherOptions">
+                            <div class="box-body">
+
+                            </div>
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextOtherOptions')">保存设置</button>
                             </div>
                         </form>
                     </div>
