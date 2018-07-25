@@ -73,18 +73,18 @@
 
 <link href="{{ url_for(theme.css) }}/main.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
 
-{% if theme.favicon.apple_touch_icon %}
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v=${options.next-version!}">
-{% endif %}
-{% if theme.favicon.medium %}
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}?v=${options.next-version!}">
-{% endif %}
-{% if theme.favicon.small %}
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for(theme.favicon.small) }}?v=${options.next-version!}">
-{% endif %}
-{% if theme.favicon.safari_pinned_tab %}
-  <link rel="mask-icon" href="{{ url_for(theme.favicon.safari_pinned_tab) }}?v=${options.next-version!}" color="{{ theme.android_chrome_color }}">
-{% endif %}
+<#if options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png') != ''>
+  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon}?v=${options.next-version!}">
+</#if>
+<#if options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png') !=''>
+  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium}?v=${options.next-version!}">
+</#if>
+<#if options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png') !=''>
+  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small}v=${options.next-version!}">
+</#if>
+<#if options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg') !=''>
+  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab}?v=${options.next-version!}" color="{{ theme.android_chrome_color }}">
+</#if>
 {% if theme.favicon.android_manifest %}
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
 {% endif %}
@@ -101,12 +101,7 @@
 {% endif %}
 
 
-{% if theme.rss === '' and config.feed and config.feed.path %}
-  {% set theme.rss = config.feed.path %}
-{% endif %}
-{% if theme.rss %}
-  <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ config.title }}" type="application/atom+xml" />
-{% endif %}
+<link rel="alternate" href="/feed.xml" title="${options.blog_title?default('NexT')}" type="application/atom+xml" />
 
 
 {% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
