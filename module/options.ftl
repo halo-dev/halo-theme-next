@@ -57,6 +57,98 @@
                                         </select>
                                     </div>
                                 </div>
+                                <!-- Favicon-Small -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFaviconSmall" class="col-sm-4 control-label">Favicon-small：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nextGeneralFaviconSmall" name="next_general_favicon_small" value="${options.next_general_favicon_small?if_exists}" >
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextGeneralFaviconSmall')">选择</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Favicon-medium -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFaviconMedium" class="col-sm-4 control-label">Favicon-medium：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nextGeneralFaviconMedium" name="next_general_favicon_medium" value="${options.next_general_favicon_medium?if_exists}" >
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextGeneralFaviconMedium')">选择</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- apple_touch_icon -->
+                                <div class="form-group">
+                                    <label for="nextGeneralAppleTouchIcon" class="col-sm-4 control-label">apple_touch_icon：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nextGeneralAppleTouchIcon" name="next_general_apple_touch_icon" value="${options.next_general_apple_touch_icon?if_exists}" >
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextGeneralAppleTouchIcon')">选择</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- safari_pinned_tab -->
+                                <div class="form-group">
+                                    <label for="nextGeneralSafariPinnedTab" class="col-sm-4 control-label">safari_pinned_tab：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nextGeneralSafariPinnedTab" name="next_general_safari_pinned_tab" value="${options.next_general_safari_pinned_tab?if_exists}" >
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextGeneralSafariPinnedTab')">选择</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Footer-icon -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFooterIcon" class="col-sm-4 control-label">Footer-Icon：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralFooterIcon" name="next_general_footer_icon" value="${options.next_general_footer_icon?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- Footer-copyright -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFooterCopyright" class="col-sm-4 control-label">Footer-copyright：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralFooterCopyright" name="next_general_footer_copyright" value="${options.next_general_footer_copyright?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- Footer-powered -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFooterPowered" class="col-sm-4 control-label">Footer-powered：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextGeneralFooterPowered" name="next_general_footer_powered">
+                                            <option value="true" ${((options.next_general_footer_powered?default('true'))=='true')?string('selected','')}>开启</option>
+                                            <option value="false" ${((options.next_general_footer_powered?if_exists)=='false')?string('selected','')}>关闭</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Footer-theme-enable -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFooterThemeEnable" class="col-sm-4 control-label">Footer-theme-enable：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextGeneralFooterThemeEnable" name="next_general_footer_theme_enable">
+                                            <option value="true" ${((options.next_general_footer_theme_enable?default('true'))=='true')?string('selected','')}>开启</option>
+                                            <option value="false" ${((options.next_general_footer_theme_enable?if_exists)=='false')?string('selected','')}>关闭</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Footer-theme-version -->
+                                <div class="form-group">
+                                    <label for="nextGeneralFooterThemeVersion" class="col-sm-4 control-label">Footer-theme-version：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextGeneralFooterThemeVersion" name="next_general_footer_theme_version">
+                                            <option value="true" ${((options.next_general_footer_theme_version?default('true'))=='true')?string('selected','')}>开启</option>
+                                            <option value="false" ${((options.next_general_footer_theme_version?if_exists)=='false')?string('selected','')}>关闭</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextGeneralOptions')">保存设置</button>
