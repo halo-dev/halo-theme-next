@@ -22,7 +22,7 @@
     {### PAGE BLOCK ###}
     {##################}
     <div class="post-block page">
-      <#include "_partials/page-header.ftl">
+      <#include "layout/_partials/page-header.ftl">
       {#################}
       {### PAGE BODY ###}
       {#################}
@@ -66,5 +66,5 @@
 {% endblock %}
 
 {% block script_extra %}
-<#include "_scripts/pages/post-details.ftl">
+<#include "layout/_scripts/pages/post-details.ftl">
 {% endblock %}

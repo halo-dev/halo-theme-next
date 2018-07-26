@@ -15,13 +15,13 @@
 
     <div class="post-spread">
       {% if theme.jiathis %}
-        <#include "_partials/share/jiathis.ftl">
+        <#include "layout/_partials/share/jiathis.ftl">
       {% elseif theme.baidushare %}
-        <#include "_partials/share/baidushare.ftl">
+        <#include "layout/_partials/share/baidushare.ftl">
       {% elseif theme.add_this_id %}
-        <#include "_partials/share/add-this.ftl">
+        <#include "layout/_partials/share/add-this.ftl">
       {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        <#include "_partials/share/duoshuo_share.ftl">
+        <#include "layout/_partials/share/duoshuo_share.ftl">
       {% endif %}
     </div>
   </div>
@@ -33,5 +33,5 @@
 {% endblock %}
 
 {% block script_extra %}
-<#include "_scripts/pages/post-details.ftl">
+<#include "layout/_scripts/pages/post-details.ftl">
 {% endblock %}

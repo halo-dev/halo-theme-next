@@ -123,30 +123,36 @@
                                 <div class="form-group">
                                     <label for="nextGeneralFooterPowered" class="col-sm-4 control-label">Footer-powered：</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="nextGeneralFooterPowered" name="next_general_footer_powered">
-                                            <option value="true" ${((options.next_general_footer_powered?default('true'))=='true')?string('selected','')}>开启</option>
-                                            <option value="false" ${((options.next_general_footer_powered?if_exists)=='false')?string('selected','')}>关闭</option>
-                                        </select>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_footer_powered" id="nextGeneralFooterPowered" value="true" ${((options.next_general_footer_powered?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_footer_powered" id="nextGeneralFooterPowered" value="false" ${((options.next_general_footer_powered?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
                                     </div>
                                 </div>
                                 <!-- Footer-theme-enable -->
                                 <div class="form-group">
                                     <label for="nextGeneralFooterThemeEnable" class="col-sm-4 control-label">Footer-theme-enable：</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="nextGeneralFooterThemeEnable" name="next_general_footer_theme_enable">
-                                            <option value="true" ${((options.next_general_footer_theme_enable?default('true'))=='true')?string('selected','')}>开启</option>
-                                            <option value="false" ${((options.next_general_footer_theme_enable?if_exists)=='false')?string('selected','')}>关闭</option>
-                                        </select>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_footer_theme_enable" id="nextGeneralFooterThemeEnable" value="true" ${((options.next_general_footer_theme_enable?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_footer_theme_enable" id="nextGeneralFooterThemeEnable" value="false" ${((options.next_general_footer_theme_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
                                     </div>
                                 </div>
                                 <!-- Footer-theme-version -->
                                 <div class="form-group">
                                     <label for="nextGeneralFooterThemeVersion" class="col-sm-4 control-label">Footer-theme-version：</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="nextGeneralFooterThemeVersion" name="next_general_footer_theme_version">
-                                            <option value="true" ${((options.next_general_footer_theme_version?default('true'))=='true')?string('selected','')}>开启</option>
-                                            <option value="false" ${((options.next_general_footer_theme_version?if_exists)=='false')?string('selected','')}>关闭</option>
-                                        </select>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_footer_theme_version" id="nextGeneralFooterThemeVersion" value="true" ${((options.next_general_footer_theme_version?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_footer_theme_version" id="nextGeneralFooterThemeVersion" value="false" ${((options.next_general_footer_theme_version?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -170,7 +176,18 @@
                     <div class="tab-pane" id="other">
                         <form method="post" class="form-horizontal" id="nextOtherOptions">
                             <div class="box-body">
-
+                                <!-- baidu_push -->
+                                <div class="form-group">
+                                    <label for="nextOtherBaiduPush" class="col-sm-4 control-label">baidu_push：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_baidu_push" id="nextOtherBaiduPush" value="true" ${((options.next_other_baidu_push?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_baidu_push" id="nextOtherBaiduPush" value="false" ${((options.next_other_baidu_push?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextOtherOptions')">保存设置</button>

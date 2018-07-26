@@ -53,7 +53,7 @@
   {### END ARCHIVE BLOCK ###}
   {#########################}
 
-<#include "_partials/pagination.ftl">
+<#include "layout/_partials/pagination.ftl">
 
 {% endblock %}
 

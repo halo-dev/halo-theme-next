@@ -2,20 +2,20 @@
 {% import '_macro/post-collapse.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-{% block title %}{{ __('title.category') }}: {{ page.category }} | {{ config.title }}{% endblock %}
+{% block title %}{{ __('title.tag') }}: {{ page.tag }} | {{ config.title }}{% endblock %}
 
 {% block content %}
 
-  {######################}
-  {### CATEGORY BLOCK ###}
-  {######################}
-  <div class="post-block category">
+  {#################}
+  {### TAG BLOCK ###}
+  {#################}
+  <div class="post-block tag">
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
         <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
-        #}{{ page.category }}{#
-        #}<small>{{  __('title.category')  }}</small>
+        #}{{ page.tag }}{#
+        #}<small>{{  __('title.tag')  }}</small>
         </{% if theme.seo %}h2{% else %}h1{% endif %}>
       </div>
 
@@ -25,12 +25,11 @@
     </div>
 
   </div>
-  {##########################}
-  {### END CATEGORY BLOCK ###}
-  {##########################}
+  {#####################}
+  {### END TAG BLOCK ###}
+  {#####################}
 
-<#include "_partials/pagination.ftl">
-
+<#include "layout/_partials/pagination.ftl">
 {% endblock %}
 
 {% block sidebar %}

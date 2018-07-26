@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 
-{% set html_class = 'theme-next ' + theme.scheme %}
-{% if theme.motion.enable %}
-  {% set html_class = html_class + ' use-motion' %}
-{% endif %}
-
-<html class="{{ html_class | lower }}" lang="{{ config.language }}">
+<html class="theme-next ${options.next_general_scheme?default('Muse')} use-motion" lang="zh-CN">
 <head>
   <#include "_partials/head.ftl">
   <title>{% block title %}{% endblock %}</title>
@@ -71,8 +66,7 @@
   <#include "_scripts/vendors.ftl">
   <#include "_scripts/commons.ftl">
 
-  {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
-  {% include scheme_script %}
+  <#include "../layout/_scripts/schemes/${options.next_general_scheme?default('Muse')?lower_case}.ftl">
 
   {% block script_extra %}{% endblock %}
 

@@ -7,7 +7,8 @@
       <i class="fa fa-times-circle"></i>
     </span>
         <div class="local-search-input-wrapper">
-            <input autocomplete="off" placeholder="search.placeholder" spellcheck="false" type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="search.placeholder" spellcheck="false" type="text"
+                   id="local-search-input">
         </div>
     </div>
     <div id="local-search-result"></div>

@@ -71,7 +71,21 @@
 {% endif %}
 <link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
 
-<link href="{{ url_for(theme.css) }}/main.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+
+<#switch '${options.next_general_scheme?default('Muse')}'>
+<#case 'Muse'>
+<link href="/next/source/css/Muse.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<#break >
+<#case 'Mist'>
+<link href="/next/source/css/Mist.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<#break >
+<#case 'Mist'>
+<link href="/next/source/css/Pisces.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<#break >
+<#case 'Mist'>
+<link href="/next/source/css/Gemini.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<#break >
+</#switch>
 
 <#if options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png') != ''>
   <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon}?v=${options.next-version!}">
