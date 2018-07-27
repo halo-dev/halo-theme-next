@@ -1,22 +1,32 @@
-{% extends '_layout.swig' %}
+<#--{% extends '_layout.swig' %}-->
+<#include "layout/_layout.ftl">
 {% import '_macro/post.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
+<@html title='${options.blog_title?default("NexT")}'>
+    <#--TODO{% block page_class %}{% endblock %}-->
+    <#if posts??>page-home</#if>
+</@html>
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
-
-{% block content %}
+<@main>
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
+      {% for post in page.posts %}
       {{ post_template.render(post, true) }}
-    {% endfor %}
+      {% endfor %}
   </section>
-<#include "layout/_partials/pagination.ftl">
-{% endblock %}
+  <#include "layout/_partials/pagination.ftl">
+</@main>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+<@sidebar>
+    {% block sidebar %}
+    {{ sidebar_template.render(false) }}
+  {% endblock %}
+</@sidebar>
+
+<@footer>
+
+</@footer>
+
+<@button>
+
+</@button>

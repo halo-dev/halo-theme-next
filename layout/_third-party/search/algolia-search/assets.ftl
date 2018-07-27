@@ -14,5 +14,5 @@
   <script src="{{ algolia_instant_js }}"></script>
   {# E: Include Algolia instantsearch.js library #}
 
-  <script src="/next/source/js/src/algolia-search.js?v=${options.next-version!}"></script>
+  <script src="/next/source/js/src/algolia-search.js?v=5.1.4"></script>
 {% endif %}

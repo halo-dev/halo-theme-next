@@ -72,32 +72,32 @@
 <link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
 
 
-<#switch '${options.next_general_scheme?default('Muse')}'>
+<#switch '${options.next_general_scheme?default("Muse")}'>
 <#case 'Muse'>
-<link href="/next/source/css/Muse.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Muse.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Mist'>
-<link href="/next/source/css/Mist.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Mist.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Mist'>
-<link href="/next/source/css/Pisces.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Pisces.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Mist'>
-<link href="/next/source/css/Gemini.css?v=${options.next-version!}" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Gemini.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 </#switch>
 
-<#if options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png') != ''>
-  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon}?v=${options.next-version!}">
+<#if options.next_general_apple_touch_icon??>
+  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png')}?v=5.1.4">
 </#if>
-<#if options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png') !=''>
-  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium}?v=${options.next-version!}">
+<#if options.next_general_favicon_medium??>
+  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png')}?v=5.1.4">
 </#if>
-<#if options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png') !=''>
-  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small}v=${options.next-version!}">
+<#if options.next_general_favicon_small??>
+  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png')}v=5.1.4">
 </#if>
-<#if options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg') !=''>
-  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab}?v=${options.next-version!}" color="{{ theme.android_chrome_color }}">
+<#if options.next_general_safari_pinned_tab??>
+  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg')}?v=5.1.4" color="{{ theme.android_chrome_color }}">
 </#if>
 {% if theme.favicon.android_manifest %}
   <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
@@ -139,8 +139,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '{{ theme.root }}',
-    scheme: '{{ theme.scheme }}',
-    version: '${options.next-version!}',
+    scheme: '${options.next_general_scheme?default('Muse')}',
+    version: '5.1.4',
     sidebar: {{ theme.sidebar | json_encode }},
     fancybox: {{ theme.fancybox }},
     tabs: {{ theme.tabs.enable }},

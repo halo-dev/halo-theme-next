@@ -8,9 +8,9 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-      {% if theme.sidebar.onmobile %}
+      <#if options.next_style_sidebar_onmobile?default('false')=='true'>
       <div id="sidebar-dimmer"></div>
-      {% endif %}
+      </#if>
       <div class="sidebar-inner">
 
           {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
@@ -166,14 +166,14 @@
       <!--/noindex-->
       {% endif %}
 
-      {% if theme.sidebar.b2t %}
+      <#if options.next_style_sidebar_b2t?default('false')=='true'>
       <div class="back-to-top">
           <i class="fa fa-arrow-up"></i>
-          {% if theme.sidebar.scrollpercent %}
+          <#if options.next_style_sidebar_scrollpercent?default('false')=='true'>
           <span id="scrollpercent"><span>0</span>%</span>
-          {% endif %}
+          </#if>
       </div>
-      {% endif %}
+      </#if>
 
       </div>
   </aside>

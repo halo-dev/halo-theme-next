@@ -37,7 +37,7 @@
       <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">
           NexT.${options.next_general_scheme?default("Muse")}
       </a><#if options.next_general_footer_theme_version?default('true')=='true'>
-      v${options.next-version?default('5.1.4')}</#if>
+      v5.1.4</#if>
   </div>
 </#if>
 

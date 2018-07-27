@@ -1,57 +1,64 @@
+<#macro html title>
 <!DOCTYPE html>
 
 <html class="theme-next ${options.next_general_scheme?default('Muse')} use-motion" lang="zh-CN">
 <head>
   <#include "_partials/head.ftl">
-  <title>{% block title %}{% endblock %}</title>
+  <title>${title}</title>
   <#include "_third-party/analytics/index.ftl">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
-  {% set container_class = "container " %}
-  {% if theme.sidebar.position %}
-    {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
-  {% endif %}
-
-  <div class="{{ container_class }} {% block page_class %}{% endblock %}">
+  <div class="container sidebar-position-${options.next_style_sidebar_position?default('left')} {% block page_class %}{% endblock %} <#nested />">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><#include "_partials/header.ftl"></div>
     </header>
+</#macro>
 
+<#macro main>
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            {% block content %}{% endblock %}
+            <#--{% block content %}{% endblock %}-->
+            <#nested />
           </div>
             <#include "_third-party/duoshuo-hot-articles.ftl">
             <#include "_partials/comments.ftl">
         </div>
-        {% if theme.sidebar.display !== 'remove' %}
-          {% block sidebar %}{% endblock %}
-        {% endif %}
+</#macro>
+<#macro sidebar>
+        <#if options.next_style_sidebar_display?default('post')!='remove'>
+        <#--{% block sidebar %}{% endblock %}-->
+        <#nested />
+        </#if>
       </div>
     </main>
+</#macro>
 
+<#macro footer>
     <footer id="footer" class="footer">
       <div class="footer-inner">
           <#include "_partials/footer.ftl">
           <#include "_third-party/analytics/analytics-with-widget.ftl">
-        {% block footer %}{% endblock %}
+        <#--{% block footer %}{% endblock %}-->
+          <#nested />
       </div>
     </footer>
+</#macro>
 
-    {% if not theme.sidebar.b2t %}
-      <div class="back-to-top">
+<#macro button>
+    <#if options.next_style_sidebar_b2t?default('false')=='false'>
+        <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        {% if theme.sidebar.scrollpercent %}
+          <#if options.next_style_sidebar_scrollpercent?default('false')=='true'>
           <span id="scrollpercent"><span>0</span>%</span>
-        {% endif %}
-      </div>
-    {% endif %}
+          </#if>
+        </div>
+    </#if>
 
     {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
       <div id="needsharebutton-float">
@@ -68,8 +75,8 @@
 
   <#include "../layout/_scripts/schemes/${options.next_general_scheme?default('Muse')?lower_case}.ftl">
 
-  {% block script_extra %}{% endblock %}
-
+  <#--{% block script_extra %}{% endblock %}-->
+    <#nested />
   <#include "_scripts/boostrap.ftl">
 
   <#include "_third-party/comments/index.ftl">
@@ -84,3 +91,4 @@
   <#include "_third-party/exturl.ftl">
 </body>
 </html>
+</#macro>

@@ -165,7 +165,71 @@
                     <div class="tab-pane" id="style">
                         <form method="post" class="form-horizontal" id="nextStyleOptions">
                             <div class="box-body">
-
+                                <!-- sidebar-position -->
+                                <div class="form-group">
+                                    <label for="nextStyleSidebarPosition" class="col-sm-4 control-label">Sidebar-position：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextStyleSidebarPosition" name="next_style_sidebar_position">
+                                            <option value="left" ${((options.next_style_sidebar_position?default('left'))=='left')?string('selected','')}>左侧</option>
+                                            <option value="right" ${((options.next_style_sidebar_position?if_exists)=='right')?string('selected','')}>右侧</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- sidebar-display -->
+                                <div class="form-group">
+                                    <label for="nextStyleSidebarDisplay" class="col-sm-4 control-label">Sidebar-display：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextStyleSidebarDisplay" name="next_style_sidebar_display">
+                                            <option value="post" ${((options.next_style_sidebar_display?default('post'))=='post')?string('selected','')}>post</option>
+                                            <option value="always" ${((options.next_style_sidebar_display?if_exists)=='always')?string('selected','')}>always</option>
+                                            <option value="hide" ${((options.next_style_sidebar_display?if_exists)=='hide')?string('selected','')}>hide</option>
+                                            <option value="remove" ${((options.next_style_sidebar_display?if_exists)=='remove')?string('selected','')}>remove</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- sidebar-offset -->
+                                <div class="form-group">
+                                    <label for="nextStyleSidebarOffset" class="col-sm-4 control-label">Sidebar-offset：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextStyleSidebarOffset" name="next_general_footer_offset" value="${options.next_general_footer_offset?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- sidebar-b2t -->
+                                <div class="form-group">
+                                    <label for="nextStyleSidebarB2t" class="col-sm-4 control-label">Sidebar-b2t：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_sidebar_b2t" id="nextStyleSidebarB2t" value="true" ${((options.next_style_sidebar_b2t?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_sidebar_b2t" id="nextStyleSidebarB2t" value="false" ${((options.next_style_sidebar_b2t?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- sidebar-Scrollpercent -->
+                                <div class="form-group">
+                                    <label for="nextStyleSidebarScrollpercent" class="col-sm-4 control-label">Sidebar-Scrollpercent：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_sidebar_scrollpercent" id="nextStyleSidebarScrollpercent" value="true" ${((options.next_style_sidebar_scrollpercent?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_sidebar_scrollpercent" id="nextStyleSidebarScrollpercent" value="false" ${((options.next_style_sidebar_scrollpercent?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- sidebar-onmobile -->
+                                <div class="form-group">
+                                    <label for="nextStyleSidebarOnmobile" class="col-sm-4 control-label">Sidebar-onmobile：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_sidebar_onmobile" id="nextStyleSidebarOnmobile" value="true" ${((options.next_style_sidebar_onmobile?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_sidebar_onmobile" id="nextStyleSidebarOnmobile" value="false" ${((options.next_style_sidebar_onmobile?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextStyleOptions')">保存设置</button>
@@ -186,6 +250,35 @@
                                         <label class="radio-inline">
                                             <input type="radio" name="next_other_baidu_push" id="nextOtherBaiduPush" value="false" ${((options.next_other_baidu_push?if_exists)=='false')?string('checked','')}> 禁用
                                         </label>
+                                    </div>
+                                </div>
+
+                                <!--post_copyright-->
+                                <div class="form-group">
+                                    <label for="nextOtherPostCopyright" class="col-sm-4 control-label">post_copyright：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_post_copyright" id="nextOtherPostCopyright" value="true" ${((options.next_other_post_copyright?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_post_copyright" id="nextOtherPostCopyright" value="false" ${((options.next_other_post_copyright?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- post_copyright_license -->
+                                <div class="form-group">
+                                    <label for="nextOtherPostCopyrightLicense" class="col-sm-4 control-label">post_copyright_license：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherPostCopyrightLicense" name="next_other_post_copyright_license" value="${options.next_other_post_copyright_license?default('CC BY-NC-SA 3.0')}" >
+                                    </div>
+                                </div>
+
+                                <!-- post_copyright_license_url -->
+                                <div class="form-group">
+                                    <label for="nextOtherPostCopyrightLicenseUrl" class="col-sm-4 control-label">post_copyright_license_url：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherPostCopyrightLicenseUrl" name="next_other_post_copyright_license_url" value="${options.next_other_post_copyright_license_url?default('https://creativecommons.org/licenses/by-nc-sa/3.0/')}" >
                                     </div>
                                 </div>
                             </div>
