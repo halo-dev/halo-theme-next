@@ -1,76 +1,51 @@
+<#macro head keywords>
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}">
 
 
-{% if theme.pace %}
-  {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
-  {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
-    {% if theme.vendors.pace %}
-      {% set pace_js_uri = theme.vendors.pace %}
-    {% endif %}
-    {% if theme.vendors.pace_css %}
-      {% set pace_css_uri = theme.vendors.pace_css %}
-    {% endif %}
-  <script src="{{ pace_js_uri }}"></script>
-  <link href="{{ pace_css_uri }}" rel="stylesheet">
-{% endif %}
+<#if options.next_plugins_pace?default('false')=='true'>
+  <script src="/next/source/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/next/source/lib/pace/${options.next_plugins_pace_theme?default('pace-theme-minimal')}.min.css?v=1.0.2" rel="stylesheet">
+</#if>
+
+<#if options.next_plugins_han?default('false')=='true'>
+  <link rel="stylesheet" media="all" href="/next/source/lib/Han/dist/han.min.css?v=3.3">
+</#if>
 
 
-{% if theme.han %}
-  {% set Han_uri = url_for(theme.vendors._internal + '/Han/dist/han.min.css?v=3.3') %}
-  {% if theme.vendors.Han %}
-    {% set Han_uri = theme.vendors.Han %}
-  {% endif %}
-  <link rel="stylesheet" media="all" href="{{ Han_uri }}">
-{% endif %}
-
-
-{# #238, Disable Baidu tranformation #}
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
-{% if theme.google_site_verification %}
-  <meta name="google-site-verification" content="{{ theme.google_site_verification }}" />
-{% endif %}
+<#if options.next_verification_google??>
+  <meta name="google-site-verification" content="${options.next_verification_google}" />
+</#if>
 
-{% if theme.bing_site_verification %}
-  <meta name="msvalidate.01" content="{{ theme.bing_site_verification }}" />
-{% endif %}
+<#if options.next_verification_bing??>
+  <meta name="msvalidate.01" content="${options.next_verification_bing}" />
+</#if>
 
-{% if theme.yandex_site_verification %}
-  <meta name="yandex-verification" content="{{ theme.yandex_site_verification }}" />
-{% endif %}
+<#if options.next_verification_yandex??>
+  <meta name="yandex-verification" content="${options.next_verification_yandex}" />
+</#if>
 
+<#if options.next_verification_baidu??>
+  <meta name="baidu-site-verification" content="${options.next_verification_baidu}" />
+</#if>
 
-{% if theme.baidu_site_verification %}
-  <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}" />
-{% endif %}
+<#if options.next_verification_qihu??>
+  <meta name="360-site-verification" content="${options.next_verification_qihu}" />
+</#if>
 
-
-{% if theme.qihu_site_verification %}
-  <meta name="360-site-verification" content="{{ theme.qihu_site_verification }}" />
-{% endif %}
-
-
-{% if theme.fancybox %}
-  {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css?v=2.1.5') %}
-  {% if theme.vendors.fancybox_css %}
-    {% set fancybox_css_uri = theme.vendors.fancybox_css %}
-  {% endif %}
-  <link href="{{ fancybox_css_uri }}" rel="stylesheet" type="text/css" />
-{% endif %}
+<#if options.next_plugins_fancybox?default('true')=='true'>
+  <link href="/next/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+</#if>
 
 <#include "head/external-fonts.ftl">
 
-{% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.6.2') %}
-{% if theme.vendors.fontawesome %}
-  {% set font_awesome_uri = theme.vendors.fontawesome %}
-{% endif %}
-<link href="{{ font_awesome_uri }}" rel="stylesheet" type="text/css" />
-
+<link href="/next/source/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <#switch '${options.next_general_scheme?default("Muse")}'>
 <#case 'Muse'>
@@ -87,64 +62,56 @@
 <#break >
 </#switch>
 
-<#if options.next_general_apple_touch_icon??>
+<#if options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png') !=''>
   <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png')}?v=5.1.4">
 </#if>
-<#if options.next_general_favicon_medium??>
+<#if options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png')!=''>
   <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png')}?v=5.1.4">
 </#if>
-<#if options.next_general_favicon_small??>
+<#if options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png')!=''>
   <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png')}v=5.1.4">
 </#if>
-<#if options.next_general_safari_pinned_tab??>
+<#if options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg')!=''>
   <link rel="mask-icon" href="${options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg')}?v=5.1.4" color="{{ theme.android_chrome_color }}">
 </#if>
-{% if theme.favicon.android_manifest %}
-  <link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">
-{% endif %}
-{% if theme.favicon.ms_browserconfig %}
-  <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}" />
-{% endif %}
 
-{% if page.keywords %}
-  <meta name="keywords" content="{{ page.keywords }}" />
-{% elif page.tags and page.tags.length %}
-  <meta name="keywords" content="{% for tag in page.tags %}{{ tag.name }},{% endfor %}" />
-{% elif theme.keywords %}
-  <meta name="keywords" content="{{ theme.keywords }}" />
-{% endif %}
+<#--{% if theme.favicon.android_manifest %}-->
+  <#--<link rel="manifest" href="{{ url_for(theme.favicon.android_manifest) }}">-->
+<#--{% endif %}-->
+<#--{% if theme.favicon.ms_browserconfig %}-->
+  <#--<meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}" />-->
+<#--{% endif %}-->
 
+<meta name="keywords" content="${keywords}" />
 
 <link rel="alternate" href="/feed.xml" title="${options.blog_title?default('NexT')}" type="application/atom+xml" />
 
 
-{% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
-  <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}" />
-  <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}" />
-{% endif %}
+<#--{% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}-->
+  <#--<meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}" />-->
+  <#--<meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}" />-->
+<#--{% endif %}-->
 
 
-{{
-  open_graph({
-    twitter_id: theme.twitter,
-    google_plus: theme.google_plus,
-    fb_admins: theme.fb_admins,
-    fb_app_id: theme.fb_app_id
-  })
-}}
+<#--{{-->
+  <#--open_graph({-->
+    <#--twitter_id: theme.twitter,-->
+    <#--google_plus: theme.google_plus,-->
+    <#--fb_admins: theme.fb_admins,-->
+    <#--fb_app_id: theme.fb_app_id-->
+  <#--})-->
+<#--}}-->
 
-
-{# Export some HEXO Configurations to Front-End #}
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '{{ theme.root }}',
+    root: '/',
     scheme: '${options.next_general_scheme?default('Muse')}',
     version: '5.1.4',
-    sidebar: {{ theme.sidebar | json_encode }},
-    fancybox: {{ theme.fancybox }},
+    sidebar: {"position":"${options.next_style_sidebar_position?default('left')}","display":"${options.next_style_sidebar_display?default('post')}","offset":${options.next_general_footer_offset?default('12')},"offset_float":0,"b2t":${options.next_style_sidebar_b2t?default('false')},"scrollpercent":${options.next_style_sidebar_scrollpercent?default('false')},"onmobile":${options.next_style_sidebar_onmobile?default('false')},
+    fancybox: ${options.next_plugins_fancybox?default('true')},
     tabs: {{ theme.tabs.enable }},
-    motion: {{ theme.motion | json_encode }},
+    motion: {"enable":${options.next_other_motion_enable?default('false')},"async":${options.next_other_motion_async?default('false')},"transition":{"post_block":"${options.next_other_motion_transition_post_block?default('fadeIn')}","post_header":"${options.next_other_motion_transition_post_header?default('slideDownIn')}","post_body":"${options.next_other_motion_transition_post_body?default('slideDownIn')}","coll_header":"${options.next_other_motion_transition_coll_header?default('slideLeftIn')}","sidebar":"${options.next_other_motion_transition_sidebar?default('slideUpIn')}"}},
     duoshuo: {
       userId: '{{ theme.duoshuo_info.user_id | default() }}',
       author: '{{ theme.duoshuo_info.admin_nickname | default(__('author'))}}'
@@ -159,9 +126,10 @@
   };
 </script>
 
-{# Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 #}
-{% if theme.canonical %}
-  <link rel="canonical" href="{{ config.url }}/{{ page.canonical_path.replace('index.html', '') }}"/>
-{% endif %}
+
+<#if options.next_other_canonical?default('true')=='true'>
+  <link rel="canonical" href="${options.blog_url?if_exists}"/>
+</#if>
 
 <#include "head/custom-head.ftl">
+</#macro>
