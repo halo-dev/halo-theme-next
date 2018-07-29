@@ -1,13 +1,13 @@
 <div class="site-brand-wrapper">
-  <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
-    {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
+  <div class="site-meta <#if options.next_style_custom_logo_enable?default('false')=='true'>custom-logo</#if>">
+    <#if options.next_style_custom_logo_enable?default('false')=='true' && options.next_general_scheme?default('Muse')=='Muse'>
       <div class="site-meta-headline">
         <a>
-          <img class="custom-logo-image" src="{{ theme.custom_logo.image }}"
-               alt="{{ config.title }}"/>
+          <img class="custom-logo-image" src="${options.next_style_custom_logo_image?if_exists}"
+               alt="${options.blog_title?if_exists}"/>
         </a>
       </div>
-    {% endif %}
+    </#if>
 
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
@@ -16,11 +16,11 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      {% if theme.seo %}
+      <#if options.next_other_seo?default('false')=='true'>
         <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
-      {% else %}
+      <#else>
         <p class="site-subtitle">{{ config.subtitle }}</p>
-      {% endif %}
+      </#if>
   </div>
 
   <div class="site-nav-toggle">

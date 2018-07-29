@@ -14,5 +14,5 @@
         e.parentNode.insertBefore(s, e);
     })(window, document, 'script', '//s.swiftypecdn.com/install/v2/st.js', '_st');
 
-    _st('install', '{{ theme.swiftype_key }}', '2.0.0');
+    _st('install', '${options.next_plugins_swiftype?if_exists}', '2.0.0');
 </script>

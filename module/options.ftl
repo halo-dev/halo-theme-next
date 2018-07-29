@@ -236,6 +236,28 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="nextStyleCustomLogoEnable" class="col-sm-4 control-label">custom_logo_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_custom_logo_enable" id="nextStyleCustomLogoEnable" value="true" ${((options.next_style_custom_logo_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_custom_logo_enable" id="nextStyleCustomLogoEnable" value="false" ${((options.next_style_custom_logo_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextStyleCustomLogoImage" class="col-sm-4 control-label">custom_logo_image：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nextStyleCustomLogoImage" name="next_style_custom_logo_image" value="${options.next_style_custom_logo_image?if_exists}" >
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextStyleCustomLogoImage')">选择</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextStyleOptions')">保存设置</button>
@@ -391,6 +413,18 @@
                                         </label>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherSeo" class="col-sm-4 control-label">seo：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_seo" id="nextOtherSeo" value="true" ${((options.next_other_seo?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_seo" id="nextOtherSeo" value="false" ${((options.next_other_seo?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextOtherOptions')">保存设置</button>
@@ -503,6 +537,12 @@
                                         <label class="radio-inline">
                                             <input type="radio" name="next_plugins_fancybox" id="nextPluginsFancybox" value="false" ${((options.next_plugins_fancybox?if_exists)=='false')?string('checked','')}> 禁用
                                         </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsSwiftype" class="col-sm-4 control-label">Swiftype：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsSwiftype" name="next_plugins_swiftype" value="${options.next_plugins_swiftype?if_exists}" >
                                     </div>
                                 </div>
                             </div>

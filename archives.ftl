@@ -8,9 +8,6 @@
 </@html>
 
 <@main>
-{#####################}
-  {### ARCHIVE BLOCK ###}
-  {#####################}
   <div class="post-block archive">
       <div id="posts" class="posts-collapse">
           <span class="archive-move-on"></span>
@@ -29,30 +26,21 @@
       </span>
 
           {% for post in page.posts %}
-
-          {# Show year #}
           {% set year %}
           {% set post.year = date(post.date, 'YYYY') %}
 
           {% if post.year !== year %}
           {% set year = post.year %}
           <div class="collection-title">
-              <{% if theme.seo %}h2
-              {% else %}h1
-              {% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
+              <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="archive-year" id="archive-year-{{ year }}">{{ year }}</<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
             </div>
       {% endif %}
-      {# endshow #}
-
       {{ post_template.render(post) }}
 
       {% endfor %}
 
   </div>
   </div>
-  {#########################}
-  {### END ARCHIVE BLOCK ###}
-  {#########################}
     <#include "layout/_partials/pagination.ftl">
 </@main>
 

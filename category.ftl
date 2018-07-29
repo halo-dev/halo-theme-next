@@ -5,18 +5,14 @@
 {% block title %}{{ __('title.category') }}: {{ page.category }} | {{ config.title }}{% endblock %}
 
 {% block content %}
-
-  {######################}
-  {### CATEGORY BLOCK ###}
-  {######################}
   <div class="post-block category">
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
-        #}{{ page.category }}{#
-        #}<small>{{  __('title.category')  }}</small>
-        </{% if theme.seo %}h2{% else %}h1{% endif %}>
+        <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
+          {{ page.category }}
+          <small>{{  __('title.category')  }}</small>
+        </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
       </div>
 
       {% for post in page.posts %}
@@ -25,9 +21,6 @@
     </div>
 
   </div>
-  {##########################}
-  {### END CATEGORY BLOCK ###}
-  {##########################}
 
 <#include "layout/_partials/pagination.ftl">
 

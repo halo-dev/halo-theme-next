@@ -37,13 +37,13 @@
                            alt="{{ theme.author }}"/>
                       {% endif %}
                       <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
-                      <p class="site-description motion-element" itemprop="description">{#
-                          #}{% if theme.seo %}{#
-                          #}{{ theme.signature }}{#
-                          #}{% else %}{#
-                          #}{{ theme.description }}{#
-                          #}{% endif %}{#
-                          #}</p>
+                      <p class="site-description motion-element" itemprop="description">
+                          <#if options.next_other_seo?default('false')=='true'>
+                          {{ theme.signature }}
+                          <#else>
+                          {{ theme.description }}
+                          </#if>
+                      </p>
                   </div>
 
                   <nav class="site-state motion-element">
@@ -100,12 +100,12 @@
                       <span class="links-of-author-item">
                     <a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}">
                       {% if theme.social_icons.enable %}
-                        <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
-                    #}{% endif %}{#
-                      #}{% if not theme.social_icons.icons_only %}{#
-                        #}{{ name }}{#
-                      #}{% endif %}{#
-                  #}</a>
+                        <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>
+                        {% endif %}
+                        {% if not theme.social_icons.icons_only %}
+                        {{ name }}
+                        {% endif %}
+                    </a>
                   </span>
                       {% endfor %}
                   </div>
@@ -121,8 +121,6 @@
                       </a>
                   </div>
                   {% endif %}
-
-                  {# Blogroll #}
                   {% if theme.links %}
                   <div class="links-of-blogroll motion-element {{ " links-of-blogroll-
                   " + theme.links_layout | default('inline') }}">

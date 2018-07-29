@@ -11,9 +11,6 @@
   {% endif %}
 
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
-      {##################}
-      {### POST BLOCK ###}
-      {##################}
       <div class="post-block">
           <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
 
@@ -29,13 +26,10 @@
 
           {% if not headlessPost %}
           <header class="post-header">
-
-              {# Not to show title for quote posts that do not have a title #}
               {% if not (is_index and post.type === 'quote' and not post.title) %}
-              <{% if theme.seo %}h2{% else %}h1{% endif %} class="post-title{% if post.direction &&
-              post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">{#
-              #}{# Link posts #}{#
-              #}{% if post.link %}
+              <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="post-title{% if post.direction &&
+              post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
+              {% if post.link %}
               {% if post.sticky > 0 %}
               {{ post.sticky }}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
@@ -47,21 +41,19 @@
                   {{ post.title or post.link }}
                   <i class="fa fa-external-link"></i>
               </a>
-              {% else %}{#
-              #}{% if is_index %}
+              {% else %}
+              {% if is_index %}
               {% if post.sticky > 0 %}
               <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
                     <i class="fa fa-thumb-tack"></i>
                   </span>
               {% endif %}
-              <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">{#
-                  #}{{ post.title | default(__('post.untitled'))}}{#
-                  #}</a>{#
-              #}{% else %}{{ post.title }}{% endif %}{#
-              #}{% endif %}{#
-              #}
-          </
-          {% if theme.seo %}h2{% else %}h1{% endif %}>
+              <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
+                  {{ post.title | default(__('post.untitled'))}}
+              </a>
+              {% else %}{{ post.title }}{% endif %}
+              {% endif %}
+          </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
           {% endif %}
 
           <div class="post-meta">
@@ -212,7 +204,6 @@
             {% endif %}
           {% endif %}
 
-          {# LeanCould PageView #}
           {% if theme.leancloud_visitors.enable %}
              <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
                <span class="post-meta-divider">|</span>
@@ -277,14 +268,9 @@
           </div>
           </header>
           {% endif %}
-
-          {#################}
-          {### POST BODY ###}
-          {#################}
           <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}"
                itemprop="articleBody">
 
-              {# Gallery support #}
               {% if post.photos and post.photos.length %}
               <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
                   {% set COLUMN_NUMBER = 3 %}
@@ -300,9 +286,6 @@
                   </div>
                   {% endif %}
                   {% endfor %}
-
-                  {# Append end tag for `post-gallery-row` when (photos size mod COLUMN_NUMBER) is less than
-                  COLUMN_NUMBER #}
                   {% if post.photos.length % COLUMN_NUMBER > 0 %}
               </div>
               {% endif %}
@@ -354,9 +337,6 @@
           {{ post.content }}
           {% endif %}
       </div>
-      {#####################}
-      {### END POST BODY ###}
-      {#####################}
 
       {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
@@ -456,9 +436,6 @@
           {% endif %}
       </footer>
       </div>
-      {######################}
-      {### END POST BLOCK ###}
-      {######################}
   </article>
 
 {% endmacro %}
