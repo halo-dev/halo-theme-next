@@ -1,6 +1,6 @@
 {% extends '_layout.swig' %}
 <#include "layout/_layout.ftl">
-{% import '_macro/post-collapse.swig' as post_template %}
+<#include "layout/_macro/post-collapse.ftl">
 {% import '_macro/sidebar.swig' as sidebar_template %}
 <@html title='${options.blog_title?default("NexT | Archives")}'>
 <#--TODO{% block page_class %}{% endblock %}-->
@@ -24,21 +24,14 @@
         {% endif %}
         {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
       </span>
-
-          {% for post in page.posts %}
-          {% set year %}
-          {% set post.year = date(post.date, 'YYYY') %}
-
-          {% if post.year !== year %}
-          {% set year = post.year %}
-          <div class="collection-title">
-              <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="archive-year" id="archive-year-{{ year }}">{{ year }}</<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
-            </div>
-      {% endif %}
-      {{ post_template.render(post) }}
-
-      {% endfor %}
-
+      <@articleTag method="archivesLess">
+          <#list archivesLess as archive>
+              <div class="collection-title">
+                  <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="archive-year" id="archive-year-${archive.year}">${archive.year}</<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
+              </div>
+              <@post_collapase archive.posts></@post_collapase>
+          </#list>
+      </@articleTag>
   </div>
   </div>
     <#include "layout/_partials/pagination.ftl">

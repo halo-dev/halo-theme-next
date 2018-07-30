@@ -1,56 +1,53 @@
-{% extends '_layout.swig' %}
+<#--{% extends '_layout.swig' %}-->
+<#include "layout/_layout.ftl">
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-  {% block title %}
-    {% set page_title_suffix = ' | ' + config.title %}
-}{% if page.type === "categories" and not page.title %}
-{{ __('title.category') + page_title_suffix }}
-{% elif page.type === "tags" and not page.title %}
-{{ __('title.tag') + page_title_suffix }}
-{% else %}
-{{ page.title + page_title_suffix }}
-{% endif %}
-{% endblock %}
+<@html title='${options.blog_title?default("NexT")}'>
+<#--TODO{% block page_class %}{% endblock %}-->
+    <#if posts??>page-post-detail</#if>
+</@html>
 
-{% block page_class %}page-post-detail{% endblock %}
-
-{% block content %}
-
-  <div id="posts" class="posts-expand">
+<@main>
+<div id="posts" class="posts-expand">
     <div class="post-block page">
       <#include "layout/_partials/page-header.ftl">
-      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        {% if page.type === "tags" %}
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                {{ _p('counter.tag_cloud', site.tags.length) }}
+        <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+            {% if page.type === "tags" %}
+            <div class="tag-cloud">
+                <div class="tag-cloud-title">
+                    {{ _p('counter.tag_cloud', site.tags.length) }}
+                </div>
+                <div class="tag-cloud-tags">
+                    {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: '#ccc', end_color: '#111'}) }}
+                </div>
             </div>
-            <div class="tag-cloud-tags">
-              {{ tagcloud({min_font: 12, max_font: 30, amount: 300, color: true, start_color: '#ccc', end_color: '#111'}) }}
+            {% elif page.type === 'categories' %}
+            <div class="category-all-page">
+                <div class="category-all-title">
+                    {{ _p('counter.categories', site.categories.length) }}
+                </div>
+                <div class="category-all">
+                    {{ list_categories() }}
+                </div>
             </div>
-          </div>
-        {% elif page.type === 'categories' %}
-          <div class="category-all-page">
-            <div class="category-all-title">
-                {{ _p('counter.categories', site.categories.length) }}
-            </div>
-            <div class="category-all">
-              {{ list_categories() }}
-            </div>
-          </div>
-        {% else %}
-          {{ page.content }}
-        {% endif %}
-      </div>
+            {% else %}
+            {{ page.content }}
+            {% endif %}
+        </div>
     </div>
-  </div>
+</div>
+</@main>
 
-{% endblock %}
+<@sidebar>
+    {% block sidebar %}
+    {{ sidebar_template.render(false) }}
+  {% endblock %}
+</@sidebar>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+<@footer>
 
-{% block script_extra %}
+</@footer>
+
+<@button>
 <#include "layout/_scripts/pages/post-details.ftl">
-{% endblock %}
+</@button>

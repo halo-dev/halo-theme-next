@@ -12,7 +12,7 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
-  <div class="container sidebar-position-${options.next_style_sidebar_position?default('left')} {% block page_class %}{% endblock %} <#nested />">
+  <div class="container sidebar-position-${options.next_style_sidebar_position?default('left')} <#nested />">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">

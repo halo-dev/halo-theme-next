@@ -1,31 +1,43 @@
-{% extends '_layout.swig' %}
+<#--{% extends '_layout.swig' %}-->
+<#include "layout/_layout.ftl">
 {% import '_macro/post-collapse.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-{% block title %}{{ __('title.category') }}: {{ page.category }} | {{ config.title }}{% endblock %}
+<@html title='${options.blog_title?default("NexT")}'>
 
-{% block content %}
+</@html>
+
+<@main>
   <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
-          {{ page.category }}
-          <small>{{  __('title.category')  }}</small>
-        </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
-      </div>
+      <div id="posts" class="posts-collapse">
+          <div class="collection-title">
+              <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
+                  {{ page.category }}
+                  <small>{{  __('title.category')  }}</small>
+              </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
+          </div>
 
-      {% for post in page.posts %}
-        {{ post_template.render(post) }}
-      {% endfor %}
-    </div>
+          {% for post in page.posts %}
+          {{ post_template.render(post) }}
+          {% endfor %}
+      </div>
 
   </div>
 
-<#include "layout/_partials/pagination.ftl">
+    <#include "layout/_partials/pagination.ftl">
+</@main>
 
-{% endblock %}
+<@sidebar>
+    {% block sidebar %}
+    {{ sidebar_template.render(false) }}
+  {% endblock %}
+</@sidebar>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+<@footer>
+
+</@footer>
+
+<@button>
+
+</@button>
