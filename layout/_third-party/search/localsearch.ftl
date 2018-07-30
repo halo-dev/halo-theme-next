@@ -1,4 +1,4 @@
-{% if theme.local_search.enable %}
+<#if options.next_search_local_search_enable?default('false')=='true'>
   <script type="text/javascript">
     // Popup Window;
     var isfetched = false;
@@ -315,4 +315,4 @@
       }
     });
   </script>
-{% endif %}
+</#if>

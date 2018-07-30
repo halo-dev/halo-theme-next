@@ -4,7 +4,7 @@
 	<script type="text/javascript">
 		window.vkAsyncInit = function() {
 			VK.init({
-				apiId: {{ theme.vkontakte_api.app_id }}
+				apiId: 11
 			});
 
 			{% if not is_home() and (is_post() and theme.vkontakte_api.like) %}

@@ -108,20 +108,20 @@
     root: '/',
     scheme: '${options.next_general_scheme?default('Muse')}',
     version: '5.1.4',
-    sidebar: {"position":"${options.next_style_sidebar_position?default('left')}","display":"${options.next_style_sidebar_display?default('post')}","offset":${options.next_general_footer_offset?default('12')},"offset_float":0,"b2t":${options.next_style_sidebar_b2t?default('false')},"scrollpercent":${options.next_style_sidebar_scrollpercent?default('false')},"onmobile":${options.next_style_sidebar_onmobile?default('false')},
+    sidebar: {"position":"${options.next_style_sidebar_position?default('left')}","display":"${options.next_style_sidebar_display?default('post')}","offset":${options.next_general_footer_offset?default('12')},"offset_float":0,"b2t":${options.next_style_sidebar_b2t?default('false')},"scrollpercent":${options.next_style_sidebar_scrollpercent?default('false')},"onmobile":${options.next_style_sidebar_onmobile?default('false')}},
     fancybox: ${options.next_plugins_fancybox?default('true')},
-    tabs: {{ theme.tabs.enable }},
+    tabs: true,
     motion: {"enable":${options.next_other_motion_enable?default('false')},"async":${options.next_other_motion_async?default('false')},"transition":{"post_block":"${options.next_other_motion_transition_post_block?default('fadeIn')}","post_header":"${options.next_other_motion_transition_post_header?default('slideDownIn')}","post_body":"${options.next_other_motion_transition_post_body?default('slideDownIn')}","coll_header":"${options.next_other_motion_transition_coll_header?default('slideLeftIn')}","sidebar":"${options.next_other_motion_transition_sidebar?default('slideUpIn')}"}},
     duoshuo: {
-      userId: '{{ theme.duoshuo_info.user_id | default() }}',
-      author: '{{ theme.duoshuo_info.admin_nickname | default(__('author'))}}'
+      userId: '0',
+      author: '博主'
     },
     algolia: {
-      applicationID: '{{ theme.algolia.applicationID }}',
-      apiKey: '{{ theme.algolia.apiKey }}',
-      indexName: '{{ theme.algolia.indexName }}',
-      hits: {{ theme.algolia_search.hits | json_encode }},
-      labels: {{ theme.algolia_search.labels | json_encode }}
+      applicationID: '0',
+      apiKey: '0',
+      indexName: '0',
+      hits: {},
+      labels: {}
     }
   };
 </script>

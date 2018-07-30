@@ -1,7 +1,7 @@
-{% if theme.leancloud_visitors.enable %}
+<#if options.next_plugins_leancloud_visitors_enable?default('false')=='true'>
 
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("{{theme.leancloud_visitors.app_id}}", "{{theme.leancloud_visitors.app_key}}");</script>
+  <script>AV.initialize("${options.next_plugins_leancloud_visitors_app_id?if_exists}", "${options.next_plugins_leancloud_visitors_app_key?if_exists}");</script>
   <script>
     function showTime(Counter) {
       var query = new AV.Query(Counter);
@@ -104,4 +104,4 @@
     });
   </script>
 
-{% endif %}
+</#if>

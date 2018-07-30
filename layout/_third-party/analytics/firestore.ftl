@@ -1,27 +1,27 @@
-{% if theme.firestore.enable %}
+<#if options.next_plugins_firestore_enable?default('false')=='true'>
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-  {% if theme.firestore.bluebird %}
+  <#if options.nextPluginsFirestoreBluebird?default('false')=='true'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.1/bluebird.core.min.js"></script>
-  {% endif %}
+  </#if>
   <script>
     (function () {
 
       firebase.initializeApp({
-        apiKey: '{{ theme.firestore.apiKey }}',
-        projectId: '{{ theme.firestore.projectId }}'
-      })
+        apiKey: '${options.next_plugins_firestore_api_key?if_exists}',
+        projectId: '${options.next_plugins_firestore_project_id?if_exists}'
+      });
 
       function getCount(doc, increaseCount) {
         //increaseCount will be false when not in article page
 
         return doc.get().then(function (d) {
-          var count
+          var count;
           if (!d.exists) { //has no data, initialize count
             if (increaseCount) {
               doc.set({
                 count: 1
-              })
+              });
               count = 1
             }
             else {
@@ -29,12 +29,12 @@
             }
           }
           else { //has data
-            count = d.data().count
+            count = d.data().count;
             if (increaseCount) {
               if (!(window.localStorage && window.localStorage.getItem(title))) { //if first view this article
                 doc.set({ //increase count
                   count: count + 1
-                })
+                });
                 count++
               }
             }
@@ -61,8 +61,8 @@
         }
       }
 
-      var db = firebase.firestore()
-      var articles = db.collection('{{ theme.firestore.collection }}')
+      var db = firebase.firestore();
+      var articles = db.collection('${options.next_plugins_firestore_collection?if_exists}')
 
       //https://hexo.io/zh-tw/docs/variables.html
       var isPost = '{{ page.title }}'.length > 0
@@ -77,18 +77,18 @@
         getCount(doc, true).then(appendCountTo($('.post-meta')))
       }
       else if (!isArchive && !isCategory && !isTag) { //is index page
-        var titles = [] //array to titles
+        var titles = []; //array to titles
 
         var postsstr = '{% for post in page.posts %}titles.push("{{ post.title }}");{% endfor %}' //if you have a better way to get titles of posts, please change it
-        eval(postsstr)
+        eval(postsstr);
 
         var promises = titles.map(function (title) {
           return articles.doc(title)
         }).map(function (doc) {
           return getCount(doc)
-        })
+        });
         Promise.all(promises).then(function (counts) {
-          var metas = $('.post-meta')
+          var metas = $('.post-meta');
           counts.forEach(function (val, idx) {
             appendCountTo(metas[idx])(val)
           })
@@ -96,4 +96,4 @@
       }
     })()
   </script>
-{% endif %}
+</#if>

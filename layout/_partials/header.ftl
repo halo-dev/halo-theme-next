@@ -33,44 +33,38 @@
 </div>
 
 <nav class="site-nav">
-  {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || theme.local_search.enable %}
-
-  {% if theme.menu %}
     <ul id="menu" class="menu">
-      {% for name, path in theme.menu %}
-        {% set itemName = name.toLowerCase() %}
-        <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
-          <a href="{{ url_for(path.split('||')[0]) | trim }}" rel="section">
-            {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />
-            {% endif %}
-            {{ __('menu.' + name) | replace('menu.', '') }}
+      <@commonTag method="menus">
+      <#list menus?sort_by('menuSort') as menu>
+        <li class="menu-item menu-item-${menu.menuUrl}">
+          <a href="${menu.menuUrl}" rel="section">
+            <#if menu.menuIcon!=''>
+              <i class="menu-item-icon fa fa-fw fa-${menu.menuIcon}"></i> <br />
+            </#if>
+            ${menu.menuName}
           </a>
         </li>
-      {% endfor %}
-
-      {% if hasSearch %}
+      </#list>
+      </@commonTag>
+        <#if options.next_search_swiftype?if_exists!='' || options.next_search_algolia_search_enable?default('false')=='true' || options.next_search_local_search_enable?default('false')=='true'>
         <li class="menu-item menu-item-search">
-          {% if theme.swiftype_key %}
+            <#if options.next_search_swiftype?if_exists!=''>
             <a href="javascript:;" class="st-search-show-outputs">
-          {% elseif theme.local_search.enable || theme.algolia_search.enable %}
+            <#elseif options.next_search_local_search_enable?default('false')=='true' || options.next_search_algolia_search_enable?default('false')=='true'>
             <a href="javascript:;" class="popup-trigger">
-          {% endif %}
-            {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            {% endif %}
+            </#if>
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             {{ __('menu.search') }}
           </a>
         </li>
-      {% endif %}
+        </#if>
     </ul>
-  {% endif %}
 
-  {% if hasSearch %}
+<#if options.next_search_swiftype?if_exists!='' || options.next_search_algolia_search_enable?default('false')=='true' || options.next_search_local_search_enable?default('false')=='true'>
     <div class="site-search">
       <#include "search.ftl">
     </div>
-  {% endif %}
+</#if>
 </nav>
 
 <#include "../_custom/header.ftl">

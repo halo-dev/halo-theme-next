@@ -62,13 +62,13 @@
         </div>
     </#if>
 
-    {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    {% endif %}
+    <#--{% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}-->
+      <#--<div id="needsharebutton-float">-->
+        <#--<span class="btn">-->
+          <#--<i class="fa fa-share-alt" aria-hidden="true"></i>-->
+        <#--</span>-->
+      <#--</div>-->
+    <#--{% endif %}-->
 
   </div>
 
@@ -81,14 +81,14 @@
     <#nested />
     <#include "_scripts/boostrap.ftl">
 
-    <#include "_third-party/comments/index.ftl">
+    <#--<#include "_third-party/comments/index.ftl">-->
     <#include "_third-party/search/index.ftl">
     <#include "_third-party/analytics/lean-analytics.ftl">
-    <#include "_third-party/analytics/firestore.ftl">
+    <#--<#include "_third-party/analytics/firestore.ftl">-->
     <#include "_third-party/seo/baidu-push.ftl">
-    <#include "_third-party/needsharebutton.ftl">
-    <#include "_third-party/rating.ftl">
-    <#include "_third-party/mathjax.ftl">
+    <#--<#include "_third-party/needsharebutton.ftl">-->
+    <#--<#include "_third-party/rating.ftl">-->
+    <#--<#include "_third-party/mathjax.ftl">-->
     <#include "_third-party/scroll-cookie.ftl">
     <#include "_third-party/exturl.ftl">
 </body>

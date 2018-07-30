@@ -1,9 +1,7 @@
-{% if theme.algolia_search.enable %}
-  <#include "../_third-party/search/algolia-search/dom.ftl">
-{% elseif theme.swiftype_key %}
-  <#include "search/swiftype.ftl">
-{% elseif theme.tinysou_Key %}
-  <#include "search/tinysou.ftl">
-{% elseif theme.local_search.enable %}
-  <#include "search/localsearch.ftl">
-{% endif %}
+<#if options.next_search_algolia_search_enable?default('false')=='true'>
+    <#include "../_third-party/search/algolia-search/dom.ftl">
+<#elseif options.next_search_swiftype?if_exists!=''>
+    <#include "search/swiftype.ftl">
+<#elseif options.next_search_local_search_enable?default('false')=='true'>
+    <#include "search/localsearch.ftl">
+</#if>

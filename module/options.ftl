@@ -39,6 +39,9 @@
                         <a href="#verification" data-toggle="tab">站点设置</a>
                     </li>
                     <li>
+                        <a href="#search" data-toggle="tab">插件设置</a>
+                    </li>
+                    <li>
                         <a href="#plugins" data-toggle="tab">插件设置</a>
                     </li>
                     <li>
@@ -341,6 +344,51 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="nextOtherCanvasNest" class="col-sm-4 control-label">canvas_nest：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_canvas_nest" id="nextOtherCanvasNest" value="true" ${((options.next_other_canvas_nest?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_canvas_nest" id="nextOtherCanvasNest" value="false" ${((options.next_other_canvas_nest?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherThreeWaves" class="col-sm-4 control-label">three_waves：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_three_waves" id="nextOtherThreeWaves" value="true" ${((options.next_other_three_waves?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_three_waves" id="nextOtherThreeWaves" value="false" ${((options.next_other_three_waves?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherCanvasLines" class="col-sm-4 control-label">canvas_lines：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_canvas_lines" id="nextOtherCanvasLines" value="true" ${((options.next_other_canvas_lines?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_canvas_lines" id="nextOtherCanvasLines" value="false" ${((options.next_other_canvas_lines?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherCanvasSphere" class="col-sm-4 control-label">canvas_sphere：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_canvas_sphere" id="nextOtherCanvasSphere" value="true" ${((options.next_other_canvas_sphere?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_canvas_sphere" id="nextOtherCanvasSphere" value="false" ${((options.next_other_canvas_sphere?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
                                 <!-- motion -->
                                 <div class="form-group">
                                     <label for="nextOtherMotionEnable" class="col-sm-4 control-label">motion-enable：</label>
@@ -479,6 +527,93 @@
                         </form>
                     </div>
 
+                    <!-- 搜索设置 -->
+                    <div class="tab-pane" id="search">
+                        <form method="post" class="form-horizontal" id="nextSearchOptions">
+                            <input type="hidden" name="next-version" value="5.1.4">
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="nextSearchSwiftype" class="col-sm-4 control-label">Swiftype：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSearchSwiftype" name="next_search_swiftype" value="${options.next_search_swiftype?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchAlgoliaSearchEnable" class="col-sm-4 control-label">algolia_search_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="true" ${((options.next_search_algolia_search_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="false" ${((options.next_search_algolia_search_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchAlgoliaSearchHitsPerPage" class="col-sm-4 control-label">algolia_search_hits_per_page：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchHitsPerPage" name="next_search_algolia_search_hits_per_page" value="${options.next_search_algolia_search_hits_per_page?default('10')}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchAlgoliaSearchLabelsInputPlaceholder" class="col-sm-4 control-label">algolia_search_labels_input_placeholder：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchLabelsInputPlaceholder" name="next_search_algolia_search_labels_input_placeholder" value="${options.next_search_algolia_search_labels_input_placeholder?default('Search for Posts')}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchAlgoliaSearchLabelsHitsEmpty" class="col-sm-4 control-label">algolia_search_labels_hits_empty：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchLabelsHitsEmpty" name="next_search_algolia_search_labels_hits_empty" value="${options.next_search_algolia_search_labels_hits_empty?default("We didn't find any results for the search: query")}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchAlgoliaSearchLabelsHitsStats" class="col-sm-4 control-label">algolia_search_labels_hits_stats：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchLabelsHitsStats" name="next_search_algolia_search_labels_hits_stats" value="${options.next_search_algolia_search_labels_hits_stats?default('hits results found in time ms')}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchLocalSearchEnable" class="col-sm-4 control-label">local_search_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="true" ${((options.next_search_local_search_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="false" ${((options.next_search_local_search_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchLocalSearchTrigger" class="col-sm-4 control-label">local_search_trigger：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextSearchLocalSearchTrigger" name="next_search_local_search_trigger">
+                                            <option value="auto" ${((options.next_search_local_search_trigger?default('auto'))=='auto')?string('selected','')}>auto</option>
+                                            <option value="manual" ${((options.next_search_local_search_trigger?if_exists)=='manual')?string('selected','')}>manual</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextSearchLocalSearchTopNPerArticle" class="col-sm-4 control-label">local_search_top_n_per_article：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSearchLocalSearchTopNPerArticle" name="next_search_local_search_top_n_per_article" value="${options.next_search_local_search_top_n_per_article?default('1')}" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextSearchOptions')">保存设置</button>
+                            </div>
+                        </form>
+                    </div>
+
                     <div class="tab-pane" id="plugins">
                         <form method="post" class="form-horizontal" id="nextPluginsOptions">
                             <input type="hidden" name="next-version" value="5.1.4">
@@ -540,9 +675,88 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nextPluginsSwiftype" class="col-sm-4 control-label">Swiftype：</label>
+                                    <label for="nextPluginsExturl" class="col-sm-4 control-label">exturl：</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextPluginsSwiftype" name="next_plugins_swiftype" value="${options.next_plugins_swiftype?if_exists}" >
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_exturl" id="nextPluginsExturl" value="true" ${((options.next_plugins_exturl?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_exturl" id="nextPluginsExturl" value="false" ${((options.next_plugins_exturl?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsSaveScroll" class="col-sm-4 control-label">save_scroll：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_save_scroll" id="nextPluginsSaveScroll" value="true" ${((options.next_plugins_save_scroll?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_save_scroll" id="nextPluginsSaveScroll" value="false" ${((options.next_plugins_save_scroll?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsFirestoreEnable" class="col-sm-4 control-label">firestore-enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_firestore_enable" id="nextPluginsFirestoreEnable" value="true" ${((options.next_plugins_firestore_enable?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_firestore_enable" id="nextPluginsFirestoreEnable" value="false" ${((options.next_plugins_firestore_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsFirestoreCollection" class="col-sm-4 control-label">firestore-cllection：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsFirestoreCollection" name="next_plugins_firestore_collection" value="${options.next_plugins_firestore_collection?default('articles')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsFirestoreApiKey" class="col-sm-4 control-label">firestore-apiKey：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsFirestoreApiKey" name="next_plugins_firestore_api_key" value="${options.next_plugins_firestore_api_key?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsFirestoreProjectId" class="col-sm-4 control-label">firestore-projectId：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsFirestoreProjectId" name="next_plugins_firestore_project_id" value="${options.next_plugins_firestore_project_id?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsFirestoreBluebird" class="col-sm-4 control-label">firestore-bluebird：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_firestore_bluebird" id="nextPluginsFirestoreBluebird" value="true" ${((options.next_plugins_firestore_bluebird?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_firestore_bluebird" id="nextPluginsFirestoreBluebird" value="false" ${((options.next_plugins_firestore_bluebird?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsLeancloudVisitorsEnable" class="col-sm-4 control-label">leancloud_visitors_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_leancloud_visitors_enable" id="nextPluginsLeancloudVisitorsEnable" value="true" ${((options.next_plugins_leancloud_visitors_enable?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_leancloud_visitors_enable" id="nextPluginsLeancloudVisitorsEnable" value="false" ${((options.next_plugins_leancloud_visitors_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsLeancloudVisitorsAppId" class="col-sm-4 control-label">leancloud_visitors_app_id：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsLeancloudVisitorsAppId" name="next_plugins_leancloud_visitors_app_id" value="${options.next_plugins_leancloud_visitors_app_id?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextPluginsLeancloudVisitorsAppKey" class="col-sm-4 control-label">leancloud_visitors_app_key：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsLeancloudVisitorsAppKey" name="next_plugins_leancloud_visitors_app_key" value="${options.next_plugins_leancloud_visitors_app_key?if_exists}" >
                                     </div>
                                 </div>
                             </div>
