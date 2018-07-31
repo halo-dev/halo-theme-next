@@ -32,7 +32,7 @@
               {% if post.link %}
               {% if post.sticky > 0 %}
               {{ post.sticky }}
-              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+              <span class="post-sticky-flag" title="置顶">
                   <i class="fa fa-thumb-tack"></i>
                 </span>
               {% endif %}
@@ -44,7 +44,7 @@
               {% else %}
               {% if is_index %}
               {% if post.sticky > 0 %}
-              <span class="post-sticky-flag" title="{{ __('post.sticky') }}">
+              <span class="post-sticky-flag" title="置顶">
                     <i class="fa fa-thumb-tack"></i>
                   </span>
               {% endif %}
@@ -63,9 +63,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.posted') }}</span>
+                <span class="post-meta-item-text">发表于</span>
               {% endif %}
-              <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished"
+              <time title="创建于" itemprop="dateCreated datePublished"
                     datetime="{{ moment(post.date).format() }}">
                 {{ date(post.date, config.date_format) }}
               </time>
@@ -80,9 +80,9 @@
                 <i class="fa fa-calendar-check-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.modified') }}&#58;</span>
+                <span class="post-meta-item-text">更新于&#58;</span>
               {% endif %}
-              <time title="{{ __('post.modified') }}" itemprop="dateModified"
+              <time title="更新于" itemprop="dateModified"
                     datetime="{{ moment(post.updated).format() }}">
                 {{ date(post.updated, config.date_format) }}
               </time>
@@ -98,7 +98,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               {% if theme.post_meta.item_text %}
-                <span class="post-meta-item-text">{{ __('post.in') }}</span>
+                <span class="post-meta-item-text">分类于</span>
               {% endif %}
               {% for cat in post.categories %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -234,9 +234,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 {% if theme.post_wordcount.item_text %}
-                  <span class="post-meta-item-text">{{ __('post.wordcount') }}&#58;</span>
+                  <span class="post-meta-item-text">字数统计&#58;</span>
                 {% endif %}
-                <span title="{{ __('post.wordcount') }}">
+                <span title="字数统计">
                   {{ wordcount(post.content) }}
                 </span>
               {% endif %}
@@ -250,9 +250,9 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 {% if theme.post_wordcount.item_text %}
-                  <span class="post-meta-item-text">{{ __('post.min2read') }} &asymp;</span>
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 {% endif %}
-                <span title="{{ __('post.min2read') }}">
+                <span title="阅读时长">
                   {{ min2read(post.content) }}
                 </span>
               {% endif %}
@@ -298,7 +298,7 @@
           <!--noindex-->
           <div class="post-button text-center">
               <a class="btn" href="{{ url_for(post.path) }}">
-                  {{ __('post.read_more') }} &raquo;
+                  阅读全文 &raquo;
               </a>
           </div>
           <!--/noindex-->
@@ -309,7 +309,7 @@
               <a class="btn"
                  href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}"
                  rel="contents">
-                  {{ __('post.read_more') }} &raquo;
+                  阅读全文 &raquo;
               </a>
           </div>
           <!--/noindex-->
@@ -322,7 +322,7 @@
               <a class="btn"
                  href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}"
                  rel="contents">
-                  {{ __('post.read_more') }} &raquo;
+                  阅读全文 &raquo;
               </a>
           </div>
           <!--/noindex-->

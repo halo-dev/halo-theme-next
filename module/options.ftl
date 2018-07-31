@@ -123,6 +123,12 @@
                                 </div>
                                 <!-- Footer-copyright -->
                                 <div class="form-group">
+                                    <label for="nextGeneralFooterSince" class="col-sm-4 control-label">Footer-since：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralFooterSince" name="next_general_footer_since" value="${options.next_general_footer_since?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="nextGeneralFooterCopyright" class="col-sm-4 control-label">Footer-copyright：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextGeneralFooterCopyright" name="next_general_footer_copyright" value="${options.next_general_footer_copyright?if_exists}" >

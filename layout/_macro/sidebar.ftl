@@ -18,10 +18,10 @@
           {% if display_toc and toc(page.content).length > 1 %}
           <ul class="sidebar-nav motion-element">
               <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                  {{ __('sidebar.toc') }}
+                  文章目录
               </li>
               <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-                  {{ __('sidebar.overview') }}
+                  站点概览
               </li>
           </ul>
           {% endif %}
@@ -56,7 +56,7 @@
                               <a href="{{ url_for(config.archive_dir) }}">
                                   {% endif %}
                                   <span class="site-state-item-count">{{ site.posts.length }}</span>
-                                  <span class="site-state-item-name">{{ __('state.posts') }}</span>
+                                  <span class="site-state-item-name">日志</span>
                               </a>
                       </div>
                       {% endif %}
@@ -67,7 +67,7 @@
                       <div class="site-state-item site-state-categories">
                           {% if hasCategoriesPage %}<a href="{{ url_for(categoriesPageQuery[0].path) }}">{% endif %}
                           <span class="site-state-item-count">{{ site.categories.length }}</span>
-                          <span class="site-state-item-name">{{ __('state.categories') }}</span>
+                          <span class="site-state-item-name">分类</span>
                           {% if hasCategoriesPage %}</a>{% endif %}
                       </div>
                       {% endif %}
@@ -78,7 +78,7 @@
                       <div class="site-state-item site-state-tags">
                           {% if hasTagsPage %}<a href="{{ url_for(tagsPageQuery[0].path) }}">{% endif %}
                           <span class="site-state-item-count">{{ site.tags.length }}</span>
-                          <span class="site-state-item-name">{{ __('state.tags') }}</span>
+                          <span class="site-state-item-name">标签</span>
                           {% if hasTagsPage %}</a>{% endif %}
                       </div>
                       {% endif %}
@@ -154,7 +154,7 @@
               {% endif %}
 
               {% if toc.length <= 1 %}
-              <p class="post-toc-empty">{{ __('post.toc_empty') }}</p>
+              <p class="post-toc-empty">此文章未包含目录</p>
               {% else %}
               <div class="post-toc-content">{{ toc }}</div>
               {% endif %}

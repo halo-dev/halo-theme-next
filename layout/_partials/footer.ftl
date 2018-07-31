@@ -1,21 +1,20 @@
 <div class="copyright">
-    {% set current = date(Date.now(), "YYYY") %}
-    &copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} &mdash; {% endif %}
-    <span itemprop="copyrightYear">{{ current }}</span>
+    <#assign current="${.now}">
+    &copy; <#if options.next_general_footer_since?if_exists!='' && options.next_general_footer_since?if_exists !=current?substring(0,4)>${options.next_general_footer_since?if_exists} &mdash;</#if>
+    <span itemprop="copyrightYear">${current?substring(0,4)}</span>
     <span class="with-love">
-    <i class="fa fa-{{ theme.footer.icon }}"></i>
+    <i class="fa fa-${options.next_general_footer_icon?if_exists}"></i>
   </span>
     <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
-
     {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
     {% if theme.post_wordcount.item_text %}
-    <span class="post-meta-item-text">{{ __('post.totalcount') }}&#58;</span>
+    <span class="post-meta-item-text">Site words total count&#58;</span>
     {% endif %}
-    <span title="{{ __('post.totalcount') }}">
+    <span title="Site words total count">
         {{ totalcount(site, '0,0.0a') }}
     </span>
     {% endif %}
