@@ -12,18 +12,22 @@
       <div id="posts" class="posts-collapse">
           <span class="archive-move-on"></span>
           <span class="archive-page-counter">
-        {% set cheers %}
-        {% set posts_length = site.posts.length %}
-        {% if posts_length > 210 %} {% set cheers = 'excellent' %}
-          {% elif posts_length > 130 %} {% set cheers = 'great' %}
-          {% elif posts_length > 80 %} {% set cheers = 'good' %}
-          {% elif posts_length > 50 %} {% set cheers = 'nice' %}
-          {% elif posts_length > 30 %} {% set cheers = 'ok' %}
-        {% else %}
-          {% set cheers = 'um' %}
-        {% endif %}
-        {{ __('cheers.' + cheers) }}! {{ _p("counter.archive_posts", site.posts.length) }} {{ __('keep_on') }}
-      </span>
+              <@articleTag method = "postsCount">
+                  <#if postsCount gt 210>
+                    太棒了!
+                  <#elseif postsCount gt 130>
+                    非常好!
+                  <#elseif postsCount gt 80>
+                    很好!
+                  <#elseif postsCount gt 50>
+                    好!
+                  <#elseif postsCount gt 30>
+                    OK!
+                  <#else>
+                    嗯..
+                  </#if> 目前共计 ${postsCount} 篇日志。 继续努力。
+              </@articleTag>
+          </span>
       <@articleTag method="archivesLess">
           <#list archivesLess as archive>
               <div class="collection-title">
