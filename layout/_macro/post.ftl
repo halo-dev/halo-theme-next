@@ -12,16 +12,16 @@
 
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
       <div class="post-block">
-          <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
+          <link itemprop="mainEntityOfPage" href="${options.blog_title?if_exists}/archives/${post.postUrl}">
 
           <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="{{ theme.author }}">
+      <meta itemprop="name" content="${user.userDisplayName?if_exists}">
       <meta itemprop="description" content="{{ theme.signature }}">
       <meta itemprop="image" content="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
     </span>
 
           <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{{ config.title }}">
+      <meta itemprop="name" content="${options.blog_title?if_exists}">
     </span>
 
           {% if not headlessPost %}

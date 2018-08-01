@@ -1,31 +1,29 @@
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>{{ theme.reward_comment }}</div>
-    <button id="rewardButton" disable="enable"
-            onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <div>${options.next_other_reward_comment?if_exists}</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
         <span>打赏</span>
     </button>
     <div id="QR" style="display: none;">
-
-        {% if theme.wechatpay %}
+        <#if options.next_other_wechatpay?if_exists !=''>
         <div id="wechat" style="display: inline-block">
-            <img id="wechat_qr" src="{{ theme.wechatpay }}" alt="{{ theme.author }} 微信支付"/>
+            <img id="wechat_qr" src="${options.next_other_wechatpay}" alt="${user.DisplayName?if_exists} 微信支付"/>
             <p>微信支付</p>
         </div>
-        {% endif %}
+        </#if>
 
-        {% if theme.alipay %}
+        <#if options.next_other_alipay?if_exists !=''>
         <div id="alipay" style="display: inline-block">
-            <img id="alipay_qr" src="{{ theme.alipay }}" alt="{{ theme.author }} 支付宝"/>
+            <img id="alipay_qr" src="${options.next_other_alipay}" alt="${user.DisplayName?if_exists} 支付宝"/>
             <p>支付宝</p>
         </div>
-        {% endif %}
+        </#if>
 
-        {% if theme.bitcoin %}
+        <#if options.next_other_bitcoin?if_exists !=''>
         <div id="bitcoin" style="display: inline-block">
-            <img id="bitcoin_qr" src="{{ theme.bitcoin }}" alt="{{ theme.author }} 比特币"/>
+            <img id="bitcoin_qr" src="${options.next_other_bitcoin}" alt="${user.DisplayName?if_exists} 比特币"/>
             <p>比特币</p>
         </div>
-        {% endif %}
+        </#if>
 
     </div>
 </div>

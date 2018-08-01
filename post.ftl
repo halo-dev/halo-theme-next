@@ -10,17 +10,14 @@
 <@main>
   <div id="posts" class="posts-expand">
       {{ post_template.render(page) }}
-
       <div class="post-spread">
-          {% if theme.jiathis %}
-        <#include "layout/_partials/share/jiathis.ftl">
-          {% elseif theme.baidushare %}
-        <#include "layout/_partials/share/baidushare.ftl">
-          {% elseif theme.add_this_id %}
-        <#include "layout/_partials/share/add-this.ftl">
-          {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        <#include "layout/_partials/share/duoshuo_share.ftl">
-          {% endif %}
+          <#if options.next_other_jiathis_uid?if_exists !=''>
+            <#include "layout/_partials/share/jiathis.ftl">
+          <#elseif options.baidu_share_type?if_exists!=''>
+            <#include "layout/_partials/share/baidushare.ftl">
+          <#elseif options.next_other_add_this_id?if_exists!=''>
+            <#include "layout/_partials/share/add-this.ftl">
+          </#if>
       </div>
   </div>
 </@main>

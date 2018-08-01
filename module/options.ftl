@@ -39,7 +39,7 @@
                         <a href="#verification" data-toggle="tab">站点设置</a>
                     </li>
                     <li>
-                        <a href="#search" data-toggle="tab">插件设置</a>
+                        <a href="#search" data-toggle="tab">搜索设置</a>
                     </li>
                     <li>
                         <a href="#plugins" data-toggle="tab">插件设置</a>
@@ -112,6 +112,13 @@
                                                 <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextGeneralSafariPinnedTab')">选择</button>
                                             </span>
                                         </div>
+                                    </div>
+                                </div>
+                                <!-- subtitle -->
+                                <div class="form-group">
+                                    <label for="nextGeneralSubtitle" class="col-sm-4 control-label">Subtitle：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralSubtitle" name="next_general_subtitle" value="${options.next_general_subtitle?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- Footer-icon -->
@@ -477,6 +484,60 @@
                                         <label class="radio-inline">
                                             <input type="radio" name="next_other_seo" id="nextOtherSeo" value="false" ${((options.next_other_seo?default('false'))=='false')?string('checked','')}> 禁用
                                         </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherRewardComment" class="col-sm-4 control-label">reward_comment：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherRewardComment" name="next_other_reward_comment" value="${options.next_other_reward_comment?default('Donate comment here')}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherWechatpay" class="col-sm-4 control-label">wechatpay：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherWechatpay" name="next_other_wechatpay" value="${options.next_other_wechatpay?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherAlipay" class="col-sm-4 control-label">alipay：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherAlipay" name="nextOtherAlipay" value="${options.next_other_alipay?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherBitcoin" class="col-sm-4 control-label">bitcoin：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBitcoin" name="next_other_bitcoin" value="${options.next_other_bitcoin?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherBaiduShareType" class="col-sm-4 control-label">baidu_share_type：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextOtherBaiduShareType" name="next_other_baidu_share_type">
+                                            <option value="" ${((options.next_other_baidu_share_type?default(''))=='')?string('selected','')}></option>
+                                            <option value="button" ${((options.next_other_baidu_share_type?if_exists)=='button')?string('selected','')}>button</option>
+                                            <option value="slide" ${((options.next_other_baidu_share_type?if_exists)=='slide')?string('selected','')}>slide</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherJiathisUid" class="col-sm-4 control-label">jiathis_uid：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherJiathisUid" name="next_other_jiathis_uid" value="${options.next_other_jiathis_uid?if_exists}" >
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="nextOtherAddThisId" class="col-sm-4 control-label">add_this_id：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherAddThisId" name="next_other_add_this_id" value="${options.next_other_add_this_id?if_exists}" >
                                     </div>
                                 </div>
                             </div>

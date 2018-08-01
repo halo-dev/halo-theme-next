@@ -56,7 +56,7 @@
                               <a href="{{ url_for(config.archive_dir) }}">
                                   {% endif %}
                                   <span class="site-state-item-count">{{ site.posts.length }}</span>
-                                  <span class="site-state-item-name">日志</span>
+                                  <span class="site-state-item-name">{{ __('state.posts') }}</span>
                               </a>
                       </div>
                       {% endif %}
@@ -67,7 +67,7 @@
                       <div class="site-state-item site-state-categories">
                           {% if hasCategoriesPage %}<a href="{{ url_for(categoriesPageQuery[0].path) }}">{% endif %}
                           <span class="site-state-item-count">{{ site.categories.length }}</span>
-                          <span class="site-state-item-name">分类</span>
+                          <span class="site-state-item-name">{{ __('state.categories') }}</span>
                           {% if hasCategoriesPage %}</a>{% endif %}
                       </div>
                       {% endif %}
@@ -78,7 +78,7 @@
                       <div class="site-state-item site-state-tags">
                           {% if hasTagsPage %}<a href="{{ url_for(tagsPageQuery[0].path) }}">{% endif %}
                           <span class="site-state-item-count">{{ site.tags.length }}</span>
-                          <span class="site-state-item-name">标签</span>
+                          <span class="site-state-item-name">{{ __('state.tags') }}</span>
                           {% if hasTagsPage %}</a>{% endif %}
                       </div>
                       {% endif %}

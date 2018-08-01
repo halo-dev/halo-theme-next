@@ -17,9 +17,9 @@
       </a>
     </div>
       <#if options.next_other_seo?default('false')=='true'>
-        <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
+        <h1 class="site-subtitle" itemprop="description">${options.next_general_subtitle?if_exists}</h1>
       <#else>
-        <p class="site-subtitle">{{ config.subtitle }}</p>
+        <p class="site-subtitle">${options.next_general_subtitle?if_exists}</p>
       </#if>
   </div>
 

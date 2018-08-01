@@ -6,6 +6,7 @@
     <i class="fa fa-${options.next_general_footer_icon?if_exists}"></i>
   </span>
     <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
+
     {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">

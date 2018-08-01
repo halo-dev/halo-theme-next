@@ -14,17 +14,17 @@
           <span class="archive-page-counter">
               <@articleTag method = "postsCount">
                   <#if postsCount gt 210>
-                    太棒了!
+                        太棒了!
                   <#elseif postsCount gt 130>
-                    非常好!
+                        非常好!
                   <#elseif postsCount gt 80>
-                    很好!
+                        很好!
                   <#elseif postsCount gt 50>
-                    好!
+                        好!
                   <#elseif postsCount gt 30>
-                    OK!
+                        OK!
                   <#else>
-                    嗯..
+                        嗯..
                   </#if> 目前共计 ${postsCount} 篇日志。 继续努力。
               </@articleTag>
           </span>

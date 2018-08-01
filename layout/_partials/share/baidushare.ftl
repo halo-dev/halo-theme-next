@@ -1,4 +1,4 @@
-{% if theme.baidushare.type === "button" %}
+<#if options.next_other_baidu_share_type?default('') =='button'>
   <div class="bdsharebuttonbox">
       <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
       <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
@@ -30,7 +30,7 @@
           }
       }
   </script>
-{% elseif theme.baidushare.type === "slide" %}
+<#else >
   <script>
       window._bd_share_config = {
           "common": {
@@ -51,7 +51,7 @@
           }
       }
   </script>
-{% endif %}
+</#if>
 <script>
     with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '//bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
 </script>

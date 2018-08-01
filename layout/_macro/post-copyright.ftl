@@ -1,15 +1,14 @@
 <ul class="post-copyright">
     <li class="post-copyright-author">
-        <strong>{{ __('post.copyright.author') + __('symbol.colon') }}</strong>
-        {{ post.author | default(config.author) }}
+        <strong>本文作者：</strong>
+        ${user.userDisplayName?if_exists}
     </li>
     <li class="post-copyright-link">
-        <strong>{{ __('post.copyright.link') + __('symbol.colon') }}</strong>
-        <a href="{{ post.url | default(post.permalink) }}" title="{{ post.title }}">{{ post.url |
-            default(post.permalink) }}</a>
+        <strong>本文链接：</strong>
+        <a href="${options.blog_url}/archives/${post.postUrl}" title="${post.postTitle}">${options.blog_url}/archives/${post.postUrl}</a>
     </li>
     <li class="post-copyright-license">
-        <strong>{{ __('post.copyright.license_title') + __('symbol.colon') }} </strong>
-        {{ __('post.copyright.license_content', theme.post_copyright.license_url, theme.post_copyright.license) }}
+        <strong>版权声明：</strong>
+        本博客所有文章除特别声明外，均采用<a href="${options.next_other_post_copyright_license_url?default('https://creativecommons.org/licenses/by-nc-sa/3.0/')}" rel="external nofollow" target="_blank">${options.next_other_post_copyright_license?default('CC BY-NC-SA 3.0')}</a> 许可协议。转载请注明出处！
     </li>
 </ul>
