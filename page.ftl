@@ -7,7 +7,7 @@
     <#if posts??>page-post-detail</#if>
 </@html>
 
-<@main>
+<@main useComment=false>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
       <#include "layout/_partials/page-header.ftl">

@@ -1,13 +1,9 @@
-{% extends '_layout.swig' %}
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/post-collapse.ftl">
 {% import '_macro/sidebar.swig' as sidebar_template %}
-<@html title='${options.blog_title?default("NexT | Archives")}'>
-<#--TODO{% block page_class %}{% endblock %}-->
-  page-archive
-</@html>
+<@html title='${options.blog_title?default("NexT | Archives")}'>page-archive</@html>
 
-<@main>
+<@main useComment=false>
   <div class="post-block archive">
       <div id="posts" class="posts-collapse">
           <span class="archive-move-on"></span>

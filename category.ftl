@@ -7,14 +7,14 @@
 
 </@html>
 
-<@main>
+<@main useComment=false>
   <div class="post-block category">
 
       <div id="posts" class="posts-collapse">
           <div class="collection-title">
               <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
                   {{ page.category }}
-                  <small>{{  __('title.category')  }}</small>
+                  <small>分类</small>
               </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
           </div>
 

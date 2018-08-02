@@ -1,7 +1,7 @@
-{% if theme.cnzz_siteid %}
+<#if options.next_other_cnzz_siteid??>
 
   <div style="display: none;">
-    <script src="//s95.cnzz.com/z_stat.php?id={{ theme.cnzz_siteid }}&web_id={{ theme.cnzz_siteid }}" language="JavaScript"></script>
+    <script src="//s95.cnzz.com/z_stat.php?id=${options.next_other_cnzz_siteid}&web_id=${options.next_other_cnzz_siteid}" language="JavaScript"></script>
   </div>
 
-{% endif %}
+</#if>

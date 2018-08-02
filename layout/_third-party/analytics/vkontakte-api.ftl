@@ -1,4 +1,4 @@
-{% if theme.vkontakte_api.enable %}
+<#if options.next_other_vkontakte_api_enable?default('false') == 'true'>
 
 	<div id="vk_api_transport"></div>
 	<script type="text/javascript">
@@ -24,4 +24,4 @@
 		}, 0);
 	</script>
 
-{% endif %}
+</#if>

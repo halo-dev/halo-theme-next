@@ -31,12 +31,12 @@
               <div class="site-overview">
                   <div class="site-author motion-element" itemprop="author" itemscope
                        itemtype="http://schema.org/Person">
-                      {% if theme.avatar %}
+                      <#if user.userAvatar??>
                       <img class="site-author-image" itemprop="image"
-                           src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
-                           alt="{{ theme.author }}"/>
-                      {% endif %}
-                      <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
+                           src="${user.userAvatar?default('/next/source/images/avatar.gif')}"
+                           alt="${user.userDisplayName?if_exists}"/>
+                      </#if>
+                      <p class="site-author-name" itemprop="name">${user.userDisplayName?if_exists}</p>
                       <p class="site-description motion-element" itemprop="description">
                           <#if options.next_other_seo?default('false')=='true'>
                           {{ theme.signature }}
@@ -56,7 +56,7 @@
                               <a href="{{ url_for(config.archive_dir) }}">
                                   {% endif %}
                                   <span class="site-state-item-count">{{ site.posts.length }}</span>
-                                  <span class="site-state-item-name">{{ __('state.posts') }}</span>
+                                  <span class="site-state-item-name">日志</span>
                               </a>
                       </div>
                       {% endif %}
@@ -67,7 +67,7 @@
                       <div class="site-state-item site-state-categories">
                           {% if hasCategoriesPage %}<a href="{{ url_for(categoriesPageQuery[0].path) }}">{% endif %}
                           <span class="site-state-item-count">{{ site.categories.length }}</span>
-                          <span class="site-state-item-name">{{ __('state.categories') }}</span>
+                          <span class="site-state-item-name">分类</span>
                           {% if hasCategoriesPage %}</a>{% endif %}
                       </div>
                       {% endif %}
@@ -78,21 +78,21 @@
                       <div class="site-state-item site-state-tags">
                           {% if hasTagsPage %}<a href="{{ url_for(tagsPageQuery[0].path) }}">{% endif %}
                           <span class="site-state-item-count">{{ site.tags.length }}</span>
-                          <span class="site-state-item-name">{{ __('state.tags') }}</span>
+                          <span class="site-state-item-name">标签</span>
                           {% if hasTagsPage %}</a>{% endif %}
                       </div>
                       {% endif %}
 
                   </nav>
 
-                  {% if theme.rss %}
+                  <#if options.next_other_rss?default('true') == 'true'>
                   <div class="feed-link motion-element">
-                      <a href="{{ url_for(theme.rss) }}" rel="alternate">
+                      <a href="/feed.xml" rel="alternate">
                           <i class="fa fa-rss"></i>
                           RSS
                       </a>
                   </div>
-                  {% endif %}
+                  </#if>
 
                   {% if theme.social %}
                   <div class="links-of-author motion-element">

@@ -1,4 +1,4 @@
-{% if theme.mathjax.enable %}
+<#if options.next_plugins_mathjax_enable?default('false') == 'true'>
   {% if not theme.mathjax.per_page or (page.total or page.mathjax) %}
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
@@ -18,6 +18,6 @@
         }
       });
     </script>
-    <script type="text/javascript" src="{{ theme.mathjax.cdn }}"></script>
+    <script type="text/javascript" src="${options.next_plugins_mathjax_cdn?default('//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML')}"></script>
   {% endif %}
-{% endif %}
+</#if>

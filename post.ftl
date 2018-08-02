@@ -7,7 +7,7 @@
 <#--TODO{% block page_class %}{% endblock %}-->
     <#if posts??>page-post-detail</#if>
 </@html>
-<@main>
+<@main useComment=true>
   <div id="posts" class="posts-expand">
       {{ post_template.render(page) }}
       <div class="post-spread">

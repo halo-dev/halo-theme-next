@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 <html class="theme-next ${options.next_general_scheme?default('Muse')?lower_case} <#if options.next_other_motion_enable?default('true')=='true'>use-motion</#if>"
-      lang="zh-CN">
+      lang="zh-Hans">
 <head>
   <#include "_partials/head.ftl">
     <@head keywords="NexT"></@head>
@@ -10,7 +10,7 @@
   <#include "_third-party/analytics/index.ftl">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   <div class="container sidebar-position-${options.next_style_sidebar_position?default('left')} <#nested />">
     <div class="headband"></div>
@@ -20,7 +20,7 @@
     </header>
 </#macro>
 
-<#macro main>
+<#macro main useComment>
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -29,7 +29,9 @@
             <#nested />
             </div>
             <#include "_third-party/duoshuo-hot-articles.ftl">
+            <#if useComment>
             <#include "_partials/comments.ftl">
+            </#if>
         </div>
 </#macro>
 <#macro sidebar>
@@ -81,7 +83,6 @@
     <#nested />
     <#include "_scripts/boostrap.ftl">
 
-    <#--<#include "_third-party/comments/index.ftl">-->
     <#include "_third-party/search/index.ftl">
     <#include "_third-party/analytics/lean-analytics.ftl">
     <#--<#include "_third-party/analytics/firestore.ftl">-->

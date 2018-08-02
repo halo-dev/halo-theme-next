@@ -56,7 +56,7 @@
                             <div class="box-body">
 								<!-- scheme -->
                                 <div class="form-group">
-                                    <label for="nextGeneralScheme" class="col-sm-4 control-label">Scheme：</label>
+                                    <label for="nextGeneralScheme" class="col-sm-4 control-label">主题中主题：</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="nextGeneralScheme" name="next_general_scheme">
                                             <option value="Muse" ${((options.next_general_scheme?default('Muse'))=='Muse')?string('selected','')}>Muse</option>
@@ -68,7 +68,7 @@
                                 </div>
                                 <!-- Favicon-Small -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFaviconSmall" class="col-sm-4 control-label">Favicon-small：</label>
+                                    <label for="nextGeneralFaviconSmall" class="col-sm-4 control-label">Favicon（小）：</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="nextGeneralFaviconSmall" name="next_general_favicon_small" value="${options.next_general_favicon_small?if_exists}" >
@@ -80,7 +80,7 @@
                                 </div>
                                 <!-- Favicon-medium -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFaviconMedium" class="col-sm-4 control-label">Favicon-medium：</label>
+                                    <label for="nextGeneralFaviconMedium" class="col-sm-4 control-label">Favicon（中）：</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="nextGeneralFaviconMedium" name="next_general_favicon_medium" value="${options.next_general_favicon_medium?if_exists}" >
@@ -92,7 +92,7 @@
                                 </div>
                                 <!-- apple_touch_icon -->
                                 <div class="form-group">
-                                    <label for="nextGeneralAppleTouchIcon" class="col-sm-4 control-label">apple_touch_icon：</label>
+                                    <label for="nextGeneralAppleTouchIcon" class="col-sm-4 control-label">iOS快捷键图标：</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="nextGeneralAppleTouchIcon" name="next_general_apple_touch_icon" value="${options.next_general_apple_touch_icon?if_exists}" >
@@ -104,7 +104,7 @@
                                 </div>
                                 <!-- safari_pinned_tab -->
                                 <div class="form-group">
-                                    <label for="nextGeneralSafariPinnedTab" class="col-sm-4 control-label">safari_pinned_tab：</label>
+                                    <label for="nextGeneralSafariPinnedTab" class="col-sm-4 control-label">Safari图标：</label>
                                     <div class="col-sm-8">
                                         <div class="input-group">
                                             <input type="text" class="form-control" id="nextGeneralSafariPinnedTab" name="next_general_safari_pinned_tab" value="${options.next_general_safari_pinned_tab?if_exists}" >
@@ -116,64 +116,65 @@
                                 </div>
                                 <!-- subtitle -->
                                 <div class="form-group">
-                                    <label for="nextGeneralSubtitle" class="col-sm-4 control-label">Subtitle：</label>
+                                    <label for="nextGeneralSubtitle" class="col-sm-4 control-label">网站副标题：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextGeneralSubtitle" name="next_general_subtitle" value="${options.next_general_subtitle?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- Footer-icon -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFooterIcon" class="col-sm-4 control-label">Footer-Icon：</label>
+                                    <label for="nextGeneralFooterIcon" class="col-sm-4 control-label">页脚图标：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextGeneralFooterIcon" name="next_general_footer_icon" value="${options.next_general_footer_icon?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- Footer-copyright -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFooterSince" class="col-sm-4 control-label">Footer-since：</label>
+                                    <label for="nextGeneralFooterSince" class="col-sm-4 control-label">页脚网站创建年份：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextGeneralFooterSince" name="next_general_footer_since" value="${options.next_general_footer_since?if_exists}" >
                                     </div>
                                 </div>
+                                <!-- Footer-copyright -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFooterCopyright" class="col-sm-4 control-label">Footer-copyright：</label>
+                                    <label for="nextGeneralFooterCopyright" class="col-sm-4 control-label">页脚版权：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextGeneralFooterCopyright" name="next_general_footer_copyright" value="${options.next_general_footer_copyright?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- Footer-powered -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFooterPowered" class="col-sm-4 control-label">Footer-powered：</label>
+                                    <label for="nextGeneralFooterPowered" class="col-sm-4 control-label">是否显示网站程序名称：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_general_footer_powered" id="nextGeneralFooterPowered" value="true" ${((options.next_general_footer_powered?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_general_footer_powered" id="nextGeneralFooterPowered" value="false" ${((options.next_general_footer_powered?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_general_footer_powered" id="nextGeneralFooterPowered" value="false" ${((options.next_general_footer_powered?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
                                 <!-- Footer-theme-enable -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFooterThemeEnable" class="col-sm-4 control-label">Footer-theme-enable：</label>
+                                    <label for="nextGeneralFooterThemeEnable" class="col-sm-4 control-label">是否显示主题名称：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_general_footer_theme_enable" id="nextGeneralFooterThemeEnable" value="true" ${((options.next_general_footer_theme_enable?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_general_footer_theme_enable" id="nextGeneralFooterThemeEnable" value="false" ${((options.next_general_footer_theme_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_general_footer_theme_enable" id="nextGeneralFooterThemeEnable" value="false" ${((options.next_general_footer_theme_enable?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
                                 <!-- Footer-theme-version -->
                                 <div class="form-group">
-                                    <label for="nextGeneralFooterThemeVersion" class="col-sm-4 control-label">Footer-theme-version：</label>
+                                    <label for="nextGeneralFooterThemeVersion" class="col-sm-4 control-label">是否显示主题版本：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_general_footer_theme_version" id="nextGeneralFooterThemeVersion" value="true" ${((options.next_general_footer_theme_version?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_general_footer_theme_version" id="nextGeneralFooterThemeVersion" value="false" ${((options.next_general_footer_theme_version?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_general_footer_theme_version" id="nextGeneralFooterThemeVersion" value="false" ${((options.next_general_footer_theme_version?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -189,7 +190,7 @@
                             <div class="box-body">
                                 <!-- sidebar-position -->
                                 <div class="form-group">
-                                    <label for="nextStyleSidebarPosition" class="col-sm-4 control-label">Sidebar-position：</label>
+                                    <label for="nextStyleSidebarPosition" class="col-sm-4 control-label">侧栏位置：</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="nextStyleSidebarPosition" name="next_style_sidebar_position">
                                             <option value="left" ${((options.next_style_sidebar_position?default('left'))=='left')?string('selected','')}>左侧</option>
@@ -199,32 +200,32 @@
                                 </div>
                                 <!-- sidebar-display -->
                                 <div class="form-group">
-                                    <label for="nextStyleSidebarDisplay" class="col-sm-4 control-label">Sidebar-display：</label>
+                                    <label for="nextStyleSidebarDisplay" class="col-sm-4 control-label">侧栏显示时机：</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="nextStyleSidebarDisplay" name="next_style_sidebar_display">
-                                            <option value="post" ${((options.next_style_sidebar_display?default('post'))=='post')?string('selected','')}>post</option>
-                                            <option value="always" ${((options.next_style_sidebar_display?if_exists)=='always')?string('selected','')}>always</option>
-                                            <option value="hide" ${((options.next_style_sidebar_display?if_exists)=='hide')?string('selected','')}>hide</option>
-                                            <option value="remove" ${((options.next_style_sidebar_display?if_exists)=='remove')?string('selected','')}>remove</option>
+                                            <option value="post" ${((options.next_style_sidebar_display?default('post'))=='post')?string('selected','')}>文章页面</option>
+                                            <option value="always" ${((options.next_style_sidebar_display?if_exists)=='always')?string('selected','')}>所有页面</option>
+                                            <option value="hide" ${((options.next_style_sidebar_display?if_exists)=='hide')?string('selected','')}>所有页面中都隐藏</option>
+                                            <option value="remove" ${((options.next_style_sidebar_display?if_exists)=='remove')?string('selected','')}>完全移除</option>
                                         </select>
                                     </div>
                                 </div>
                                 <!-- sidebar-offset -->
                                 <div class="form-group">
-                                    <label for="nextStyleSidebarOffset" class="col-sm-4 control-label">Sidebar-offset：</label>
+                                    <label for="nextStyleSidebarOffset" class="col-sm-4 control-label">侧栏偏移量：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextStyleSidebarOffset" name="next_general_footer_offset" value="${options.next_general_footer_offset?default('12')}" >
                                     </div>
                                 </div>
                                 <!-- sidebar-b2t -->
                                 <div class="form-group">
-                                    <label for="nextStyleSidebarB2t" class="col-sm-4 control-label">Sidebar-b2t：</label>
+                                    <label for="nextStyleSidebarB2t" class="col-sm-4 control-label">侧栏返回顶部按钮：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_style_sidebar_b2t" id="nextStyleSidebarB2t" value="true" ${((options.next_style_sidebar_b2t?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_style_sidebar_b2t" id="nextStyleSidebarB2t" value="false" ${((options.next_style_sidebar_b2t?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_style_sidebar_b2t" id="nextStyleSidebarB2t" value="false" ${((options.next_style_sidebar_b2t?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -236,7 +237,7 @@
                                             <input type="radio" name="next_style_sidebar_scrollpercent" id="nextStyleSidebarScrollpercent" value="true" ${((options.next_style_sidebar_scrollpercent?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_style_sidebar_scrollpercent" id="nextStyleSidebarScrollpercent" value="false" ${((options.next_style_sidebar_scrollpercent?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_style_sidebar_scrollpercent" id="nextStyleSidebarScrollpercent" value="false" ${((options.next_style_sidebar_scrollpercent?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -248,7 +249,7 @@
                                             <input type="radio" name="next_style_sidebar_onmobile" id="nextStyleSidebarOnmobile" value="true" ${((options.next_style_sidebar_onmobile?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_style_sidebar_onmobile" id="nextStyleSidebarOnmobile" value="false" ${((options.next_style_sidebar_onmobile?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_style_sidebar_onmobile" id="nextStyleSidebarOnmobile" value="false" ${((options.next_style_sidebar_onmobile?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -259,7 +260,7 @@
                                             <input type="radio" name="next_style_custom_logo_enable" id="nextStyleCustomLogoEnable" value="true" ${((options.next_style_custom_logo_enable?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_style_custom_logo_enable" id="nextStyleCustomLogoEnable" value="false" ${((options.next_style_custom_logo_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_style_custom_logo_enable" id="nextStyleCustomLogoEnable" value="false" ${((options.next_style_custom_logo_enable?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -286,33 +287,33 @@
                             <div class="box-body">
                                 <!-- baidu_push -->
                                 <div class="form-group">
-                                    <label for="nextOtherBaiduPush" class="col-sm-4 control-label">baidu_push：</label>
+                                    <label for="nextOtherBaiduPush" class="col-sm-4 control-label">百度自动提交：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_other_baidu_push" id="nextOtherBaiduPush" value="true" ${((options.next_other_baidu_push?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_baidu_push" id="nextOtherBaiduPush" value="false" ${((options.next_other_baidu_push?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_baidu_push" id="nextOtherBaiduPush" value="false" ${((options.next_other_baidu_push?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
 
                                 <!--post_copyright-->
                                 <div class="form-group">
-                                    <label for="nextOtherPostCopyright" class="col-sm-4 control-label">post_copyright：</label>
+                                    <label for="nextOtherPostCopyright" class="col-sm-4 control-label">文章版权信息：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_other_post_copyright" id="nextOtherPostCopyright" value="true" ${((options.next_other_post_copyright?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_post_copyright" id="nextOtherPostCopyright" value="false" ${((options.next_other_post_copyright?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_post_copyright" id="nextOtherPostCopyright" value="false" ${((options.next_other_post_copyright?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
 
                                 <!-- post_copyright_license -->
                                 <div class="form-group">
-                                    <label for="nextOtherPostCopyrightLicense" class="col-sm-4 control-label">post_copyright_license：</label>
+                                    <label for="nextOtherPostCopyrightLicense" class="col-sm-4 control-label">文章版权信息：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherPostCopyrightLicense" name="next_other_post_copyright_license" value="${options.next_other_post_copyright_license?default('CC BY-NC-SA 3.0')}" >
                                     </div>
@@ -320,7 +321,7 @@
 
                                 <!-- post_copyright_license_url -->
                                 <div class="form-group">
-                                    <label for="nextOtherPostCopyrightLicenseUrl" class="col-sm-4 control-label">post_copyright_license_url：</label>
+                                    <label for="nextOtherPostCopyrightLicenseUrl" class="col-sm-4 control-label">文章版权链接：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherPostCopyrightLicenseUrl" name="next_other_post_copyright_license_url" value="${options.next_other_post_copyright_license_url?default('https://creativecommons.org/licenses/by-nc-sa/3.0/')}" >
                                     </div>
@@ -334,7 +335,7 @@
                                             <input type="radio" name="next_other_canvas_ribbon_enable" id="nextOtherCanvasRibbonEnable" value="true" ${((options.next_other_canvas_ribbon_enable?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_canvas_ribbon_enable" id="nextOtherCanvasRibbonEnable" value="false" ${((options.next_other_canvas_ribbon_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_canvas_ribbon_enable" id="nextOtherCanvasRibbonEnable" value="false" ${((options.next_other_canvas_ribbon_enable?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -364,7 +365,7 @@
                                             <input type="radio" name="next_other_canvas_nest" id="nextOtherCanvasNest" value="true" ${((options.next_other_canvas_nest?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_canvas_nest" id="nextOtherCanvasNest" value="false" ${((options.next_other_canvas_nest?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_canvas_nest" id="nextOtherCanvasNest" value="false" ${((options.next_other_canvas_nest?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -376,7 +377,7 @@
                                             <input type="radio" name="next_other_three_waves" id="nextOtherThreeWaves" value="true" ${((options.next_other_three_waves?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_three_waves" id="nextOtherThreeWaves" value="false" ${((options.next_other_three_waves?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_three_waves" id="nextOtherThreeWaves" value="false" ${((options.next_other_three_waves?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -387,7 +388,7 @@
                                             <input type="radio" name="next_other_canvas_lines" id="nextOtherCanvasLines" value="true" ${((options.next_other_canvas_lines?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_canvas_lines" id="nextOtherCanvasLines" value="false" ${((options.next_other_canvas_lines?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_canvas_lines" id="nextOtherCanvasLines" value="false" ${((options.next_other_canvas_lines?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -398,7 +399,7 @@
                                             <input type="radio" name="next_other_canvas_sphere" id="nextOtherCanvasSphere" value="true" ${((options.next_other_canvas_sphere?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_canvas_sphere" id="nextOtherCanvasSphere" value="false" ${((options.next_other_canvas_sphere?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_canvas_sphere" id="nextOtherCanvasSphere" value="false" ${((options.next_other_canvas_sphere?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -410,7 +411,7 @@
                                             <input type="radio" name="next_other_motion_enable" id="nextOtherMotionEnable" value="true" ${((options.next_other_motion_enable?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_motion_enable" id="nextOtherMotionEnable" value="false" ${((options.next_other_motion_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_motion_enable" id="nextOtherMotionEnable" value="false" ${((options.next_other_motion_enable?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -422,7 +423,7 @@
                                             <input type="radio" name="next_other_motion_async" id="nextOtherMotionAsync" value="true" ${((options.next_other_motion_async?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_motion_async" id="nextOtherMotionAsync" value="false" ${((options.next_other_motion_async?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_motion_async" id="nextOtherMotionAsync" value="false" ${((options.next_other_motion_async?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -470,7 +471,7 @@
                                             <input type="radio" name="next_other_canonical" id="nextOtherCanonical" value="true" ${((options.next_other_canonical?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_canonical" id="nextOtherCanonical" value="false" ${((options.next_other_canonical?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_canonical" id="nextOtherCanonical" value="false" ${((options.next_other_canonical?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -482,46 +483,46 @@
                                             <input type="radio" name="next_other_seo" id="nextOtherSeo" value="true" ${((options.next_other_seo?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_other_seo" id="nextOtherSeo" value="false" ${((options.next_other_seo?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_other_seo" id="nextOtherSeo" value="false" ${((options.next_other_seo?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nextOtherRewardComment" class="col-sm-4 control-label">reward_comment：</label>
+                                    <label for="nextOtherRewardComment" class="col-sm-4 control-label">捐赠提示：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherRewardComment" name="next_other_reward_comment" value="${options.next_other_reward_comment?default('Donate comment here')}" >
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nextOtherWechatpay" class="col-sm-4 control-label">wechatpay：</label>
+                                    <label for="nextOtherWechatpay" class="col-sm-4 control-label">微信支付二维码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherWechatpay" name="next_other_wechatpay" value="${options.next_other_wechatpay?if_exists}" >
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nextOtherAlipay" class="col-sm-4 control-label">alipay：</label>
+                                    <label for="nextOtherAlipay" class="col-sm-4 control-label">支付宝二维码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherAlipay" name="nextOtherAlipay" value="${options.next_other_alipay?if_exists}" >
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nextOtherBitcoin" class="col-sm-4 control-label">bitcoin：</label>
+                                    <label for="nextOtherBitcoin" class="col-sm-4 control-label">比特币二维码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherBitcoin" name="next_other_bitcoin" value="${options.next_other_bitcoin?if_exists}" >
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nextOtherBaiduShareType" class="col-sm-4 control-label">baidu_share_type：</label>
+                                    <label for="nextOtherBaiduShareType" class="col-sm-4 control-label">百度分享类型：</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="nextOtherBaiduShareType" name="next_other_baidu_share_type">
                                             <option value="" ${((options.next_other_baidu_share_type?default(''))=='')?string('selected','')}></option>
-                                            <option value="button" ${((options.next_other_baidu_share_type?if_exists)=='button')?string('selected','')}>button</option>
-                                            <option value="slide" ${((options.next_other_baidu_share_type?if_exists)=='slide')?string('selected','')}>slide</option>
+                                            <option value="button" ${((options.next_other_baidu_share_type?if_exists)=='button')?string('selected','')}>按钮</option>
+                                            <option value="slide" ${((options.next_other_baidu_share_type?if_exists)=='slide')?string('selected','')}>侧边</option>
                                         </select>
                                     </div>
                                 </div>
@@ -540,6 +541,241 @@
                                         <input type="text" class="form-control" id="nextOtherAddThisId" name="next_other_add_this_id" value="${options.next_other_add_this_id?if_exists}" >
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBaiduAnalytics" class="col-sm-4 control-label">百度统计ID：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBaiduAnalytics" name="next_other_baidu_analytics" value="${options.next_other_baidu_analytics?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherApplicationInsights" class="col-sm-4 control-label">application_insights：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherApplicationInsights" name="next_other_application_insights" value="${options.next_other_application_insights?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountEnable" class="col-sm-4 control-label">busuanzi_count_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_enable" id="nextOtherBusuanziCountEnable" value="true" ${((options.next_other_busuanzi_count_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_enable" id="nextOtherBusuanziCountEnable" value="false" ${((options.next_other_busuanzi_count_enable?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountSiteUv" class="col-sm-4 control-label">busuanzi_count_site_uv：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_site_uv" id="nextOtherBusuanziCountSiteUv" value="true" ${((options.next_other_busuanzi_count_site_uv?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_site_uv" id="nextOtherBusuanziCountSiteUv" value="false" ${((options.next_other_busuanzi_count_site_uv?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountSiteUvHeader" class="col-sm-4 control-label">busuanzi_count_site_uv_header：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBusuanziCountSiteUvHeader" name="next_other_busuanzi_count_site_uv_header" value="${options.next_other_busuanzi_count_site_uv_header?default('<i class="fa fa-user"></i>')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountSiteUvFooter" class="col-sm-4 control-label">busuanzi_count_site_uv_Footer：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBusuanziCountSiteUvFooter" name="next_other_busuanzi_count_site_uv_footer" value="${options.next_other_busuanzi_count_site_uv_footer?if_exists}" >
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountSitePv" class="col-sm-4 control-label">busuanzi_count_site_pv：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_site_pv" id="nextOtherBusuanziCountSitePv" value="true" ${((options.next_other_busuanzi_count_site_pv?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_site_pv" id="nextOtherBusuanziCountSitePv" value="false" ${((options.next_other_busuanzi_count_site_pv?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountSitePvHeader" class="col-sm-4 control-label">busuanzi_count_site_pv_header：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBusuanziCountSitePvHeader" name="next_other_busuanzi_count_site_pv_header" value="${options.next_other_busuanzi_count_site_pv_header?default('<i class="fa fa-eye"></i>')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountSitePvFooter" class="col-sm-4 control-label">busuanzi_count_site_pv_Footer：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBusuanziCountSitePvFooter" name="next_other_busuanzi_count_site_pv_footer" value="${options.next_other_busuanzi_count_site_pv_footer?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountPagePv" class="col-sm-4 control-label">busuanzi_count_page_pv：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_page_pv" id="nextOtherBusuanziCountPagePv" value="true" ${((options.next_other_busuanzi_count_page_pv?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_busuanzi_count_page_pv" id="nextOtherBusuanziCountPagePv" value="false" ${((options.next_other_busuanzi_count_page_pv?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountPagePvHeader" class="col-sm-4 control-label">busuanzi_count_page_pv_header：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBusuanziCountPagePvHeader" name="next_other_busuanzi_count_page_pv_header" value="${options.next_other_busuanzi_count_page_pv_header?default('<i class="fa fa-file-o"></i>')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherBusuanziCountPagePvFooter" class="col-sm-4 control-label">busuanzi_count_site_pv_Footer：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherBusuanziCountPagePvFooter" name="next_other_busuanzi_count_page_pv_footer" value="${options.next_other_busuanzi_count_page_pv_footer?if_exists}" >
+                                    </div>
+                                </div>
+                                <!--cnzz-id-->
+                                <div class="form-group">
+                                    <label for="nextOtherCnzzSiteid" class="col-sm-4 control-label">CNZZ-SiteId：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherCnzzSiteid" name="next_other_cnzz_siteid" value="${options.next_other_cnzz_siteid?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- google_analytics -->
+                                <div class="form-group">
+                                    <label for="nextOtherGoogleAnalytics" class="col-sm-4 control-label">谷歌统计ID：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherGoogleAnalytics" name="next_other_google_analytics" value="${options.next_other_google_analytics?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- tencent_analytics -->
+                                <div class="form-group">
+                                    <label for="nextOtherTencentAnalytics" class="col-sm-4 control-label">腾讯统计ID：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherTencentAnalytics" name="next_other_tencent_analytics" value="${options.next_other_tencent_analytics?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- tencent_mta -->
+                                <div class="form-group">
+                                    <label for="nextOtherTencentMta" class="col-sm-4 control-label">tencent_mta：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherTencentMta" name="next_other_tencent_mta" value="${options.next_other_tencent_mta?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <!-- vkontakte_api_enable -->
+                                <div class="form-group">
+                                    <label for="nextOtherVkontakteApiEnable" class="col-sm-4 control-label">vkontakte_api_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_vkontakte_api_enable" id="nextOtherVkontakteApiEnable" value="true" ${((options.next_other_vkontakte_api_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_vkontakte_api_enable" id="nextOtherVkontakteApiEnable" value="false" ${((options.next_other_vkontakte_api_enable?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--- vkontakte_api_app_id -->
+                                <div class="form-group">
+                                    <label for="nextOtherVkontakteApiAppId" class="col-sm-4 control-label">vkontakte_api_app_id：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherVkontakteApiAppId" name="next_other_vkontakte_api_app_id" value="${options.next_other_vkontakte_api_app_id?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- vkontakte_api_like -->
+                                <div class="form-group">
+                                    <label for="nextOtherVkontakteApiLike" class="col-sm-4 control-label">vkontakte_api_like：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_vkontakte_api_like" id="nextOtherVkontakteApiLike" value="true" ${((options.next_other_vkontakte_api_like?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_vkontakte_api_like" id="nextOtherVkontakteApiLike" value="false" ${((options.next_other_vkontakte_api_like?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- vkontakte_api_comments -->
+                                <div class="form-group">
+                                    <label for="nextOtherVkontakteApiComments" class="col-sm-4 control-label">vkontakte_api_comments：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_vkontakte_api_comments" id="nextOtherVkontakteApiComments" value="true" ${((options.next_other_vkontakte_api_comments?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_vkontakte_api_comments" id="nextOtherVkontakteApiComments" value="false" ${((options.next_other_vkontakte_api_comments?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- vkontakte_api_num_of_posts -->
+                                <div class="form-group">
+                                    <label for="nextOtherVkontakteApiNumOfPosts" class="col-sm-4 control-label">vkontakte_api_num_of_posts：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherVkontakteApiNumOfPosts" name="next_other_vkontakte_api_mum_of_posts" value="${options.next_other_vkontakte_api_mum_of_posts?default('10')}" >
+                                    </div>
+                                </div>
+                                <!-- facebook_sdk_enable -->
+                                <div class="form-group">
+                                    <label for="nextOtherFacebookSdkEnable" class="col-sm-4 control-label">facebook_sdk_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_facebook_sdk_enable" id="nextOtherFacebookSdkEnable" value="true" ${((options.next_other_facebook_sdk_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_facebook_sdk_enable" id="nextOtherFacebookSdkEnable" value="false" ${((options.next_other_facebook_sdk_enable?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- facebook_sdk_app_id -->
+                                <div class="form-group">
+                                    <label for="nextOtherFacebookSdkAppId" class="col-sm-4 control-label">facebook_sdk_app_id：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherFacebookSdkAppId" name="next_other_facebook_sdk_app_id" value="${options.next_other_facebook_sdk_app_id?if_exists}" >
+                                    </div>
+                                </div>
+                                <!-- facebook_sdk_fb_admin -->
+                                <div class="form-group">
+                                    <label for="nextOtherFacebookSdkFbAdmin" class="col-sm-4 control-label">facebook_sdk_fb_admin：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextOtherFacebookSdkFbAdmin" name="next_other_facebook_sdk_fb_admin" value="${options.next_other_facebook_sdk_fb_admin?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherFacebookSdkLikeButton" class="col-sm-4 control-label">facebook_sdk_like_button：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_facebook_sdk_like_button" id="nextOtherFacebookSdkLikeButton" value="true" ${((options.next_other_facebook_sdk_like_button?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_facebook_sdk_like_button" id="nextOtherFacebookSdkLikeButton" value="false" ${((options.next_other_facebook_sdk_like_button?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextOtherFacebookSdkWebmaster" class="col-sm-4 control-label">facebook_sdk_webmaster：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_facebook_sdk_webmaster" id="nextOtherFacebookSdkWebmaster" value="true" ${((options.next_other_facebook_sdk_webmaster?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_facebook_sdk_webmaster" id="nextOtherFacebookSdkWebmaster" value="false" ${((options.next_other_facebook_sdk_webmaster?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- rss -->
+                                <div class="form-group">
+                                    <label for="nextOtherRss" class="col-sm-4 control-label">侧边栏显示RSS按钮：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_rss" id="nextOtherRss" value="true" ${((options.next_other_rss?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_other_rss" id="nextOtherRss" value="false" ${((options.next_other_rss?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextOtherOptions')">保存设置</button>
@@ -554,35 +790,35 @@
                             <div class="box-body">
                                 <!-- Google -->
                                 <div class="form-group">
-                                    <label for="nextVerificationGoogle" class="col-sm-4 control-label">google_site_verification：</label>
+                                    <label for="nextVerificationGoogle" class="col-sm-4 control-label">Google站点验证代码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextVerificationGoogle" name="next_verification_google" value="${options.next_verification_google?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- Google -->
                                 <div class="form-group">
-                                    <label for="nextVerificationBing" class="col-sm-4 control-label">bing_site_verification：</label>
+                                    <label for="nextVerificationBing" class="col-sm-4 control-label">必应站点验证代码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextVerificationBing" name="next_verification_bing" value="${options.next_verification_bing?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- yandex -->
                                 <div class="form-group">
-                                    <label for="nextVerificationYandex" class="col-sm-4 control-label">yandex_site_verification：</label>
+                                    <label for="nextVerificationYandex" class="col-sm-4 control-label">Yandex站点验证代码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextVerificationYandex" name="next_verification_yandex" value="${options.next_verification_yandex?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- baidu -->
                                 <div class="form-group">
-                                    <label for="nextVerificationBaidu" class="col-sm-4 control-label">baidu_site_verification：</label>
+                                    <label for="nextVerificationBaidu" class="col-sm-4 control-label">百度站点验证代码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="next_verification_baidu" name="next_verification_baidu" value="${options.next_verification_baidu?if_exists}" >
                                     </div>
                                 </div>
                                 <!-- qihu -->
                                 <div class="form-group">
-                                    <label for="nextVerificationQihu" class="col-sm-4 control-label">yandex_site_verification：</label>
+                                    <label for="nextVerificationQihu" class="col-sm-4 control-label">360搜索站点验证代码：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextVerificationQihu" name="next_verification_qihu" value="${options.next_verification_qihu?if_exists}" >
                                     </div>
@@ -613,7 +849,7 @@
                                             <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="true" ${((options.next_search_algolia_search_enable?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="false" ${((options.next_search_algolia_search_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="false" ${((options.next_search_algolia_search_enable?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -653,7 +889,7 @@
                                             <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="true" ${((options.next_search_local_search_enable?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="false" ${((options.next_search_local_search_enable?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="false" ${((options.next_search_local_search_enable?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -687,19 +923,19 @@
                             <div class="box-body">
                                 <!--Pace-->
                                 <div class="form-group">
-                                    <label for="nextPluginsPace" class="col-sm-4 control-label">Pace-enable：</label>
+                                    <label for="nextPluginsPace" class="col-sm-4 control-label">加载进度条：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_plugins_pace" id="nextPluginsPace" value="true" ${((options.next_plugins_pace?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_pace" id="nextPluginsPace" value="false" ${((options.next_plugins_pace?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_pace" id="nextPluginsPace" value="false" ${((options.next_plugins_pace?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
                                 <!-- Pace-theme -->
                                 <div class="form-group">
-                                    <label for="nextPluginsPaceTheme" class="col-sm-4 control-label">Pace-theme：</label>
+                                    <label for="nextPluginsPaceTheme" class="col-sm-4 control-label">加载进度条主题：</label>
                                     <div class="col-sm-8">
                                         <select class="form-control" id="nextPluginsPaceTheme" name="next_plugins_pace_theme">
                                             <option value="pace-theme-big-counter" ${((options.next_plugins_pace_theme?if_exists)=='pace-theme-big-counter')?string('selected','')}>pace-theme-big-counter</option>
@@ -726,7 +962,7 @@
                                             <input type="radio" name="next_plugins_han" id="nextPluginsHan" value="true" ${((options.next_plugins_han?if_exists)=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_han" id="nextPluginsHan" value="false" ${((options.next_plugins_han?default('false'))=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_han" id="nextPluginsHan" value="false" ${((options.next_plugins_han?default('false'))=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -737,7 +973,7 @@
                                             <input type="radio" name="next_plugins_fancybox" id="nextPluginsFancybox" value="true" ${((options.next_plugins_fancybox?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_fancybox" id="nextPluginsFancybox" value="false" ${((options.next_plugins_fancybox?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_fancybox" id="nextPluginsFancybox" value="false" ${((options.next_plugins_fancybox?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -748,7 +984,7 @@
                                             <input type="radio" name="next_plugins_exturl" id="nextPluginsExturl" value="true" ${((options.next_plugins_exturl?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_exturl" id="nextPluginsExturl" value="false" ${((options.next_plugins_exturl?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_exturl" id="nextPluginsExturl" value="false" ${((options.next_plugins_exturl?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -759,7 +995,7 @@
                                             <input type="radio" name="next_plugins_save_scroll" id="nextPluginsSaveScroll" value="true" ${((options.next_plugins_save_scroll?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_save_scroll" id="nextPluginsSaveScroll" value="false" ${((options.next_plugins_save_scroll?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_save_scroll" id="nextPluginsSaveScroll" value="false" ${((options.next_plugins_save_scroll?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -770,7 +1006,7 @@
                                             <input type="radio" name="next_plugins_firestore_enable" id="nextPluginsFirestoreEnable" value="true" ${((options.next_plugins_firestore_enable?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_firestore_enable" id="nextPluginsFirestoreEnable" value="false" ${((options.next_plugins_firestore_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_firestore_enable" id="nextPluginsFirestoreEnable" value="false" ${((options.next_plugins_firestore_enable?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -799,7 +1035,7 @@
                                             <input type="radio" name="next_plugins_firestore_bluebird" id="nextPluginsFirestoreBluebird" value="true" ${((options.next_plugins_firestore_bluebird?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_firestore_bluebird" id="nextPluginsFirestoreBluebird" value="false" ${((options.next_plugins_firestore_bluebird?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_firestore_bluebird" id="nextPluginsFirestoreBluebird" value="false" ${((options.next_plugins_firestore_bluebird?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -810,7 +1046,7 @@
                                             <input type="radio" name="next_plugins_leancloud_visitors_enable" id="nextPluginsLeancloudVisitorsEnable" value="true" ${((options.next_plugins_leancloud_visitors_enable?default('true'))=='true')?string('checked','')}> 开启
                                         </label>
                                         <label class="radio-inline">
-                                            <input type="radio" name="next_plugins_leancloud_visitors_enable" id="nextPluginsLeancloudVisitorsEnable" value="false" ${((options.next_plugins_leancloud_visitors_enable?if_exists)=='false')?string('checked','')}> 禁用
+                                            <input type="radio" name="next_plugins_leancloud_visitors_enable" id="nextPluginsLeancloudVisitorsEnable" value="false" ${((options.next_plugins_leancloud_visitors_enable?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
                                     </div>
                                 </div>
@@ -824,6 +1060,38 @@
                                     <label for="nextPluginsLeancloudVisitorsAppKey" class="col-sm-4 control-label">leancloud_visitors_app_key：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextPluginsLeancloudVisitorsAppKey" name="next_plugins_leancloud_visitors_app_key" value="${options.next_plugins_leancloud_visitors_app_key?if_exists}" >
+                                    </div>
+                                </div>
+
+                                <!-- mathjax_enable -->
+                                <div class="form-group">
+                                    <label for="nextPluginsMathjaxEnable" class="col-sm-4 control-label">Mathjax支持：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_mathjax_enable" id="nextPluginsMathjaxEnable" value="true" ${((options.next_plugins_mathjax_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_mathjax_enable" id="nextPluginsMathjaxEnable" value="false" ${((options.next_plugins_mathjax_enable?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- mathjax_per_page -->
+                                <div class="form-group">
+                                    <label for="nextPluginsMathjaxEnable" class="col-sm-4 control-label">mathjax_per_page：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_mathjax_per_page" id="nextPluginsMathjaxPerPage" value="true" ${((options.next_plugins_mathjax_per_page?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_plugins_mathjax_per_page" id="nextPluginsMathjaxPerPage" value="false" ${((options.next_plugins_mathjax_per_page?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- mathjax_cdn -->
+                                <div class="form-group">
+                                    <label for="nextPluginsMathjaxCdn" class="col-sm-4 control-label">Mathjax CDN：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextPluginsMathjaxCdn" name="next_plugins_mathjax_cdn" value="${options.next_plugins_mathjax_cdn?default('//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML')}" >
                                     </div>
                                 </div>
                             </div>

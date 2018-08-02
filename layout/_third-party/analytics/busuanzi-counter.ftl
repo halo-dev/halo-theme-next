@@ -1,21 +1,22 @@
-{% if theme.busuanzi_count.enable %}
+<#if options.next_other_busuanzi_count_enable?default('false')=='true'>
 <div class="busuanzi-count">
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  {% if theme.busuanzi_count.site_uv %}
+  <#if options.next_other_busuanzi_count_site_uv?default('true')=='true'>
     <span class="site-uv">
-      {{ theme.busuanzi_count.site_uv_header }}
+      ${options.next_other_busuanzi_count_site_uv_header?default('<i class="fa fa-user"></i>')}
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      {{ theme.busuanzi_count.site_uv_footer }}
+      ${options.next_other_busuanzi_count_site_uv_footer?if_exists}
     </span>
-  {% endif %}
+  </#if>
 
-  {% if theme.busuanzi_count.site_pv %}
+  <#if options.next_other_busuanzi_count_site_pv?default('true')=='true'>
     <span class="site-pv">
       {{ theme.busuanzi_count.site_pv_header }}
+      ${options.next_other_busuanzi_count_site_pv_header?default('<i class="fa fa-eye"></i>')}
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      {{ theme.busuanzi_count.site_pv_footer }}
+      ${options.next_other_busuanzi_count_site_pv_footer?if_exists}
     </span>
-  {% endif %}
+  </#if>
 </div>
-{% endif %}
+</#if>

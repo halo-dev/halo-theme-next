@@ -86,12 +86,10 @@
 
 <link rel="alternate" href="/feed.xml" title="${options.blog_title?default('NexT')}" type="application/atom+xml" />
 
-
-<#--{% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}-->
-  <#--<meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}" />-->
-  <#--<meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}" />-->
-<#--{% endif %}-->
-
+<#if options.next_other_facebook_sdk_enable?default('false')=='true' && options.next_other_facebook_sdk_webmaster?default('true') =='true'>
+<meta property="fb:admins" content="${options.next_other_facebook_sdk_fb_admin?if_exists}" />
+<meta property="fb:app_id" content="${options.next_other_facebook_sdk_app_id?if_exists}" />
+</#if>
 
 <#--{{-->
   <#--open_graph({-->

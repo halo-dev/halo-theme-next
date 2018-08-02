@@ -1,8 +1,8 @@
-{% if theme.facebook_sdk.enable %}
+<#if options.next_other_facebook_sdk_enable?default('false') == 'true'>
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '{{ theme.facebook_sdk.app_id }}',
+      appId      : '${options.next_other_facebook_sdk_app_id?if_exists}',
       xfbml      : true,
       version    : 'v2.10'
     });
@@ -12,8 +12,8 @@
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/{{ config.language|replace('-', '_') }}/sdk.js";
+     js.src = "//connect.facebook.net/zh_hans/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-{% endif %}
+</#if>
