@@ -54,7 +54,7 @@
             <a href="javascript:;" class="popup-trigger">
             </#if>
             <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            {{ __('menu.search') }}
+            搜索
           </a>
         </li>
         </#if>

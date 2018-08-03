@@ -1,6 +1,5 @@
-<#--{% extends '_layout.swig' %}-->
 <#include "layout/_layout.ftl">
-{% import '_macro/post-collapse.swig' as post_template %}
+<#include "layout/_macro/post-collapse.ftl">
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
 <@html title='${options.blog_title?default("NexT")}'>
@@ -13,14 +12,11 @@
       <div id="posts" class="posts-collapse">
           <div class="collection-title">
               <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
-                  {{ page.category }}
+                  ${category.cateName}
                   <small>分类</small>
               </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
           </div>
-
-          {% for post in page.posts %}
-          {{ post_template.render(post) }}
-          {% endfor %}
+          <@post_collapase posts=posts.content></@post_collapase>
       </div>
 
   </div>

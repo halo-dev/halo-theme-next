@@ -125,7 +125,7 @@
                                 <div class="form-group">
                                     <label for="nextGeneralFooterIcon" class="col-sm-4 control-label">页脚图标：</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextGeneralFooterIcon" name="next_general_footer_icon" value="${options.next_general_footer_icon?if_exists}" >
+                                        <input type="text" class="form-control" id="nextGeneralFooterIcon" name="next_general_footer_icon" value="${options.next_general_footer_icon?default('user')}" >
                                     </div>
                                 </div>
                                 <!-- Footer-copyright -->
@@ -176,6 +176,12 @@
                                         <label class="radio-inline">
                                             <input type="radio" name="next_general_footer_theme_version" id="nextGeneralFooterThemeVersion" value="false" ${((options.next_general_footer_theme_version?if_exists)=='false')?string('checked','')}> 关闭
                                         </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextGeneralFooterCustomText" class="col-sm-4 control-label">custom_text：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralFooterCustomText" name="next_general_footer_custom_text" value="${options.next_general_footer_custom_text?if_exists}" >
                                     </div>
                                 </div>
                             </div>

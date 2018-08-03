@@ -34,7 +34,7 @@
       </@articleTag>
   </div>
   </div>
-    <#include "layout/_partials/pagination.ftl">
+    <#--<#include "layout/_partials/pagination.ftl">-->
 </@main>
 
 <@sidebar>

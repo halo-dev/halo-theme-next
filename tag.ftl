@@ -7,19 +7,37 @@
 </@html>
 <@main useComment=false>
 <div class="post-block tag">
-
     <div id="posts" class="posts-collapse">
         <div class="collection-title">
             <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
-                ${tag}
+                ${tag.tagName}
                 <small>标签</small>
             </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
         </div>
-        <@post_collapase posts='${posts.content}'></@post_collapase>
+        <@post_collapase posts=posts.content></@post_collapase>
     </div>
-
 </div>
-  <#include "layout/_partials/pagination.ftl">
+<#if posts.totalPages gt 1>
+    <nav class="pagination">
+        <#if posts.hasPrevious()>
+            <#if posts.number == 1>
+                <a class="extend prev" rel="prev" href="/tags/${tag.tagUrl}">
+                    <i class="fa fa-angle-left" aria-label="Previous page"></i>
+                </a>
+            <#else>
+                <a class="extend prev" rel="prev" href="/tags/${tag.tagUrl}/page/${posts.number}">
+                    <i class="fa fa-angle-left" aria-label="Previous page"></i>
+                </a>
+            </#if>
+        </#if>
+        <span class="page-number current">${posts.number+1}</span>
+        <#if posts.hasNext()>
+            <a class="extend next" rel="next" href="/tags/${tag.tagUrl}/page/${posts.number+2}/">
+                <i class="fa fa-angle-right" aria-label="Next page"></i>
+            </a>
+        </#if>
+    </nav>
+</#if>
 </@main>
 
 <@sidebar>

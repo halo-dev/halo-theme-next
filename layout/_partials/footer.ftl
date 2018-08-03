@@ -3,22 +3,15 @@
     &copy; <#if options.next_general_footer_since?if_exists!='' && options.next_general_footer_since?if_exists !=current?substring(0,4)>${options.next_general_footer_since?if_exists} &mdash;</#if>
     <span itemprop="copyrightYear">${current?substring(0,4)}</span>
     <span class="with-love">
-    <i class="fa fa-${options.next_general_footer_icon?if_exists}"></i>
-  </span>
-    <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
-
-    {% if theme.post_wordcount.totalcount %}
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+    <i class="fa fa-${options.next_general_footer_icon?default('user')}"></i>
     </span>
-    {% if theme.post_wordcount.item_text %}
-    <span class="post-meta-item-text">Site words total count&#58;</span>
-    {% endif %}
-    <span title="Site words total count">
-        {{ totalcount(site, '0,0.0a') }}
+    <span class="author" itemprop="copyrightHolder">
+    <#if options.next_general_footer_copyright??>
+        ${options.options.next_general_footer_copyright}
+    <#else>
+    ${user.userDisplayName?if_exists}
+    </#if>
     </span>
-    {% endif %}
 </div>
 
 <#if options.next_general_footer_powered?default('true')=='true'>
@@ -41,8 +34,8 @@
   </div>
 </#if>
 
-{% if theme.footer.custom_text %}
+<#if options.next_general_footer_custom_text??>
   <div class="footer-custom">
-      {{ theme.footer.custom_text }}
+      ${options.next_general_footer_custom_text}
   </div>
-{% endif %}
+</#if>
