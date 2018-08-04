@@ -1,11 +1,10 @@
+<#macro page_header title>
 <header class="post-header">
 
-	<<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="post-title" itemprop="name headline">{{ page.title }}</<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
+	<<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="post-title" itemprop="name headline">${title}</<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
 
-{% if page.description %}
 	<div class="post-meta">
-		<div class="post-description">{{ page.description }}</div>
+		<div class="post-description"></div>
 	</div>
-{% endif %}
-
 </header>
+</#macro>

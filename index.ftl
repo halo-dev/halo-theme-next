@@ -1,15 +1,17 @@
 <#include "layout/_layout.ftl">
-{% import '_macro/post.swig' as post_template %}
+<#include "layout/_macro/post.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
 <@html title='${options.blog_title?default("NexT")}'><#if posts??>page-home</#if></@html>
 
 <@main useComment=false>
-  <section id="posts" class="posts-expand">
-      {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-      {% endfor %}
-  </section>
+    <section id="posts" class="posts-expand">
+        <#if posts??>
+            <#list posts.content as post>
+                <@post_template post,is_index,''></@post_template>
+            </#list>
+        </#if>
+    </section>
   <#include "layout/_partials/pagination.ftl">
 </@main>
 

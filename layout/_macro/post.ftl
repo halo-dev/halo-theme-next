@@ -1,4 +1,4 @@
-{% macro render(post, is_index, post_extra_class) %}
+<#macro post_template post,is_index,post_extra_class>
 
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
 
@@ -13,50 +13,40 @@
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
       <div class="post-block">
           <link itemprop="mainEntityOfPage" href="${options.blog_title?if_exists}/archives/${post.postUrl}">
-
           <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="${user.userDisplayName?if_exists}">
-      <meta itemprop="description" content="{{ theme.signature }}">
-      <meta itemprop="image" content="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
-    </span>
+              <meta itemprop="name" content="${user.userDisplayName?if_exists}">
+              <meta itemprop="description" content="{{ theme.signature }}">
+              <meta itemprop="image" content="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}">
+            </span>
 
           <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="${options.blog_title?if_exists}">
-    </span>
+              <meta itemprop="name" content="${options.blog_title?if_exists}">
+            </span>
 
           {% if not headlessPost %}
           <header class="post-header">
               {% if not (is_index and post.type === 'quote' and not post.title) %}
-              <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="post-title{% if post.direction &&
-              post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
-              {% if post.link %}
-              {% if post.sticky > 0 %}
-              {{ post.sticky }}
-              <span class="post-sticky-flag" title="置顶">
-                  <i class="fa fa-thumb-tack"></i>
-                </span>
+                  <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="post-title{% if post.direction &&
+                  post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="name headline">
+                      {% if post.link %}
+                          <a class="post-title-link post-title-link-external" target="_blank" href="/archives/${post.postUrl}"
+                             itemprop="url">
+                              ${post.postTitle}
+                              <i class="fa fa-external-link"></i>
+                          </a>
+                      {% else %}
+                            <#if is_index??>
+                                <a class="post-title-link" href="/archives/${post.postUrl}" itemprop="url">
+                                ${post.postTitle}
+                                </a>
+                            <#else>
+                                ${post.postTitle}
+                            </#if>
+                      {% endif %}
+                  </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
               {% endif %}
-              <a class="post-title-link post-title-link-external" target="_blank" href="{{ url_for(post.link) }}"
-                 itemprop="url">
-                  {{ post.title or post.link }}
-                  <i class="fa fa-external-link"></i>
-              </a>
-              {% else %}
-              {% if is_index %}
-              {% if post.sticky > 0 %}
-              <span class="post-sticky-flag" title="置顶">
-                    <i class="fa fa-thumb-tack"></i>
-                  </span>
-              {% endif %}
-              <a class="post-title-link" href="{{ url_for(post.path) }}" itemprop="url">
-                  {{ post.title | default(__('post.untitled'))}}
-              </a>
-              {% else %}{{ post.title }}{% endif %}
-              {% endif %}
-          </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
-          {% endif %}
 
-          <div class="post-meta">
+              <div class="post-meta">
           <span class="post-time">
             {% if theme.post_meta.created_at %}
               <span class="post-meta-item-icon">
@@ -89,8 +79,8 @@
             {% endif %}
           </span>
 
-              {% if post.categories and post.categories.length and theme.post_meta.categories %}
-              <span class="post-category">
+                  {% if post.categories and post.categories.length and theme.post_meta.categories %}
+                  <span class="post-category">
             {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
               <span class="post-meta-divider">|</span>
             {% endif %}
@@ -113,57 +103,57 @@
                 {% endif %}
               {% endfor %}
             </span>
-              {% endif %}
+                  {% endif %}
 
-              {% if post.comments %}
-              {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
-              <span class="post-comments-count">
+                  {% if post.comments %}
+                  {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}
+                  <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="{{ post.path }}"
+                <a href="/archives/${post.postUrl}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="${post.postUrl}"
                         itemprop="commentCount"></span>
                 </a>
               </span>
-              {% elseif theme.facebook_comments_plugin.enable %}
-              <span class="post-comments-count">
+                  {% elseif theme.facebook_comments_plugin.enable %}
+                  <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                <a href="/archives/${post.postUrl}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count fb-comments-count" data-href="{{ post.permalink }}"
                         itemprop="commentCount">0</span> comments
                 </a>
               </span>
-              {% elseif theme.disqus.enable and theme.disqus.count %}
-              <span class="post-comments-count">
+                  {% elseif theme.disqus.enable and theme.disqus.count %}
+                  <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+                <a href="/archives/${post.postUrl}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
                         data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
                 </a>
               </span>
-              {% elseif theme.hypercomments_id %}
-              <!--noindex-->
-              <span class="post-comments-count">
+                  {% elseif theme.hypercomments_id %}
+                  <!--noindex-->
+                  <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="{{ post.path }}"
+                <a href="/archives/${post.postUrl}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="${post.postUrl}"
                         itemprop="commentsCount"></span>
                 </a>
               </span>
-              <!--/noindex-->
-              {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
-              <span class="post-comments-count">
+                  <!--/noindex-->
+                  {% elseif theme.changyan.enable and theme.changyan.appid and theme.changyan.appkey %}
+                  <span class="post-comments-count">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-comment-o"></i>
@@ -196,8 +186,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}"
+                <a href=/archives/${post.postUrl}#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/${post.postUrl}"
                         itemprop="commentCount"></span>
                 </a>
               </span>
@@ -205,24 +195,24 @@
           {% endif %}
 
           {% if theme.leancloud_visitors.enable %}
-             <span id="{{ url_for(post.path) }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+             <span id="/archives/${post.postUrl}" class="leancloud_visitors" data-flag-title=${post.postTitle}">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                {% if theme.post_meta.item_text %}
-                 <span class="post-meta-item-text">{{__('post.visitors')}}&#58;</span>
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
                {% endif %}
                  <span class="leancloud-visitors-count"></span>
              </span>
           {% endif %}
 
-          {% if not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.page_pv %}
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">{{ theme.busuanzi_count.page_pv_header }}
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>{{ theme.busuanzi_count.page_pv_footer }}
-            </span>
-          {% endif %}
+          <#if (!is_index?if_exists) && options.busuanzi_count_enable?default('false')=='true' && options.busuanzi_count_page_pv?default('true')=='true'>
+                <span class="post-meta-divider">|</span>
+                <span class="page-pv">${options.next_other_busuanzi_count_page_pv_header?default('<i class="fa fa-file-o"></i>')}
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>${options.next_other_busuanzi_count_page_pv_footer?if_exists}
+                </span>
+          </#if>
 
           {% if theme.post_wordcount.wordcount or theme.post_wordcount.min2read %}
             <div class="post-wordcount">
@@ -265,7 +255,7 @@
               </div>
           {% endif %}
 
-          </div>
+              </div>
           </header>
           {% endif %}
           <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}"
@@ -297,7 +287,7 @@
           {{ post.description }}
           <!--noindex-->
           <div class="post-button text-center">
-              <a class="btn" href="{{ url_for(post.path) }}">
+              <a class="btn" href="/archives/${post.postUrl}">
                   阅读全文 &raquo;
               </a>
           </div>
@@ -307,7 +297,7 @@
           <!--noindex-->
           <div class="post-button text-center">
               <a class="btn"
-                 href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}"
+                 href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}{% endif %}"
                  rel="contents">
                   阅读全文 &raquo;
               </a>
@@ -320,7 +310,7 @@
           <!--noindex-->
           <div class="post-button text-center">
               <a class="btn"
-                 href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}"
+                 href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}{% endif %}"
                  rel="contents">
                   阅读全文 &raquo;
               </a>
@@ -338,32 +328,32 @@
           {% endif %}
       </div>
 
-      {% if theme.wechat_subscriber.enabled and not is_index %}
+      <#if options.next_general_wechat_subscriber_enable?default('false') == 'true' && (!is_index??)>
       <div>
           <#include "wechat-subscriber.ftl">
       </div>
-      {% endif %}
+      </#if>
 
-      {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
+      <#if (options.next_other_alipay?if_exists !='' || options.next_other_wechatpay?if_exists !='' || options.next_other_bitcoin?if_exists!='') && (!is_index??)>
       <div>
           <#include "reward.ftl">
       </div>
-      {% endif %}
+      </#if>
 
-      {% if theme.post_copyright.enable and not is_index %}
+      <#if options.next_other_post_copyright?default('true')=='true' && (!is_index??)>
       <div>
-          {% include 'post-copyright.swig' with { post: post } %}
+          <#include "post-copyright.ftl">
       </div>
-      {% endif %}
+      </#if>
 
       <footer class="post-footer">
-          {% if post.tags and post.tags.length and not is_index %}
+          <#if post.tags?? && post?size gt 0 && (!is_index??)>
           <div class="post-tags">
-              {% for tag in post.tags %}
-              <a href="{{ url_for(tag.path) }}" rel="tag"># {{ tag.name }}</a>
-              {% endfor %}
+              <#list post.tags as tag>
+                  <a href="/tags/${tag.tagUrl}" rel="tag"># ${tag.tagName}</a>
+              </#list>
           </div>
-          {% endif %}
+          </#if>
 
           {% if not is_index %}
           {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or
@@ -436,5 +426,4 @@
       </footer>
       </div>
   </article>
-
-{% endmacro %}
+</#macro>

@@ -542,7 +542,7 @@
                                 <div class="form-group">
                                     <label for="nextOtherAlipay" class="col-sm-4 control-label">支付宝二维码：</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextOtherAlipay" name="nextOtherAlipay" value="${options.next_other_alipay?if_exists}" >
+                                        <input type="text" class="form-control" id="nextOtherAlipay" name="next_other_alipay" value="${options.next_other_alipay?if_exists}" >
                                     </div>
                                 </div>
 

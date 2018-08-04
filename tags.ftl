@@ -1,5 +1,6 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/sidebar.ftl">
+<#include "layout/_partials/page-header.ftl">
 
 
 <@html title='${options.blog_title?default("NexT")}'><#if posts??>page-post-detail</#if></@html>
@@ -7,8 +8,8 @@
 <@main useComment=false>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
-      <#include "layout/_partials/page-header.ftl">
-        <div class="post-body<#if options.next_plugins_han?default('false')=='true'> han-init-context</#if>{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+        <@page_header '标签'></@page_header>
+        <div class="post-body<#if options.next_plugins_han?default('false')=='true'> han-init-context</#if>">
             <div class="tag-cloud">
                 <div class="tag-cloud-title">
                     <#if tags?? && tags?size gt 0>
