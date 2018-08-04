@@ -184,6 +184,37 @@
                                         <input type="text" class="form-control" id="nextGeneralFooterCustomText" name="next_general_footer_custom_text" value="${options.next_general_footer_custom_text?if_exists}" >
                                     </div>
                                 </div>
+                                <!-- wechat_subscriber_enable -->
+                                <div class="form-group">
+                                    <label for="nextGeneralWechatSubscriberEnable" class="col-sm-4 control-label">wechat_subscriber_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_wechat_subscriber_enable" id="nextGeneralWechatSubscriberEnable" value="true" ${((options.next_general_wechat_subscriber_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_general_wechat_subscriber_enable" id="nextGeneralWechatSubscriberEnable" value="false" ${((options.next_general_wechat_subscriber_enable?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- wechat_subscriber_qcode -->
+                                <div class="form-group">
+                                    <label for="nextGeneralWechatSubscriberQcode" class="col-sm-4 control-label">wechat_subscriber_qcode：</label>
+                                    <div class="col-sm-8">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="nextGeneralWechatSubscriberQcode" name="next_general_wechat_subscriber_qcode" value="${options.next_general_wechat_subscriber_qcode?if_exists}" >
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextGeneralWechatSubscriberQcode')">选择</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- wechat_subscriber_description -->
+                                <div class="form-group">
+                                    <label for="nextGeneralWechatSubscriberDescription" class="col-sm-4 control-label">wechat_subscriber_description：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralWechatSubscriberDescription" name="next_general_wechat_subscriber_description" value="${options.next_general_wechat_subscriber_description?if_exists}" >
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextGeneralOptions')">保存设置</button>

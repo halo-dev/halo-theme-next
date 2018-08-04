@@ -1,6 +1,6 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/post-collapse.ftl">
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<#include "layout/_macro/sidebar.ftl">
 
 <@html title='${options.blog_title?default("NexT")}'>
 
@@ -41,9 +41,7 @@
 </@main>
 
 <@sidebar>
-    {% block sidebar %}
-    {{ sidebar_template.render(false) }}
-  {% endblock %}
+<@sidebar_template is_post=false></@sidebar_template>
 </@sidebar>
 
 <@footer>

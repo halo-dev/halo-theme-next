@@ -36,7 +36,6 @@
 </#macro>
 <#macro sidebar>
     <#if options.next_style_sidebar_display?default('post')!='remove'>
-    <#--{% block sidebar %}{% endblock %}-->
         <#nested />
     </#if>
       </div>
@@ -48,7 +47,6 @@
         <div class="footer-inner">
           <#include "_partials/footer.ftl">
           <#include "_third-party/analytics/analytics-with-widget.ftl">
-        <#--{% block footer %}{% endblock %}-->
           <#nested />
         </div>
     </footer>

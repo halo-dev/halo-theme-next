@@ -54,10 +54,10 @@
 <#case 'Mist'>
 <link href="/next/source/css/Mist.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
-<#case 'Mist'>
+<#case 'Pisces'>
 <link href="/next/source/css/Pisces.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
-<#case 'Mist'>
+<#case 'Gemini'>
 <link href="/next/source/css/Gemini.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 </#switch>

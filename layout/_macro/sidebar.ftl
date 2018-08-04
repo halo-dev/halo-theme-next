@@ -1,4 +1,4 @@
-{% macro render(is_post) %}
+<#macro sidebar_template is_post>
   <div class="sidebar-toggle">
       <div class="sidebar-toggle-line-wrap">
           <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -175,4 +175,4 @@
 
       </div>
   </aside>
-{% endmacro %}
+</#macro>

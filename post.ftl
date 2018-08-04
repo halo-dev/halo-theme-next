@@ -1,12 +1,8 @@
-<#--{% extends '_layout.swig' %}-->
 <#include "layout/_layout.ftl">
 {% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<#include "layout/_macro/sidebar.ftl">
 
-<@html title='${options.blog_title?default("NexT")}'>
-<#--TODO{% block page_class %}{% endblock %}-->
-    <#if posts??>page-post-detail</#if>
-</@html>
+<@html title='${options.blog_title?default("NexT")}'><#if posts??>page-post-detail</#if></@html>
 <@main useComment=true>
   <div id="posts" class="posts-expand">
       {{ post_template.render(page) }}
@@ -23,9 +19,7 @@
 </@main>
 
 <@sidebar>
-    {% block sidebar %}
-    {{ sidebar_template.render(false) }}
-  {% endblock %}
+<@sidebar_template is_post=true></@sidebar_template>
 </@sidebar>
 
 <@footer>
