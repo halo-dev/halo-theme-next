@@ -45,6 +45,9 @@
                         <a href="#plugins" data-toggle="tab">插件设置</a>
                     </li>
                     <li>
+                        <a href="#social" data-toggle="tab">社交设置</a>
+                    </li>
+                    <li>
                         <a href="#about" data-toggle="tab">关于</a>
                     </li>
                 </ul>
@@ -215,6 +218,34 @@
                                         <input type="text" class="form-control" id="nextGeneralWechatSubscriberDescription" name="next_general_wechat_subscriber_description" value="${options.next_general_wechat_subscriber_description?if_exists}" >
                                     </div>
                                 </div>
+                                <!-- creative_commons -->
+                                <div class="form-group">
+                                    <label for="nextGeneralCreativeCommons" class="col-sm-4 control-label">creative_commons：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralCreativeCommons" name="next_general_creative_commons" value="${options.next_general_creative_commons?default('by-nc-sa')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextGeneralLinksIcon" class="col-sm-4 control-label">links_icon：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralLinksIcon" name="next_general_links_icon" value="${options.next_general_links_icon?default('link')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextGeneralLinksTitle" class="col-sm-4 control-label">links_title：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextGeneralLinksTitle" name="next_general_links_title" value="${options.next_general_links_title?default('Links')}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextGeneralLinksLayout" class="col-sm-4 control-label">links_layout：</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" id="nextGeneralLinksLayout" name="next_general_links_layout">
+                                            <option value="block" ${((options.next_general_links_layout?if_exists)=='block')?string('selected','')}>block</option>
+                                            <option value="inline" ${((options.next_general_links_layout?default('inline'))=='inline')?string('selected','')}>inline</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextGeneralOptions')">保存设置</button>
@@ -310,6 +341,39 @@
                                                 <button class="btn btn-default btn-flat" type="button" onclick="openAttach('nextStyleCustomLogoImage')">选择</button>
                                             </span>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextStyleTocEnable" class="col-sm-4 control-label">toc_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_toc_enable" id="nextStyleTocEnable" value="true" ${((options.next_style_toc_enable?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_toc_enable" id="nextStyleTocEnable" value="false" ${((options.next_style_toc_enable?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextStyleTocNumber" class="col-sm-4 control-label">toc_number：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_toc_number" id="nextStyleTocNumber" value="true" ${((options.next_style_toc_number?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_toc_number" id="nextStyleTocNumber" value="false" ${((options.next_style_toc_number?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextStyleTocWrap" class="col-sm-4 control-label">toc_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_toc_wrap" id="nextStyleTocWrap" value="true" ${((options.next_style_toc_wrap?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_toc_wrap" id="nextStyleTocWrap" value="false" ${((options.next_style_toc_wrap?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -1134,6 +1198,195 @@
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextPluginsOptions')">保存设置</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 社交设置 -->
+                    <div class="tab-pane" id="social">
+                        <form method="post" class="form-horizontal" id="nextSocialOptions">
+                            <div class="box-body">
+                                <!-- social_enable -->
+                                <div class="form-group">
+                                    <label for="nextSocialEnable" class="col-sm-4 control-label">social_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_enable" id="nextSocialEnable" value="true" ${((options.next_social_enable?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_enable" id="nextSocialEnable" value="false" ${((options.next_social_enable?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- social_enable -->
+                                <div class="form-group">
+                                    <label for="nextSocialIconEnable" class="col-sm-4 control-label">social_icon_enable：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_icon_enable" id="nextSocialIconEnable" value="true" ${((options.next_social_icon_enable?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_icon_enable" id="nextSocialIconEnable" value="false" ${((options.next_social_icon_enable?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- social_enable -->
+                                <div class="form-group">
+                                    <label for="nextSocialIconOnly" class="col-sm-4 control-label">social_icon_only：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_icon_only" id="nextSocialIconOnly" value="true" ${((options.next_social_icon_only?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_icon_only" id="nextSocialIconOnly" value="false" ${((options.next_social_icon_only?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- social_enable -->
+                                <div class="form-group">
+                                    <label for="nextSocialIconTransition" class="col-sm-4 control-label">social_icon_transition：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_icon_transition" id="nextSocialIconTransition" value="true" ${((options.next_social_icon_transition?if_exists)=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_social_icon_transition" id="nextSocialIconTransition" value="false" ${((options.next_social_icon_transition?default('false'))=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- Github -->
+                                <div class="form-group">
+                                    <label for="nextSocialGithub" class="col-sm-4 control-label">Github地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialGithub" name="next_social_github" value="${options.next_social_github?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialGithubIcon" class="col-sm-4 control-label">Github图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialGithubIcon" name="next_social_github_icon" value="${options.next_social_github_icon?default('github')}" >
+                                    </div>
+                                </div>
+                                <!-- E-Mail -->
+                                <div class="form-group">
+                                    <label for="nextSocialEmail" class="col-sm-4 control-label">E-Mail地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialEmail" name="next_social_email" value="${options.next_social_email?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialEmailIcon" class="col-sm-4 control-label">E-Mail图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialEmailIcon" name="next_social_email_icon" value="${options.next_social_email_icon?default('envelope')}" >
+                                    </div>
+                                </div>
+                                <!-- Google Plus -->
+                                <div class="form-group">
+                                    <label for="nextSocialGoogle" class="col-sm-4 control-label">Google Plus地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialGoogle" name="next_social_google" value="${options.next_social_google?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialGoogleIcon" class="col-sm-4 control-label">Google Plus图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialGoogleIcon" name="next_social_google_icon" value="${options.next_social_google_icon?default('google')}" >
+                                    </div>
+                                </div>
+                                <!-- Twitter -->
+                                <div class="form-group">
+                                    <label for="nextSocialTwitter" class="col-sm-4 control-label">Twitter地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialTwitter" name="next_social_twitter" value="${options.next_social_twitter?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialTwitterIcon" class="col-sm-4 control-label">Twitter图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialTwitterIcon" name="next_social_twitter_icon" value="${options.next_social_twitter_icon?default('twitter')}" >
+                                    </div>
+                                </div>
+                                <!-- FB Page -->
+                                <div class="form-group">
+                                    <label for="nextSocialFbPage" class="col-sm-4 control-label">FB Page地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialFbPage" name="next_social_fb_pager" value="${options.next_social_fb_pager?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialFbPageIcon" class="col-sm-4 control-label">FB Page图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialFbPageIcon" name="next_social_fb_pager_icon" value="${options.next_social_twitter_icon?default('facebook')}" >
+                                    </div>
+                                </div>
+                                <!-- FB Page -->
+                                <div class="form-group">
+                                    <label for="nextSocialVkGroup" class="col-sm-4 control-label">VK Group地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialVkGroup" name="next_social_vk_group" value="${options.next_social_vk_group?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialVkGroupIcon" class="col-sm-4 control-label">VK Group图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialVkGroupIcon" name="next_social_vk_group_icon" value="${options.next_social_vk_group_icon?default('vk')}" >
+                                    </div>
+                                </div>
+                                <!-- FB Page -->
+                                <div class="form-group">
+                                    <label for="nextSocialStackOverflow" class="col-sm-4 control-label">StackOverflow地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialStackOverflow" name="next_social_stack_over_flow" value="${options.next_social_stack_over_flow?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialStackOverflowIcon" class="col-sm-4 control-label">StackOverflow图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialStackOverflowIcon" name="next_social_stack_over_flow_icon" value="${options.next_social_stack_over_flow_icon?default('stack-overflow')}" >
+                                    </div>
+                                </div>
+                                <!-- YouTube -->
+                                <div class="form-group">
+                                    <label for="nextSocialYouTube" class="col-sm-4 control-label">YouTube地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialYouTube" name="next_social_you_tube" value="${options.next_social_you_tube?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialYouTubeIcon" class="col-sm-4 control-label">YouTube图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialYouTube" name="next_social_you_tube_icon" value="${options.next_social_you_tube_icon?default('youtube')}" >
+                                    </div>
+                                </div>
+                                <!-- Instagram -->
+                                <div class="form-group">
+                                    <label for="nextSocialInstagram" class="col-sm-4 control-label">Instagram地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialInstagram" name="next_social_instagram" value="${options.next_social_instagram?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialInstagramIcon" class="col-sm-4 control-label">Instagram图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialInstagramIcon" name="next_social_instagram_icon" value="${options.next_social_instagram_icon?default('instagram')}" >
+                                    </div>
+                                </div>
+                                <!-- Skype -->
+                                <div class="form-group">
+                                    <label for="nextSocialSkype" class="col-sm-4 control-label">Skype地址：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialSkype" name="next_social_skype" value="${options.next_social_skype?if_exists}" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nextSocialSkypeIcon" class="col-sm-4 control-label">Skype图标：</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="nextSocialSkypeIcon" name="next_social_skype_icon" value="${options.next_social_skype_icon?default('skype')}" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextSocialOptions')">保存设置</button>
                             </div>
                         </form>
                     </div>
