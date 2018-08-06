@@ -2,14 +2,13 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-
-<@html title='${options.blog_title?default("NexT")}'><#if posts??>page-post-detail</#if></@html>
+<@html title=" ${post.postTitle} | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="article" url="${options.blog_url?if_exists}/p/${post.postUrl?if_exists}"></@html>
 
 <@main useComment=true>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
         <@page_header post.postTitle></@page_header>
-        <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+        <div class="post-body<#if options.next_plugins_han?default('false')=='true'> han-init-context</#if>">
             ${post.postContent?if_exists}
         </div>
     </div>

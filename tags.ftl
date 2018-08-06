@@ -1,9 +1,7 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
-
-
-<@html title='${options.blog_title?default("NexT")}'><#if posts??>page-post-detail</#if></@html>
+<@html title=" 标签 | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}/tags/"></@html>
 
 <@main useComment=false>
 <div id="posts" class="posts-expand">

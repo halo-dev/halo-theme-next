@@ -1,4 +1,4 @@
-<#macro head keywords>
+<#macro head title,keywords,desc,ogtype,url>
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -91,14 +91,16 @@
 <meta property="fb:app_id" content="${options.next_other_facebook_sdk_app_id?if_exists}" />
 </#if>
 
-<#--{{-->
-  <#--open_graph({-->
-    <#--twitter_id: theme.twitter,-->
-    <#--google_plus: theme.google_plus,-->
-    <#--fb_admins: theme.fb_admins,-->
-    <#--fb_app_id: theme.fb_app_id-->
-  <#--})-->
-<#--}}-->
+<meta name="description" content="${desc}">
+<meta property="og:type" content="${ogtype}">
+<meta property="og:title" content="${title}">
+<meta property="og:url" content="${url}">
+<meta property="og:site_name" content="${options.blog_title?default('NexT')}">
+<meta property="og:description" content="${desc}">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};

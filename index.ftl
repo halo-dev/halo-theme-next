@@ -2,7 +2,7 @@
 <#include "layout/_macro/post.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title='${options.blog_title?default("NexT")}'><#if posts??>page-home</#if></@html>
+<@html title="${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}"></@html>
 
 <@main useComment=false>
     <section id="posts" class="posts-expand">

@@ -1,11 +1,11 @@
-<#macro html title>
+<#macro html title,keywords,desc,ogtype,url>
 <!DOCTYPE html>
 
 <html class="theme-next ${options.next_general_scheme?default('Muse')?lower_case} <#if options.next_other_motion_enable?default('true')=='true'>use-motion</#if>"
       lang="zh-Hans">
 <head>
   <#include "_partials/head.ftl">
-    <@head keywords="NexT"></@head>
+    <@head title,keywords,desc,ogtype,url></@head>
     <title>${title}</title>
   <#include "_third-party/analytics/index.ftl">
 </head>
@@ -25,7 +25,6 @@
       <div class="main-inner">
         <div class="content-wrap">
             <div id="content" class="content">
-            <#--{% block content %}{% endblock %}-->
             <#nested />
             </div>
             <#include "_third-party/duoshuo-hot-articles.ftl">

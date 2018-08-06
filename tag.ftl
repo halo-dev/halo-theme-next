@@ -2,7 +2,7 @@
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title='${options.blog_title?default("NexT")}'>
+<@html title=" 标签: ${tag.tagName} | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}/tags/${tag.tagUrl?if_exists}">
 
 </@html>
 <@main useComment=false>

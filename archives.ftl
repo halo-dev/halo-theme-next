@@ -1,7 +1,7 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
-<@html title='${options.blog_title?default("NexT | Archives")}'>page-archive</@html>
+<@html title=" 归档 | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}/archives">page-archive</@html>
 
 <@main useComment=false>
   <div class="post-block archive">

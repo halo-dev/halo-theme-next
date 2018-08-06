@@ -2,7 +2,7 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title='${options.blog_title?default("NexT")}'><#if posts??>page-post-detail</#if></@html>
+<@html title=" 分类 | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}/categories"></@html>
 
 <@main useComment=false>
 <div id="posts" class="posts-expand">
