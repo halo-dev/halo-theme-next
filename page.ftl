@@ -16,7 +16,7 @@
 </@main>
 
 <@sidebar>
-    <@sidebar_template is_post=false></@sidebar_template>
+    <@sidebar_template is_post=true></@sidebar_template>
 </@sidebar>
 
 <@footer>

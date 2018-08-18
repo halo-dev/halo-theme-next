@@ -86,11 +86,6 @@
 
 <link rel="alternate" href="/feed.xml" title="${options.blog_title?default('NexT')}" type="application/atom+xml" />
 
-<#if options.next_other_facebook_sdk_enable?default('false')=='true' && options.next_other_facebook_sdk_webmaster?default('true') =='true'>
-<meta property="fb:admins" content="${options.next_other_facebook_sdk_fb_admin?if_exists}" />
-<meta property="fb:app_id" content="${options.next_other_facebook_sdk_app_id?if_exists}" />
-</#if>
-
 <meta name="description" content="${desc}">
 <meta property="og:type" content="${ogtype}">
 <meta property="og:title" content="${title}">

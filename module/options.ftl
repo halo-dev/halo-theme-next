@@ -376,6 +376,18 @@
                                         </label>
                                     </div>
                                 </div>
+                                <!-- rss -->
+                                <div class="form-group">
+                                    <label for="nextStyleRss" class="col-sm-4 control-label">侧边栏显示RSS按钮：</label>
+                                    <div class="col-sm-8">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_rss" id="nextStyleRss" value="true" ${((options.next_style_rss?default('true'))=='true')?string('checked','')}> 开启
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="next_style_rss" id="nextStyleRss" value="false" ${((options.next_style_rss?if_exists)=='false')?string('checked','')}> 关闭
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextStyleOptions')">保存设置</button>
@@ -764,117 +776,6 @@
                                     <label for="nextOtherTencentMta" class="col-sm-4 control-label">tencent_mta：</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control" id="nextOtherTencentMta" name="next_other_tencent_mta" value="${options.next_other_tencent_mta?if_exists}" >
-                                    </div>
-                                </div>
-
-                                <!-- vkontakte_api_enable -->
-                                <div class="form-group">
-                                    <label for="nextOtherVkontakteApiEnable" class="col-sm-4 control-label">vkontakte_api_enable：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_vkontakte_api_enable" id="nextOtherVkontakteApiEnable" value="true" ${((options.next_other_vkontakte_api_enable?if_exists)=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_vkontakte_api_enable" id="nextOtherVkontakteApiEnable" value="false" ${((options.next_other_vkontakte_api_enable?default('false'))=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-                                <!--- vkontakte_api_app_id -->
-                                <div class="form-group">
-                                    <label for="nextOtherVkontakteApiAppId" class="col-sm-4 control-label">vkontakte_api_app_id：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextOtherVkontakteApiAppId" name="next_other_vkontakte_api_app_id" value="${options.next_other_vkontakte_api_app_id?if_exists}" >
-                                    </div>
-                                </div>
-                                <!-- vkontakte_api_like -->
-                                <div class="form-group">
-                                    <label for="nextOtherVkontakteApiLike" class="col-sm-4 control-label">vkontakte_api_like：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_vkontakte_api_like" id="nextOtherVkontakteApiLike" value="true" ${((options.next_other_vkontakte_api_like?default('true'))=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_vkontakte_api_like" id="nextOtherVkontakteApiLike" value="false" ${((options.next_other_vkontakte_api_like?if_exists)=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- vkontakte_api_comments -->
-                                <div class="form-group">
-                                    <label for="nextOtherVkontakteApiComments" class="col-sm-4 control-label">vkontakte_api_comments：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_vkontakte_api_comments" id="nextOtherVkontakteApiComments" value="true" ${((options.next_other_vkontakte_api_comments?default('true'))=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_vkontakte_api_comments" id="nextOtherVkontakteApiComments" value="false" ${((options.next_other_vkontakte_api_comments?if_exists)=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- vkontakte_api_num_of_posts -->
-                                <div class="form-group">
-                                    <label for="nextOtherVkontakteApiNumOfPosts" class="col-sm-4 control-label">vkontakte_api_num_of_posts：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextOtherVkontakteApiNumOfPosts" name="next_other_vkontakte_api_mum_of_posts" value="${options.next_other_vkontakte_api_mum_of_posts?default('10')}" >
-                                    </div>
-                                </div>
-                                <!-- facebook_sdk_enable -->
-                                <div class="form-group">
-                                    <label for="nextOtherFacebookSdkEnable" class="col-sm-4 control-label">facebook_sdk_enable：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_facebook_sdk_enable" id="nextOtherFacebookSdkEnable" value="true" ${((options.next_other_facebook_sdk_enable?if_exists)=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_facebook_sdk_enable" id="nextOtherFacebookSdkEnable" value="false" ${((options.next_other_facebook_sdk_enable?default('false'))=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- facebook_sdk_app_id -->
-                                <div class="form-group">
-                                    <label for="nextOtherFacebookSdkAppId" class="col-sm-4 control-label">facebook_sdk_app_id：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextOtherFacebookSdkAppId" name="next_other_facebook_sdk_app_id" value="${options.next_other_facebook_sdk_app_id?if_exists}" >
-                                    </div>
-                                </div>
-                                <!-- facebook_sdk_fb_admin -->
-                                <div class="form-group">
-                                    <label for="nextOtherFacebookSdkFbAdmin" class="col-sm-4 control-label">facebook_sdk_fb_admin：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextOtherFacebookSdkFbAdmin" name="next_other_facebook_sdk_fb_admin" value="${options.next_other_facebook_sdk_fb_admin?if_exists}" >
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nextOtherFacebookSdkLikeButton" class="col-sm-4 control-label">facebook_sdk_like_button：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_facebook_sdk_like_button" id="nextOtherFacebookSdkLikeButton" value="true" ${((options.next_other_facebook_sdk_like_button?default('true'))=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_facebook_sdk_like_button" id="nextOtherFacebookSdkLikeButton" value="false" ${((options.next_other_facebook_sdk_like_button?if_exists)=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nextOtherFacebookSdkWebmaster" class="col-sm-4 control-label">facebook_sdk_webmaster：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_facebook_sdk_webmaster" id="nextOtherFacebookSdkWebmaster" value="true" ${((options.next_other_facebook_sdk_webmaster?default('true'))=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_facebook_sdk_webmaster" id="nextOtherFacebookSdkWebmaster" value="false" ${((options.next_other_facebook_sdk_webmaster?if_exists)=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-                                <!-- rss -->
-                                <div class="form-group">
-                                    <label for="nextOtherRss" class="col-sm-4 control-label">侧边栏显示RSS按钮：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_rss" id="nextOtherRss" value="true" ${((options.next_other_rss?default('true'))=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_other_rss" id="nextOtherRss" value="false" ${((options.next_other_rss?if_exists)=='false')?string('checked','')}> 关闭
-                                        </label>
                                     </div>
                                 </div>
                             </div>

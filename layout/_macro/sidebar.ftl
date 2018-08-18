@@ -13,7 +13,7 @@
       </#if>
       <div class="sidebar-inner">
 
-          <#if (is_post?? && options.next_style_toc_enable?default('true')=='true') || (is_page && options.next_style_toc_enable?default('true')=='true')>
+          <#if is_post && options.next_style_toc_enable?default('true')=='true'>
           <ul class="sidebar-nav motion-element">
               <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
                   文章目录
@@ -24,8 +24,7 @@
           </ul>
           </#if>
 
-          <section
-                  class="site-overview-wrap sidebar-panel{% if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{% endif %}">
+          <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
               <div class="site-overview">
                   <div class="site-author motion-element" itemprop="author" itemscope
                        itemtype="http://schema.org/Person">
@@ -64,7 +63,7 @@
 
                     </nav>
 
-                  <#if options.next_other_rss?default('true') == 'true'>
+                  <#if options.next_style_rss?default('true') == 'true'>
                   <div class="feed-link motion-element">
                       <a href="/feed.xml" rel="alternate">
                           <i class="fa fa-rss"></i>

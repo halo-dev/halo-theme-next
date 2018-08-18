@@ -17,7 +17,27 @@
             <@post_collapase posts=posts.content></@post_collapase>
         </div>
     </div>
-    <#include "layout/_partials/pagination.ftl">
+    <#if posts.totalPages gt 1>
+    <nav class="pagination">
+        <#if posts.hasPrevious()>
+            <#if posts.number == 1>
+                <a class="extend prev" rel="prev" href="/categories/${category.cateUrl}">
+                    <i class="fa fa-angle-left" aria-label="Previous page"></i>
+                </a>
+            <#else>
+                <a class="extend prev" rel="prev" href="/categories/${category.cateUrl}/page/${posts.number}">
+                    <i class="fa fa-angle-left" aria-label="Previous page"></i>
+                </a>
+            </#if>
+        </#if>
+        <span class="page-number current">${posts.number+1}</span>
+        <#if posts.hasNext()>
+            <a class="extend next" rel="next" href="/categories/${category.cateUrl}/page/${posts.number+2}/">
+                <i class="fa fa-angle-right" aria-label="Next page"></i>
+            </a>
+        </#if>
+    </nav>
+    </#if>
 </@main>
 
 <@sidebar>

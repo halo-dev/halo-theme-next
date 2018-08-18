@@ -5,7 +5,7 @@
 <@html title=" ${post.postTitle} | ${options.blog_title?default('NexT')}" keywords="${tagWords}" desc="${post.postSummary?if_exists}" ogtype="article" url="${options.blog_url?if_exists}/archives/${post.postUrl?if_exists}"></@html>
 <@main useComment=true>
     <div id="posts" class="posts-expand">
-        <@post_template post,is_index??,''></@post_template>
+        <@post_template post></@post_template>
         <div class="post-spread">
             <#if options.next_other_jiathis_uid?if_exists !=''>
             <#include "layout/_partials/share/jiathis.ftl">

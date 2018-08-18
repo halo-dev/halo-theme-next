@@ -8,7 +8,7 @@
     <section id="posts" class="posts-expand">
         <#if posts??>
             <#list posts.content as post>
-                <@post_template post,is_index,''></@post_template>
+                <@post_template post></@post_template>
             </#list>
         </#if>
     </section>
