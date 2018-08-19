@@ -1,3 +1,4 @@
+<#include "../../../common/macro/common_macro.ftl">
 <#macro html title,keywords,desc,ogtype,url>
 <!DOCTYPE html>
 
@@ -7,7 +8,6 @@
   <#include "_partials/head.ftl">
     <@head title,keywords,desc,ogtype,url></@head>
     <title>${title}</title>
-  <#include "_third-party/analytics/index.ftl">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -27,7 +27,6 @@
             <div id="content" class="content">
             <#nested />
             </div>
-            <#include "_third-party/duoshuo-hot-articles.ftl">
             <#if useComment>
             <#include "_partials/comments.ftl">
             </#if>
@@ -45,7 +44,7 @@
     <footer id="footer" class="footer">
         <div class="footer-inner">
           <#include "_partials/footer.ftl">
-          <#include "_third-party/analytics/analytics-with-widget.ftl">
+            <@statistics></@statistics>
           <#nested />
         </div>
     </footer>
@@ -53,7 +52,7 @@
 
 <#macro button>
     <#if options.next_style_sidebar_b2t?default('false')=='false'>
-        <div class="back-to-top">
+        <div class="back-to-top" style="width: initial">
             <i class="fa fa-arrow-up"></i>
           <#if options.next_style_sidebar_scrollpercent?default('false')=='true'>
           <span id="scrollpercent"><span>0</span>%</span>
@@ -61,32 +60,16 @@
         </div>
     </#if>
 
-    <#--{% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}-->
-      <#--<div id="needsharebutton-float">-->
-        <#--<span class="btn">-->
-          <#--<i class="fa fa-share-alt" aria-hidden="true"></i>-->
-        <#--</span>-->
-      <#--</div>-->
-    <#--{% endif %}-->
-
   </div>
 
     <#include "_scripts/vendors.ftl">
     <#include "_scripts/commons.ftl">
 
     <#include "../layout/_scripts/schemes/${options.next_general_scheme?default('Muse')?lower_case}.ftl">
-
-<#--{% block script_extra %}{% endblock %}-->
     <#nested />
     <#include "_scripts/boostrap.ftl">
-
     <#include "_third-party/search/index.ftl">
-    <#include "_third-party/analytics/lean-analytics.ftl">
-    <#--<#include "_third-party/analytics/firestore.ftl">-->
     <#include "_third-party/seo/baidu-push.ftl">
-    <#--<#include "_third-party/needsharebutton.ftl">-->
-    <#--<#include "_third-party/rating.ftl">-->
-    <#--<#include "_third-party/mathjax.ftl">-->
     <#include "_third-party/scroll-cookie.ftl">
     <#include "_third-party/exturl.ftl">
 </body>

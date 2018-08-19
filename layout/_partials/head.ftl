@@ -2,8 +2,9 @@
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="{{ theme.android_chrome_color }}">
-
+<#if options.next_general_android_chrome_color??>
+<meta name="theme-color" content="${options.next_general_android_chrome_color}">
+</#if>
 
 <#if options.next_plugins_pace?default('false')=='true'>
   <script src="/next/source/lib/pace/pace.min.js?v=1.0.2"></script>
@@ -49,18 +50,19 @@
 
 <#switch '${options.next_general_scheme?default("Muse")}'>
 <#case 'Muse'>
-<link href="/next/source/css/Muse.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Muse/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Mist'>
-<link href="/next/source/css/Mist.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Mist/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Pisces'>
-<link href="/next/source/css/Pisces.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Pisces/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Gemini'>
-<link href="/next/source/css/Gemini.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/next/source/css/Gemini/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 </#switch>
+<link href="/next/source/css/highlight/${options.next_general_highlight?default('normal')}.css" rel="stylesheet" type="text/css" />
 
 <#if options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png') !=''>
   <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png')}?v=5.1.4">

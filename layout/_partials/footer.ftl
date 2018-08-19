@@ -34,8 +34,7 @@
   </div>
 </#if>
 
-<#if options.next_general_footer_custom_text??>
-  <div class="footer-custom">
-      ${options.next_general_footer_custom_text}
-  </div>
-</#if>
+<div class="footer-custom">
+  <@footer_info></@footer_info>
+</div>
+

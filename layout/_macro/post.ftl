@@ -1,7 +1,7 @@
 <#macro post_template post>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
     <div class="post-block">
-        <link itemprop="mainEntityOfPage" href="https://ioliu.cn/2017/git-command-backup/">
+        <link itemprop="mainEntityOfPage" href="${options.blog_url}/archives/${post.postUrl}">
         <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             <meta itemprop="name" content="${user.userDisplayName?if_exists}">
             <meta itemprop="description" content="${post.postSummary?if_exists}">
@@ -43,7 +43,7 @@
                     <span class="post-meta-item-icon">
                         <i class="fa fa-comment-o"></i>
                     </span>
-                    <a href="/archives/${post.postUrl}/#comments" itemprop="discussionUrl">
+                    <a href="/archives/${post.postUrl}#comments" itemprop="discussionUrl">
                         <span class="valine-comment-count" data-xid="/archives/${post.postUrl}/" itemprop="commentsCount">${post.comments?size}</span>
                     </a>
                     <span id="/archives/${post.postUrl}/" class="leancloud_visitors" data-flag-title="${post.postTitle}">
@@ -52,7 +52,7 @@
                             <i class="fa fa-eye"></i>
                         </span>
                         <span class="post-meta-item-text">阅读次数 </span>
-                        <span class="leancloud-visitors-count">${post.postViews?default(0)}</span>
+                        <span class="leancloud-visitors-count">${post.postViews?default(0)?c}</span>
                     </span>
                 </span>
             </div>
@@ -71,8 +71,56 @@
                 ${post.postContent}
             </#if>
         </div>
+        <#if options.next_general_wechat_subscriber_enable?? && !is_index??>
+        <div>
+            <#include "wechat-subscriber.ftl">
+        </div>
+        </#if>
+        <#if (options.next_other_alipay?? || options.next_other_wechatpay?? || options.next_other_bitcoin??) && !is_index??>
+        <div>
+            <#include "reward.ftl">
+        </div>
+        </#if>
+        <#if options.next_other_post_copyright?default('true')=='true' && !is_index??>
+        <div>
+            <#include "post-copyright.ftl">
+        </div>
+        </#if>
         <footer class="post-footer">
+            <div class="post-tags">
+                <#if !is_index??>
+                    <#if post.tags?size gt 0>
+                    <#list post.tags as tag>
+                    <a href="/tags/${tag.tagUrl}" rel="tag"># ${tag.tagName}</a>
+                    </#list>
+                    </#if>
+                </#if>
+            </div>
+            <#if (afterPost?? || beforePost??) && !is_index??>
+            <div class="post-nav">
+
+                <div class="post-nav-next post-nav-item">
+                    <#if beforePost??>
+                    <a href="/archives/${beforePost.postUrl}" rel="next" title="${beforePost.postTitle}">
+                        <i class="fa fa-chevron-left"></i> ${beforePost.postTitle}
+                    </a>
+                    </#if>
+                </div>
+
+                <span class="post-nav-divider"></span>
+
+                <div class="post-nav-prev post-nav-item">
+                    <#if afterPost??>
+                    <a href="/archives/${afterPost.postUrl}" rel="prev" title="${afterPost.postTitle}">
+                        ${afterPost.postTitle} <i class="fa fa-chevron-right"></i>
+                    </a>
+                    </#if>
+                </div>
+            </div>
+            </#if>
+            <#if is_index??>
             <div class="post-eof"></div>
+            </#if>
         </footer>
     </div>
 </article>

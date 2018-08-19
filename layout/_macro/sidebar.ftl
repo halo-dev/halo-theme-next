@@ -24,7 +24,7 @@
           </ul>
           </#if>
 
-          <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+          <section class="site-overview-wrap sidebar-panel <#if !is_post || options.next_style_toc_enable?default('true')=='false'>sidebar-panel-active</#if>">
               <div class="site-overview">
                   <div class="site-author motion-element" itemprop="author" itemscope
                        itemtype="http://schema.org/Person">
@@ -226,30 +226,17 @@
       </div>
       </section>
 
-      <#--{% if display_toc and toc(page.content).length > 1 %}-->
-      <#--<!--noindex&ndash;&gt;-->
-      <#--<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">-->
-          <#--<div class="post-toc">-->
 
-              <#--{% if page.toc_number === undefined %}-->
-              <#--{% set toc = toc(page.content, { "class": "nav", list_number: theme.toc.number }) %}-->
-              <#--{% else %}-->
-              <#--{% set toc = toc(page.content, { "class": "nav", list_number: page.toc_number }) %}-->
-              <#--{% endif %}-->
-
-              <#--{% if toc.length <= 1 %}-->
-              <#--<p class="post-toc-empty">此文章未包含目录</p>-->
-              <#--{% else %}-->
-              <#--<div class="post-toc-content">{{ toc }}</div>-->
-              <#--{% endif %}-->
-
-          <#--</div>-->
-      <#--</section>-->
-      <#--<!--/noindex&ndash;&gt;-->
-      <#--{% endif %}-->
+      <!--noindex-->
+      <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+              <div class="post-toc-content"></div>
+          </div>
+      </section>
+      <!--/noindex-->
 
       <#if options.next_style_sidebar_b2t?default('false')=='true'>
-      <div class="back-to-top">
+      <div class="back-to-top" style="width: initial">
           <i class="fa fa-arrow-up"></i>
           <#if options.next_style_sidebar_scrollpercent?default('false')=='true'>
           <span id="scrollpercent"><span>0</span>%</span>
