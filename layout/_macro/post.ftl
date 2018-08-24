@@ -71,7 +71,7 @@
                 ${post.postContent}
             </#if>
         </div>
-        <#if options.next_general_wechat_subscriber_enable?? && !is_index??>
+        <#if options.next_general_wechat_subscriber_enable?default('false')=='true' && !is_index??>
         <div>
             <#include "wechat-subscriber.ftl">
         </div>
