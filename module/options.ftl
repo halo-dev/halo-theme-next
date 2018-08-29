@@ -1093,6 +1093,11 @@
                                     <li><a target="_blank" href="https://github.com/iissnan/hexo-theme-next">原主题地址</a></li>
                                 </ul>
                             </div>
+                            <#if hasUpdate>
+                            <div class="box-footer">
+                                <button type="button" class="btn btn-warning btn-sm pull-right" data-loading-text="更新中..." onclick="updateTheme('${themeDir}',this)">更新主题</button>
+                            </div>
+                            </#if>
                         </div>
                     </div>
                 </div>
@@ -1131,6 +1136,54 @@
             area: ['90%', '90%'],
             content: '/admin/attachments/select?id='+id,
             scrollbar: false
+        });
+    }
+    /**
+     * 更新主题
+     */
+    function updateTheme(theme,e) {
+        $(e).button('loading');
+        $.ajax({
+            type: 'get',
+            url: '/admin/themes/pull',
+            data: {
+                'themeName': theme
+            },
+            success: function (data) {
+                if (data.code == 1) {
+                    $.toast({
+                        text: data.msg,
+                        heading: '提示',
+                        icon: 'success',
+                        showHideTransition: 'fade',
+                        allowToastClose: true,
+                        hideAfter: 1000,
+                        stack: 1,
+                        position: 'top-center',
+                        textAlign: 'left',
+                        loader: true,
+                        loaderBg: '#ffffff',
+                        afterHidden: function () {
+                            parent.location.href = "/admin/themes";
+                        }
+                    });
+                } else {
+                    $.toast({
+                        text: data.msg,
+                        heading: '提示',
+                        icon: 'error',
+                        showHideTransition: 'fade',
+                        allowToastClose: true,
+                        hideAfter: 2000,
+                        stack: 1,
+                        position: 'top-center',
+                        textAlign: 'left',
+                        loader: true,
+                        loaderBg: '#ffffff'
+                    });
+                    $(e).button('reset');
+                }
+            }
         });
     }
 </script>
