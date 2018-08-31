@@ -25,7 +25,13 @@
                 </a>
             </#if>
         </#if>
-        <span class="page-number current">${posts.number+1}</span>
+        <#list rainbow as r>
+            <#if r == posts.number+1>
+                <span class="page-number current">${posts.number+1}</span>
+            <#else>
+                <a class="page-number" href="/page/${r}">${r}</a>
+            </#if>
+        </#list>
         <#if posts.hasNext()>
             <a class="extend next" rel="next" href="/page/${posts.number+2}/">
                 <i class="fa fa-angle-right" aria-label="Next page"></i>
