@@ -30,7 +30,7 @@
                        itemtype="http://schema.org/Person">
                       <#if user.userAvatar??>
                       <img class="site-author-image" itemprop="image"
-                           src="${user.userAvatar?default('/next/source/images/avatar.gif')}"
+                           src="${user.userAvatar?default('/${themeName}/source/images/avatar.gif')}"
                            alt="${user.userDisplayName?if_exists}"/>
                       </#if>
                       <p class="site-author-name" itemprop="name">${user.userDisplayName?if_exists}</p>
@@ -200,7 +200,7 @@
                   <div class="cc-license motion-element" itemprop="license">
                       <a href="https://creativecommons.org/<#if options.next_general_creative_commons?default('by-nc-sa')=='zero'>publicdomain/zero/1.0<#else>licenses/${options.next_general_creative_commons?default('by-nc-sa')}/4.0</#if>/"
                          class="cc-opacity" target="_blank">
-                          <img src="/next/source/images/cc-${options.next_general_creative_commons?default('by-nc-sa')}.svg"
+                          <img src="/${themeName}/source/images/cc-${options.next_general_creative_commons?default('by-nc-sa')}.svg"
                                alt="Creative Commons"/>
                       </a>
                   </div>

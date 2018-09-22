@@ -7,12 +7,12 @@
 </#if>
 
 <#if options.next_plugins_pace?default('false')=='true'>
-  <script src="/next/source/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/next/source/lib/pace/${options.next_plugins_pace_theme?default('pace-theme-minimal')}.min.css?v=1.0.2" rel="stylesheet">
+  <script src="/${themeName}/source/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/${themeName}/source/lib/pace/${options.next_plugins_pace_theme?default('pace-theme-minimal')}.min.css?v=1.0.2" rel="stylesheet">
 </#if>
 
 <#if options.next_plugins_han?default('false')=='true'>
-  <link rel="stylesheet" media="all" href="/next/source/lib/Han/dist/han.min.css?v=3.3">
+  <link rel="stylesheet" media="all" href="/${themeName}/source/lib/Han/dist/han.min.css?v=3.3">
 </#if>
 
 
@@ -41,40 +41,40 @@
 </#if>
 
 <#if options.next_plugins_fancybox?default('true')=='true'>
-  <link href="/next/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/${themeName}/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 </#if>
 
 <#include "head/external-fonts.ftl">
 
-<link href="/next/source/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/${themeName}/source/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <#switch '${options.next_general_scheme?default("Muse")}'>
 <#case 'Muse'>
-<link href="/next/source/css/Muse/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${themeName}/source/css/Muse/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Mist'>
-<link href="/next/source/css/Mist/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${themeName}/source/css/Mist/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Pisces'>
-<link href="/next/source/css/Pisces/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${themeName}/source/css/Pisces/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Gemini'>
-<link href="/next/source/css/Gemini/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${themeName}/source/css/Gemini/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 </#switch>
-<link href="/next/source/css/highlight/${options.next_general_highlight?default('normal')}.css" rel="stylesheet" type="text/css" />
+<link href="/${themeName}/source/css/highlight/${options.next_general_highlight?default('normal')}.css" rel="stylesheet" type="text/css" />
 
-<#if options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png') !=''>
-  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon?default('/next/source/images/apple-touch-icon-next.png')}?v=5.1.4">
+<#if options.next_general_apple_touch_icon?default('/${themeName}/source/images/apple-touch-icon-next.png') !=''>
+  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon?default('/${themeName}/source/images/apple-touch-icon-next.png')}?v=5.1.4">
 </#if>
-<#if options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png')!=''>
-  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium?default('/next/source/images/favicon-32x32-next.png')}?v=5.1.4">
+<#if options.next_general_favicon_medium?default('/${themeName}/source/images/favicon-32x32-next.png')!=''>
+  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium?default('/${themeName}/source/images/favicon-32x32-next.png')}?v=5.1.4">
 </#if>
-<#if options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png')!=''>
-  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small?default('/next/source/images/favicon-16x16-next.png')}v=5.1.4">
+<#if options.next_general_favicon_small?default('/${themeName}/source/images/favicon-16x16-next.png')!=''>
+  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small?default('/${themeName}/source/images/favicon-16x16-next.png')}v=5.1.4">
 </#if>
-<#if options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg')!=''>
-  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab?default('/next/source/images/logo.svg')}?v=5.1.4" color="{{ theme.android_chrome_color }}">
+<#if options.next_general_safari_pinned_tab?default('/${themeName}/source/images/logo.svg')!=''>
+  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab?default('/${themeName}/source/images/logo.svg')}?v=5.1.4" color="{{ theme.android_chrome_color }}">
 </#if>
 
 <#--{% if theme.favicon.android_manifest %}-->
