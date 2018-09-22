@@ -21,7 +21,7 @@
 ## 注意
 
 - 该主题能渲染`首页(/)`，`文章页(/archives/${postUrl})`，`标签页(/tags)`，`分类目录(/categories)`，`归档(/archives)`，`自定义页面(/p/${postUrl})`。
-- 上传完成之后需要保存一次主题设置，方可使用。
+- 该主题设置选项比较多，具体请看：[http://theme-next.iissnan.com/](http://theme-next.iissnan.com/)
 
 ## 使用方法
 
