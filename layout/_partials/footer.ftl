@@ -7,7 +7,7 @@
     </span>
     <span class="author" itemprop="copyrightHolder">
     <#if options.next_general_footer_copyright??>
-        ${options.options.next_general_footer_copyright}
+        ${options.next_general_footer_copyright}
     <#else>
     ${user.userDisplayName?if_exists}
     </#if>
