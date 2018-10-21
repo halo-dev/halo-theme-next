@@ -19,26 +19,7 @@
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-
-<#if options.next_verification_google??>
-  <meta name="google-site-verification" content="${options.next_verification_google}" />
-</#if>
-
-<#if options.next_verification_bing??>
-  <meta name="msvalidate.01" content="${options.next_verification_bing}" />
-</#if>
-
-<#if options.next_verification_yandex??>
-  <meta name="yandex-verification" content="${options.next_verification_yandex}" />
-</#if>
-
-<#if options.next_verification_baidu??>
-  <meta name="baidu-site-verification" content="${options.next_verification_baidu}" />
-</#if>
-
-<#if options.next_verification_qihu??>
-  <meta name="360-site-verification" content="${options.next_verification_qihu}" />
-</#if>
+<@verification />
 
 <#if options.next_plugins_fancybox?default('true')=='true'>
   <link href="/${themeName}/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />

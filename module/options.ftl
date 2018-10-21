@@ -18,9 +18,6 @@
                         <a href="#other" data-toggle="tab">其他设置</a>
                     </li>
                     <li>
-                        <a href="#verification" data-toggle="tab">站点设置</a>
-                    </li>
-                    <li>
                         <a href="#search" data-toggle="tab">搜索设置</a>
                     </li>
                     <li>
@@ -644,53 +641,6 @@
                             </div>
                             <div class="box-footer">
                                 <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextOtherOptions')">保存设置</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- 站点验证代码 -->
-                    <div class="tab-pane" id="verification">
-                        <form method="post" class="form-horizontal" id="nextVerificationOptions">
-                            <input type="hidden" name="next-version" value="5.1.4">
-                            <div class="box-body">
-                                <!-- Google -->
-                                <div class="form-group">
-                                    <label for="nextVerificationGoogle" class="col-sm-4 control-label">Google站点验证代码：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextVerificationGoogle" name="next_verification_google" value="${options.next_verification_google?if_exists}" >
-                                    </div>
-                                </div>
-                                <!-- Google -->
-                                <div class="form-group">
-                                    <label for="nextVerificationBing" class="col-sm-4 control-label">必应站点验证代码：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextVerificationBing" name="next_verification_bing" value="${options.next_verification_bing?if_exists}" >
-                                    </div>
-                                </div>
-                                <!-- yandex -->
-                                <div class="form-group">
-                                    <label for="nextVerificationYandex" class="col-sm-4 control-label">Yandex站点验证代码：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextVerificationYandex" name="next_verification_yandex" value="${options.next_verification_yandex?if_exists}" >
-                                    </div>
-                                </div>
-                                <!-- baidu -->
-                                <div class="form-group">
-                                    <label for="nextVerificationBaidu" class="col-sm-4 control-label">百度站点验证代码：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="next_verification_baidu" name="next_verification_baidu" value="${options.next_verification_baidu?if_exists}" >
-                                    </div>
-                                </div>
-                                <!-- qihu -->
-                                <div class="form-group">
-                                    <label for="nextVerificationQihu" class="col-sm-4 control-label">360搜索站点验证代码：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextVerificationQihu" name="next_verification_qihu" value="${options.next_verification_qihu?if_exists}" >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-footer">
-                                <button type="button" class="btn btn-primary btn-sm pull-right" onclick="saveThemeOptions('nextVerificationOptions')">保存设置</button>
                             </div>
                         </form>
                     </div>
