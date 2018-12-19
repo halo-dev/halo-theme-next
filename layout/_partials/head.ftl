@@ -43,7 +43,11 @@
 <link href="/${themeName}/source/css/Gemini/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 </#switch>
-<link href="/${themeName}/source/css/highlight/${options.next_general_highlight?default('normal')}.css" rel="stylesheet" type="text/css" />
+
+<#if post??>
+<link rel="stylesheet" type="text/css" href="/${themeName}/source/lib/prism/css/prism-${options.next_general_highlight!'Default'}.css" />
+<script type="text/javascript" src="/${themeName}/source/lib/prism/js/prism.js"></script>
+</#if>
 
 <#if options.next_general_apple_touch_icon?default('/${themeName}/source/images/apple-touch-icon-next.png') !=''>
   <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon?default('/${themeName}/source/images/apple-touch-icon-next.png')}?v=5.1.4">

@@ -348,12 +348,14 @@
                                 <div class="form-group">
                                     <label for="nextGeneralHighlight" class="col-sm-4 control-label">文章代码高亮主题：</label>
                                     <div class="col-sm-8">
-                                        <select class="form-control" id="nextGeneralHighlight" name="next_general_highlight">
-                                            <option value="normal" ${((options.next_general_highlight?default('normal'))=='normal')?string('selected','')}>normal</option>
-                                            <option value="night" ${((options.next_general_highlight?if_exists)=='night')?string('selected','')}>night</option>
-                                            <option value="night-blue" ${((options.next_general_highlight?if_exists)=='night-blue')?string('selected','')}>night-blue</option>
-                                            <option value="night-bright" ${((options.next_general_highlight?if_exists)=='night-bright')?string('selected','')}>night-bright</option>
-                                            <option value="night-eighties" ${((options.next_general_highlight?if_exists)=='night-eighties')?string('selected','')}>night-eighties</option>
+                                        <select class="form-control" id="casperGeneralCodePretty" name="next_general_highlight">
+                                            <option value="Default" ${((options.next_general_highlight!'Default')=='Default')?string('selected','')}>Default</option>
+                                            <option value="Coy" ${((options.next_general_highlight!)=='Coy')?string('selected','')}>Coy</option>
+                                            <option value="Dark" ${((options.next_general_highlight!)=='Dark')?string('selected','')}>Dark</option>
+                                            <option value="Okaidia" ${((options.next_general_highlight!)=='Okaidia')?string('selected','')}>Okaidia</option>
+                                            <option value="Solarized Light" ${((options.next_general_highlight!)=='Solarized Light')?string('selected','')}>Solarized Light</option>
+                                            <option value="Tomorrow Night" ${((options.next_general_highlight!)=='Tomorrow Night')?string('selected','')}>Tomorrow Night</option>
+                                            <option value="Twilight" ${((options.next_general_highlight!)=='Twilight')?string('selected','')}>Twilight</option>
                                         </select>
                                     </div>
                                 </div>
