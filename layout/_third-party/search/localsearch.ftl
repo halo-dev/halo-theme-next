@@ -1,4 +1,4 @@
-<#if options.next_search_local_search_enable?default('false')=='true'>
+<#if (options.next_search_local_search_enable!'false')=='true'>
   <script type="text/javascript">
     // Popup Window;
     var isfetched = false;

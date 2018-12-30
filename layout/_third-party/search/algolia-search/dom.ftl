@@ -1,4 +1,4 @@
-<#if options.next_search_algolia_search_enable?default('false')=='true'>
+<#if (options.next_search_algolia_search_enable!'false')=='true'>
   <div class="algolia-popup popup search-popup">
     <div class="algolia-search">
       <div class="algolia-search-input-icon">

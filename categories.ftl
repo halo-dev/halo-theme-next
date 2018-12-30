@@ -2,13 +2,13 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title=" 分类 | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}/categories"></@html>
+<@html title=" 分类 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/categories"></@html>
 
 <@main useComment=false>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
         <@page_header "分类"></@page_header>
-        <div class="post-body<#if options.next_plugins_han?default('false')=='true'> han-init-context</#if>">
+        <div class="post-body<#if (options.next_plugins_han!'false')=='true'> han-init-context</#if>">
             <div class="category-all-page">
                 <div class="category-all-title">
                     <#if categories?? && categories?size gt 0>

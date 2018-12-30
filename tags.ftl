@@ -1,13 +1,13 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
-<@html title=" 标签 | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="website" url="${options.blog_url?if_exists}/tags/"></@html>
+<@html title=" 标签 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/tags/"></@html>
 
 <@main useComment=false>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
         <@page_header '标签'></@page_header>
-        <div class="post-body<#if options.next_plugins_han?default('false')=='true'> han-init-context</#if>">
+        <div class="post-body<#if (options.next_plugins_han!'false')=='true'> han-init-context</#if>">
             <div class="tag-cloud">
                 <div class="tag-cloud-title">
                     <@commonTag method="tags">

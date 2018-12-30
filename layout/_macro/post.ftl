@@ -1,19 +1,19 @@
 <#macro post_template post>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
     <div class="post-block">
-        <link itemprop="mainEntityOfPage" href="${options.blog_url}/archives/${post.postUrl}">
+        <link itemprop="mainEntityOfPage" href="${options.blog_url!}/archives/${post.postUrl}">
         <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            <meta itemprop="name" content="${user.userDisplayName?if_exists}">
-            <meta itemprop="description" content="${post.postSummary?if_exists}">
-            <meta itemprop="image" content="${user.userAvatar?if_exists}">
+            <meta itemprop="name" content="${user.userDisplayName!}">
+            <meta itemprop="description" content="${post.postSummary!}">
+            <meta itemprop="image" content="${user.userAvatar!}">
         </span>
         <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-            <meta itemprop="name" content="${options.blog_title?if_exists}">
+            <meta itemprop="name" content="${options.blog_title!}">
         </span>
         <header class="post-header">
-            <<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if> class="post-title" itemprop="name headline">
+            <<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if> class="post-title" itemprop="name headline">
                 <a class="post-title-link" href="/archives/${post.postUrl}" itemprop="url">${post.postTitle}</a>
-            </<#if options.next_other_seo?default('false')=='true'>h2<#else>h1</#if>>
+            </<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if>>
             <div class="post-meta">
                 <span class="post-time">
                     <span class="post-meta-item-icon">
@@ -52,7 +52,7 @@
                             <i class="fa fa-eye"></i>
                         </span>
                         <span class="post-meta-item-text">阅读次数 </span>
-                        <span class="leancloud-visitors-count">${post.postViews?default(0)?c}</span>
+                        <span class="leancloud-visitors-count">${(post.postViews!0)?c}</span>
                     </span>
                 </span>
             </div>
@@ -71,7 +71,7 @@
                 ${post.postContent}
             </#if>
         </div>
-        <#if options.next_general_wechat_subscriber_enable?default('false')=='true' && !is_index??>
+        <#if (options.next_general_wechat_subscriber_enable!'false')=='true' && !is_index??>
         <div>
             <#include "wechat-subscriber.ftl">
         </div>
@@ -81,7 +81,7 @@
             <#include "reward.ftl">
         </div>
         </#if>
-        <#if options.next_other_post_copyright?default('true')=='true' && !is_index??>
+        <#if (options.next_other_post_copyright!'true')=='true' && !is_index??>
         <div>
             <#include "post-copyright.ftl">
         </div>

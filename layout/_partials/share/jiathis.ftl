@@ -22,5 +22,5 @@
         hideMore: false
     }
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=${options.next_other_jiathis_uid?if_exists}" charset="utf-8"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=${options.next_other_jiathis_uid!}" charset="utf-8"></script>
 <!-- JiaThis Button END -->

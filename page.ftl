@@ -2,14 +2,14 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title=" ${post.postTitle} | ${options.blog_title?default('NexT')}" keywords="${options.seo_keywords?default('NexT')}" desc="${options.seo_desc?default('NexT')}" ogtype="article" url="${options.blog_url?if_exists}/p/${post.postUrl?if_exists}"></@html>
+<@html title=" ${post.postTitle} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="article" url="${options.blog_url!}/p/${post.postUrl!}"></@html>
 
 <@main useComment=true>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
         <@page_header post.postTitle></@page_header>
-        <div class="post-body<#if options.next_plugins_han?default('false')=='true'> han-init-context</#if>">
-            ${post.postContent?if_exists}
+        <div class="post-body<#if (options.next_plugins_han!'false')=='true'> han-init-context</#if>">
+            ${post.postContent!}
         </div>
     </div>
 </div>
