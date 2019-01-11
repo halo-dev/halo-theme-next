@@ -2,7 +2,7 @@
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title=" 分类: ${category.cateName!} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/categories/${category.cateUrl!}">
+<@html title="分类: ${category.cateName!} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/categories/${category.cateUrl!}">
 </@html>
 
 <@main useComment=false>

@@ -1,7 +1,7 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
-<@html title=" 标签 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/tags/"></@html>
+<@html title="标签 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/tags/"></@html>
 
 <@main useComment=false>
 <div id="posts" class="posts-expand">

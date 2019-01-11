@@ -2,7 +2,7 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title=" ${post.postTitle} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="article" url="${options.blog_url!}/p/${post.postUrl!}"></@html>
+<@html title="${post.postTitle} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="article" url="${options.blog_url!}/p/${post.postUrl!}"></@html>
 
 <@main useComment=true>
 <div id="posts" class="posts-expand">

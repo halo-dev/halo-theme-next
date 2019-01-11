@@ -653,54 +653,7 @@
                             <input type="hidden" name="next-version" value="5.1.4">
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="nextSearchSwiftype" class="col-sm-4 control-label">Swiftype：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextSearchSwiftype" name="next_search_swiftype" value="${options.next_search_swiftype!}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchAlgoliaSearchEnable" class="col-sm-4 control-label">algolia_search_enable：</label>
-                                    <div class="col-sm-8">
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="true" ${((options.next_search_algolia_search_enable!)=='true')?string('checked','')}> 开启
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" name="next_search_algolia_search_enable" id="nextSearchAlgoliaSearchEnable" value="false" ${((options.next_search_algolia_search_enable!'false')=='false')?string('checked','')}> 关闭
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchAlgoliaSearchHitsPerPage" class="col-sm-4 control-label">algolia_search_hits_per_page：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchHitsPerPage" name="next_search_algolia_search_hits_per_page" value="${options.next_search_algolia_search_hits_per_page!'10'}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchAlgoliaSearchLabelsInputPlaceholder" class="col-sm-4 control-label">algolia_search_labels_input_placeholder：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchLabelsInputPlaceholder" name="next_search_algolia_search_labels_input_placeholder" value="${options.next_search_algolia_search_labels_input_placeholder!'Search for Posts'}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchAlgoliaSearchLabelsHitsEmpty" class="col-sm-4 control-label">algolia_search_labels_hits_empty：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchLabelsHitsEmpty" name="next_search_algolia_search_labels_hits_empty" value="${options.next_search_algolia_search_labels_hits_empty!'We didn\'t find any results for the search: query'}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchAlgoliaSearchLabelsHitsStats" class="col-sm-4 control-label">algolia_search_labels_hits_stats：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextSearchAlgoliaSearchLabelsHitsStats" name="next_search_algolia_search_labels_hits_stats" value="${options.next_search_algolia_search_labels_hits_stats!'hits results found in time ms'}" >
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchLocalSearchEnable" class="col-sm-4 control-label">local_search_enable：</label>
+                                    <label for="nextSearchLocalSearchEnable" class="col-sm-4 control-label">菜单搜索按钮：</label>
                                     <div class="col-sm-8">
                                         <label class="radio-inline">
                                             <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="true" ${((options.next_search_local_search_enable!)=='true')?string('checked','')}> 开启
@@ -708,23 +661,6 @@
                                         <label class="radio-inline">
                                             <input type="radio" name="next_search_local_search_enable" id="nextSearchLocalSearchEnable" value="false" ${((options.next_search_local_search_enable!'false')=='false')?string('checked','')}> 关闭
                                         </label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchLocalSearchTrigger" class="col-sm-4 control-label">local_search_trigger：</label>
-                                    <div class="col-sm-8">
-                                        <select class="form-control" id="nextSearchLocalSearchTrigger" name="next_search_local_search_trigger">
-                                            <option value="auto" ${((options.next_search_local_search_trigger!'auto')=='auto')?string('selected','')}>auto</option>
-                                            <option value="manual" ${((options.next_search_local_search_trigger!)=='manual')?string('selected','')}>manual</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nextSearchLocalSearchTopNPerArticle" class="col-sm-4 control-label">local_search_top_n_per_article：</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="nextSearchLocalSearchTopNPerArticle" name="next_search_local_search_top_n_per_article" value="${options.next_search_local_search_top_n_per_article!'1'}" >
                                     </div>
                                 </div>
                             </div>

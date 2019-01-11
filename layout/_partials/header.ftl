@@ -46,13 +46,9 @@
         </li>
       </#list>
       </@commonTag>
-        <#if options.next_search_swiftype?? || (options.next_search_algolia_search_enable!'false')=='true' || (options.next_search_local_search_enable!'false')=='true'>
+        <#if (options.next_search_local_search_enable!'false')=='true'>
         <li class="menu-item menu-item-search">
-            <#if options.next_search_swiftype??>
-            <a href="javascript:;" class="st-search-show-outputs">
-            <#elseif (options.next_search_local_search_enable!'false')=='true' || (options.next_search_algolia_search_enable!'false')=='true'>
             <a href="javascript:;" class="popup-trigger">
-            </#if>
             <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             搜索
           </a>
@@ -60,7 +56,7 @@
         </#if>
     </ul>
 
-<#if options.next_search_swiftype?? || (options.next_search_algolia_search_enable!'false')=='true' || (options.next_search_local_search_enable!'false')=='true'>
+<#if (options.next_search_local_search_enable!'false')=='true'>
     <div class="site-search">
       <#include "search.ftl">
     </div>

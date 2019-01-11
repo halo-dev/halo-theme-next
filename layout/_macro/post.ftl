@@ -58,7 +58,7 @@
             </div>
         </header>
         <div class="post-body" itemprop="articleBody">
-            <#if is_index??>
+            <#if is_index?? || is_search??>
                 ${post.postSummary}
                 <!--noindex-->
                 <div class="post-button text-center">
@@ -71,24 +71,24 @@
                 ${post.postContent}
             </#if>
         </div>
-        <#if (options.next_general_wechat_subscriber_enable!'false')=='true' && !is_index??>
+        <#if (options.next_general_wechat_subscriber_enable!'false')=='true' && !is_index?? && !is_search??>
         <div>
             <#include "wechat-subscriber.ftl">
         </div>
         </#if>
-        <#if (options.next_other_alipay?? || options.next_other_wechatpay?? || options.next_other_bitcoin??) && !is_index??>
+        <#if (options.next_other_alipay?? || options.next_other_wechatpay?? || options.next_other_bitcoin??) && !is_index?? && !is_search??>
         <div>
             <#include "reward.ftl">
         </div>
         </#if>
-        <#if (options.next_other_post_copyright!'true')=='true' && !is_index??>
+        <#if (options.next_other_post_copyright!'true')=='true' && !is_index?? && !is_search??>
         <div>
             <#include "post-copyright.ftl">
         </div>
         </#if>
         <footer class="post-footer">
             <div class="post-tags">
-                <#if !is_index??>
+                <#if !is_index?? && !is_search??>
                     <#if post.tags?size gt 0>
                     <#list post.tags as tag>
                     <a href="/tags/${tag.tagUrl}" rel="tag"># ${tag.tagName}</a>
@@ -96,7 +96,7 @@
                     </#if>
                 </#if>
             </div>
-            <#if (afterPost?? || beforePost??) && !is_index??>
+            <#if (afterPost?? || beforePost??) && !is_index?? && !is_search??>
             <div class="post-nav">
 
                 <div class="post-nav-next post-nav-item">
@@ -118,7 +118,7 @@
                 </div>
             </div>
             </#if>
-            <#if is_index??>
+            <#if is_index?? || is_search??>
             <div class="post-eof"></div>
             </#if>
         </footer>
