@@ -16,21 +16,21 @@
                 <#if tags?? && tags?size gt 0>
                     <#list tags as tag>
                         <#if (tag.posts?size gt 0 && tag.posts?size lt 3) || tag.posts?size == 0>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 12px; color: #ccc">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 12px; color: #ccc">${tag.tagName}</a>
                         <#elseif tag.posts?size gt 3 && tag.posts?size lt 6>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 13.5px; color: #bcbcbc">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 13.5px; color: #bcbcbc">${tag.tagName}</a>
                         <#elseif tag.posts?size gt 6 && tag.posts?size lt 9>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 18px; color: #8e8e8e">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 18px; color: #8e8e8e">${tag.tagName}</a>
                         <#elseif tag.posts?size gt 9 && tag.posts?size lt 12>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 19.5px; color: #7e7e7e">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 19.5px; color: #7e7e7e">${tag.tagName}</a>
                         <#elseif tag.posts?size gt 12 && tag.posts?size lt 15>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 22.5px; color: #5f5f5f">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 22.5px; color: #5f5f5f">${tag.tagName}</a>
                         <#elseif tag.posts?size gt 15 && tag.posts?size lt 18>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 24px; color: #4f4f4f">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 24px; color: #4f4f4f">${tag.tagName}</a>
                         <#elseif tag.posts?size gt 18 && tag.posts?size lt 21>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 25.5px; color: #404040">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 25.5px; color: #404040">${tag.tagName}</a>
                         <#else>
-                            <a href="/tags/${tag.tagUrl}/" style="font-size: 30px; color: #111">${tag.tagName}</a>
+                            <a href="${options.blog_url!}/tags/${tag.tagUrl}/" style="font-size: 30px; color: #111">${tag.tagName}</a>
                         </#if>
                     </#list>
                 </#if>

@@ -16,11 +16,11 @@
     <nav class="pagination">
         <#if posts.hasPrevious()>
             <#if posts.number == 1>
-                <a class="extend prev" rel="prev" href="/">
+                <a class="extend prev" rel="prev" href="${options.blog_url!}/">
                     <i class="fa fa-angle-left" aria-label="Previous page"></i>
                 </a>
             <#else>
-                <a class="extend prev" rel="prev" href="/page/${posts.number}">
+                <a class="extend prev" rel="prev" href="${options.blog_url!}/page/${posts.number}">
                     <i class="fa fa-angle-left" aria-label="Previous page"></i>
                 </a>
             </#if>
@@ -29,11 +29,11 @@
             <#if r == posts.number+1>
                 <span class="page-number current">${posts.number+1}</span>
             <#else>
-                <a class="page-number" href="/page/${r}">${r}</a>
+                <a class="page-number" href="${options.blog_url!}/page/${r}">${r}</a>
             </#if>
         </#list>
         <#if posts.hasNext()>
-            <a class="extend next" rel="next" href="/page/${posts.number+2}/">
+            <a class="extend next" rel="next" href="${options.blog_url!}/page/${posts.number+2}/">
                 <i class="fa fa-angle-right" aria-label="Next page"></i>
             </a>
         </#if>

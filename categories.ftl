@@ -22,7 +22,7 @@
                         <#if categories?? && categories?size gt 0>
                             <#list categories as cate>
                                 <li class="category-list-item">
-                                    <a class="category-list-link" href="/categories/${cate.cateUrl}/">${cate.cateName}</a>
+                                    <a class="category-list-link" href="${options.blog_url!}/categories/${cate.cateUrl}/">${cate.cateName}</a>
                                     <span class="category-list-count">${cate.posts?size}</span>
                                 </li>
                             </#list>

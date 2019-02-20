@@ -12,7 +12,7 @@
         </span>
         <header class="post-header">
             <<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if> class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="/archives/${post.postUrl}" itemprop="url">${post.postTitle}</a>
+                <a class="post-title-link" href="${options.blog_url!}/archives/${post.postUrl}" itemprop="url">${post.postTitle}</a>
             </<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if>>
             <div class="post-meta">
                 <span class="post-time">
@@ -32,7 +32,7 @@
                     <span class="post-meta-item-text">分类于</span>
                     <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                         <#if post.categories?? && post.categories?size gt 0>
-                            <a href="/categories/${post.categories[0].cateUrl}/" itemprop="url" rel="index">
+                            <a href="${options.blog_url!}/categories/${post.categories[0].cateUrl}/" itemprop="url" rel="index">
                                 <span itemprop="name">${post.categories[0].cateName}</span>
                             </a>
                         </#if>
@@ -43,10 +43,10 @@
                     <span class="post-meta-item-icon">
                         <i class="fa fa-comment-o"></i>
                     </span>
-                    <a href="/archives/${post.postUrl}#comments" itemprop="discussionUrl">
-                        <span class="valine-comment-count" data-xid="/archives/${post.postUrl}/" itemprop="commentsCount">${post.comments?size}</span>
+                    <a href="${options.blog_url!}/archives/${post.postUrl}#comments" itemprop="discussionUrl">
+                        <span class="valine-comment-count" data-xid="${options.blog_url!}/archives/${post.postUrl}/" itemprop="commentsCount">${post.comments?size}</span>
                     </a>
-                    <span id="/archives/${post.postUrl}/" class="leancloud_visitors" data-flag-title="${post.postTitle}">
+                    <span id="${options.blog_url!}/archives/${post.postUrl}/" class="leancloud_visitors" data-flag-title="${post.postTitle}">
                         <span class="post-meta-divider">|</span>
                         <span class="post-meta-item-icon">
                             <i class="fa fa-eye"></i>
@@ -62,7 +62,7 @@
                 ${post.postSummary}
                 <!--noindex-->
                 <div class="post-button text-center">
-                    <a class="btn" href="/archives/${post.postUrl}/" rel="contents">
+                    <a class="btn" href="${options.blog_url!}/archives/${post.postUrl}/" rel="contents">
                         阅读全文 »
                     </a>
                 </div>
@@ -91,7 +91,7 @@
                 <#if !is_index?? && !is_search??>
                     <#if post.tags?size gt 0>
                     <#list post.tags as tag>
-                    <a href="/tags/${tag.tagUrl}" rel="tag"># ${tag.tagName}</a>
+                    <a href="${options.blog_url!}/tags/${tag.tagUrl}" rel="tag"># ${tag.tagName}</a>
                     </#list>
                     </#if>
                 </#if>
@@ -101,7 +101,7 @@
 
                 <div class="post-nav-next post-nav-item">
                     <#if beforePost??>
-                    <a href="/archives/${beforePost.postUrl}" rel="next" title="${beforePost.postTitle}">
+                    <a href="${options.blog_url!}/archives/${beforePost.postUrl}" rel="next" title="${beforePost.postTitle}">
                         <i class="fa fa-chevron-left"></i> ${beforePost.postTitle}
                     </a>
                     </#if>
@@ -111,7 +111,7 @@
 
                 <div class="post-nav-prev post-nav-item">
                     <#if afterPost??>
-                    <a href="/archives/${afterPost.postUrl}" rel="prev" title="${afterPost.postTitle}">
+                    <a href="${options.blog_url!}/archives/${afterPost.postUrl}" rel="prev" title="${afterPost.postTitle}">
                         ${afterPost.postTitle} <i class="fa fa-chevron-right"></i>
                     </a>
                     </#if>

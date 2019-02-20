@@ -4,7 +4,7 @@
         <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
             <header class="post-header">
             <<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if> class="post-title">
-                <a class="post-title-link" href="/archives/${post.postUrl}" itemprop="url">
+                <a class="post-title-link" href="${options.blog_url!}/archives/${post.postUrl}" itemprop="url">
                     <span itemprop="name">${post.postTitle}</span>
                 </a>
             </<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if>>

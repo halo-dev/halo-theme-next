@@ -41,21 +41,21 @@
 
                     <nav class="site-state motion-element">
                         <div class="site-state-item site-state-posts">
-                            <a href="/archives/">
+                            <a href="${options.blog_url!}/archives/">
                             <span class="site-state-item-count"><@articleTag method="postsCount">${postsCount!0}</@articleTag></span>
                             <span class="site-state-item-name">日志</span>
                             </a>
                         </div>
 
                         <div class="site-state-item site-state-categories">
-                            <a href="/categories/">
+                            <a href="${options.blog_url!}/categories/">
                             <span class="site-state-item-count"><@commonTag method="categories">${categories?size}</@commonTag></span>
                             <span class="site-state-item-name">分类</span>
                             </a>
                         </div>
 
                         <div class="site-state-item site-state-tags">
-                            <a href="/tags/">
+                            <a href="${options.blog_url!}/tags/">
                             <span class="site-state-item-count"><@commonTag method="tags">${tags?size}</@commonTag></span>
                             <span class="site-state-item-name">标签</span>
                             </a>
@@ -65,7 +65,7 @@
 
                   <#if (options.next_style_rss!'true') == 'true'>
                   <div class="feed-link motion-element">
-                      <a href="/feed.xml" rel="alternate">
+                      <a href="${options.blog_url!}/feed.xml" rel="alternate">
                           <i class="fa fa-rss"></i>
                           RSS
                       </a>

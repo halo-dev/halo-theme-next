@@ -64,7 +64,7 @@
 
 <meta name="keywords" content="${keywords!}" />
 
-<link rel="alternate" href="/feed.xml" title="${options.blog_title!'Next'}" type="application/atom+xml" />
+<link rel="alternate" href="${options.blog_url!}/feed.xml" title="${options.blog_title!'Next'}" type="application/atom+xml" />
 
 <meta name="description" content="${desc!}">
 <meta property="og:type" content="${ogtype!}">
