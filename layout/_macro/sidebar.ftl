@@ -89,7 +89,7 @@
                           <#if options.next_social_email??>
                             <span class="links-of-author-item">
                                 <a href="${options.next_social_email}" target="_blank" title="E-mail">
-                                <#if options.next_social_icon_enable!'true'=='true'>
+                                <#if (options.next_social_icon_enable!'true')=='true'>
                                     <i class="fa fa-fw fa-${options.next_social_email_icon!'globe'}"></i>
                                 </#if>
                                 <#if (options.next_social_icon_only!'false')=='false'>
