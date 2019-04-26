@@ -1,6 +1,6 @@
 <div class="site-brand-wrapper">
   <div class="site-meta <#if (options.next_style_custom_logo_enable!'false')=='true'>custom-logo</#if>">
-    <#if (options.next_style_custom_logo_enable!'false')=='true' && (options.next_general_scheme!'Muse')=='Muse'>
+    <#if (options.next_style_custom_logo_enable!'false')=='true' && (settings.scheme!'Muse')=='Muse'>
       <div class="site-meta-headline">
         <a>
           <img class="custom-logo-image" src="${options.next_style_custom_logo_image!}"
@@ -16,7 +16,7 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      <#if (options.next_other_seo!'false')=='true'>
+      <#if settings.seo!false>
         <h1 class="site-subtitle" itemprop="description">${options.next_general_subtitle!}</h1>
       <#else>
         <p class="site-subtitle">${options.next_general_subtitle!}</p>

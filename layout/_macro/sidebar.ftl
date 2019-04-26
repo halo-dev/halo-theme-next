@@ -8,12 +8,12 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-      <#if (options.next_style_sidebar_onmobile!'false')=='true'>
+      <#if settings.sidebar_onmobile!false>
       <div id="sidebar-dimmer"></div>
       </#if>
       <div class="sidebar-inner">
 
-          <#if is_post && (options.next_style_toc_enable!'true')=='true'>
+          <#if is_post && settings.toc_enable!true>
           <ul class="sidebar-nav motion-element">
               <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
                   文章目录
@@ -24,16 +24,16 @@
           </ul>
           </#if>
 
-          <section class="site-overview-wrap sidebar-panel <#if !is_post || (options.next_style_toc_enable!'true')=='false'>sidebar-panel-active</#if>">
+          <section class="site-overview-wrap sidebar-panel <#if !is_post || !settings.toc_enable!true>sidebar-panel-active</#if>">
               <div class="site-overview">
                   <div class="site-author motion-element" itemprop="author" itemscope
                        itemtype="http://schema.org/Person">
-                      <#if user.userAvatar??>
+                      <#if user.avatar??>
                       <img class="site-author-image" itemprop="image"
-                           src="${user.userAvatar!'/${themeName}/source/images/avatar.gif'}"
-                           alt="${user.userDisplayName!}"/>
+                           src="${user.avatar!'/${themeName}/source/images/avatar.gif'}"
+                           alt="${user.nickName!}"/>
                       </#if>
-                      <p class="site-author-name" itemprop="name">${user.userDisplayName!}</p>
+                      <p class="site-author-name" itemprop="name">${user.nickName!}</p>
                       <p class="site-description motion-element" itemprop="description">
                           ${user.userDesc!}
                       </p>
@@ -63,7 +63,7 @@
 
                     </nav>
 
-                  <#if (options.next_style_rss!'true') == 'true'>
+                  <#if settings.rss!true>
                   <div class="feed-link motion-element">
                       <a href="${options.blog_url!}/feed.xml" rel="alternate">
                           <i class="fa fa-rss"></i>
@@ -72,124 +72,88 @@
                   </div>
                   </#if>
 
-                  <#if (options.next_social_enable!'false')=='true'>
+                  <#if settings.social_enable!false>
                       <div class="links-of-author motion-element">
-                          <#if options.next_social_github??>
+                          <#if settings.social_github??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_github!}" target="_blank" title="Github">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_github_icon!'globe'}"></i>
+                                <a href="${settings.next_social_github!}" target="_blank" title="Github">
+                                <#if (settings.next_social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.next_social_github_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     Github
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if options.next_social_email??>
+                          <#if settings.next_social_email??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_email!}" target="_blank" title="E-mail">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_email_icon!'globe'}"></i>
+                                <a href="${settings.social_email!}" target="_blank" title="E-mail">
+                                <#if (settings.social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.social_email_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     E-mail
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if options.next_social_google??>
+                          <#if settings.social_google??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_google}" target="_blank" title="Google Plus">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_google_icon!'globe'}"></i>
+                                <a href="${settings.social_google}" target="_blank" title="Google Plus">
+                                <#if (settings.social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.social_google_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     Google+
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if options.next_social_twitter??>
+                          <#if settings.social_twitter??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_twitter}" target="_blank" title="Twitter">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_twitter_icon!'globe'}"></i>
+                                <a href="${settings.social_twitter}" target="_blank" title="Twitter">
+                                <#if (settings.social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.social_twitter_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     Twitter
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if options.next_social_fb_pager??>
+                          <#if settings.social_fb_pager??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_fb_pager}" target="_blank" title="Facebook Page">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_fb_pager_icon!'globe'}"></i>
+                                <a href="${settings.social_fb_pager}" target="_blank" title="Facebook Page">
+                                <#if (settings.social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.social_fb_pager_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     Facebook
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if options.next_social_vk_group??>
+                          <#if settings.social_stack_over_flow??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_vk_group}" target="_blank" title="VK Group">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_vk_group_icon!'globe'}"></i>
+                                <a href="${settings.social_stack_over_flow}" target="_blank" title="StackOverflow">
+                                <#if (settings.social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.social_stack_over_flow_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
-                                    VK Group
-                                </#if>
-                                </a>
-                            </span>
-                          </#if>
-                          <#if options.next_social_stack_over_flow??>
-                            <span class="links-of-author-item">
-                                <a href="${options.next_social_stack_over_flow}" target="_blank" title="StackOverflow">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_stack_over_flow_icon!'globe'}"></i>
-                                </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     StackOverflow
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if options.next_social_you_tube??>
+                          <#if settings.social_instagram??>
                             <span class="links-of-author-item">
-                                <a href="${options.next_social_you_tube}" target="_blank" title="YouTube">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_you_tube_icon!'globe'}"></i>
+                                <a href="${settings.social_instagram}" target="_blank" title="Instagram">
+                                <#if (settings.social_icon_enable!'true')=='true'>
+                                    <i class="fa fa-fw fa-${settings.social_instagram_icon!'globe'}"></i>
                                 </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
-                                    YouTube
-                                </#if>
-                                </a>
-                            </span>
-                          </#if>
-                          <#if options.next_social_instagram??>
-                            <span class="links-of-author-item">
-                                <a href="${options.next_social_instagram}" target="_blank" title="Instagram">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_instagram_icon!'globe'}"></i>
-                                </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
+                                <#if !settings.next_social_icon_only!false>
                                     Instagram
-                                </#if>
-                                </a>
-                            </span>
-                          </#if>
-                          <#if options.next_social_skype??>
-                            <span class="links-of-author-item">
-                                <a href="${options.next_social_skype}" target="_blank" title="Skype">
-                                <#if (options.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${options.next_social_skype_icon!'globe'}"></i>
-                                </#if>
-                                <#if (options.next_social_icon_only!'false')=='false'>
-                                    Skype
                                 </#if>
                                 </a>
                             </span>
@@ -198,18 +162,18 @@
                   </#if>
 
                   <div class="cc-license motion-element" itemprop="license">
-                      <a href="https://creativecommons.org/<#if (options.next_general_creative_commons!'by-nc-sa')=='zero'>publicdomain/zero/1.0<#else>licenses/${options.next_general_creative_commons!'by-nc-sa'}/4.0</#if>/"
+                      <a href="https://creativecommons.org/<#if (settings.creative_commons!'by-nc-sa')=='zero'>publicdomain/zero/1.0<#else>licenses/${settings.creative_commons!'by-nc-sa'}/4.0</#if>/"
                          class="cc-opacity" target="_blank">
-                          <img src="/${themeName}/source/images/cc-${options.next_general_creative_commons!'by-nc-sa'}.svg"
+                          <img src="/${themeName}/source/images/cc-${settings.creative_commons!'by-nc-sa'}.svg"
                                alt="Creative Commons"/>
                       </a>
                   </div>
                   <@commonTag method="links">
                       <#if links?? && links?size gt 0>
-                          <div class="links-of-blogroll motion-element links-of-blogroll-${options.next_general_links_layout!'inline'}">
+                          <div class="links-of-blogroll motion-element links-of-blogroll-${settings.links_layout!'inline'}">
                               <div class="links-of-blogroll-title">
-                                  <i class="fa  fa-fw fa-${options.next_general_links_icon!'link'}"></i>
-                                  ${options.next_general_links_title!'Links'}
+                                  <i class="fa  fa-fw fa-${settings.links_icon!'link'}"></i>
+                                  ${settings.links_title!'Links'}
                               </div>
                               <ul class="links-of-blogroll-list">
                                   <#list links as link>
@@ -235,10 +199,10 @@
       </section>
       <!--/noindex-->
 
-      <#if (options.next_style_sidebar_b2t!'false')=='true'>
+      <#if (settings.sidebar_b2t!'false')=='true'>
       <div class="back-to-top" style="width: initial">
           <i class="fa fa-arrow-up"></i>
-          <#if (options.next_style_sidebar_scrollpercent!'false')=='true'>
+          <#if (settings.sidebar_scrollpercent!'false')=='true'>
           <span id="scrollpercent"><span>0</span>%</span>
           </#if>
       </div>

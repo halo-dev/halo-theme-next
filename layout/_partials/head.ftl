@@ -29,7 +29,7 @@
 
 <link href="/${themeName}/source/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<#switch '${options.next_general_scheme!"Muse"}'>
+<#switch '${settings.scheme!"Muse"}'>
 <#case 'Muse'>
 <link href="/${themeName}/source/css/Muse/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
@@ -81,9 +81,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: '${options.next_general_scheme!"Muse"}',
+    scheme: '${settings.scheme!"Muse"}',
     version: '5.1.4',
-    sidebar: {"position":"${options.next_style_sidebar_position!'left'}","display":"${options.next_style_sidebar_display!'post'}","offset":${options.next_general_footer_offset!'12'},"offset_float":0,"b2t":${options.next_style_sidebar_b2t!'false'},"scrollpercent":${options.next_style_sidebar_scrollpercent!'false'},"onmobile":${options.next_style_sidebar_onmobile!'false'}},
+    sidebar: {"position":"${settings.sidebar_position!'left'}","display":"${options.next_style_sidebar_display!'post'}","offset":${options.next_general_footer_offset!'12'},"offset_float":0,"b2t":${options.next_style_sidebar_b2t!'false'},"scrollpercent":${options.next_style_sidebar_scrollpercent!'false'},"onmobile":${options.next_style_sidebar_onmobile!'false'}},
     fancybox: ${options.next_plugins_fancybox!'true'},
     tabs: true,
     motion: {"enable":${options.next_other_motion_enable!'true'},"async":${options.next_other_motion_async!'false'},"transition":{"post_block":"${options.next_other_motion_transition_post_block!'fadeIn'}","post_header":"${options.next_other_motion_transition_post_header!'slideDownIn'}","post_body":"${options.next_other_motion_transition_post_body!'slideDownIn'}","coll_header":"${options.next_other_motion_transition_coll_header!'slideLeftIn'}","sidebar":"${options.next_other_motion_transition_sidebar!'slideUpIn'}"}},

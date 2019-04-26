@@ -9,7 +9,7 @@
     <#if options.next_general_footer_copyright??>
         ${options.next_general_footer_copyright}
     <#else>
-    ${user.userDisplayName!}
+    ${user.nickName!}
     </#if>
     </span>
 </div>
@@ -28,7 +28,7 @@
   <div class="theme-info">
       主题 -
       <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">
-          NexT.${options.next_general_scheme!'Muse'}
+          NexT.${settings.scheme!'Muse'}
       </a><#if (options.next_general_footer_theme_version!'true')=='true'>
       v5.1.4</#if>
   </div>

@@ -2,7 +2,7 @@
 <#include "layout/_macro/post.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title="${options.blog_title!'NexT'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}"></@html>
+<@html title="${options.blog_title!'NexT'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${options.blog_url!}"></@html>
 
 <@main useComment=false>
     <section id="posts" class="posts-expand">

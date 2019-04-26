@@ -2,13 +2,13 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title="分类 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/categories"></@html>
+<@html title="分类 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${options.blog_url!}/categories"></@html>
 
 <@main useComment=false>
 <div id="posts" class="posts-expand">
     <div class="post-block page">
         <@page_header "分类"></@page_header>
-        <div class="post-body<#if (options.next_plugins_han!'false')=='true'> han-init-context</#if>">
+        <div class="post-body<#if settings.han!false> han-init-context</#if>">
             <div class="category-all-page">
                 <div class="category-all-title">
                     <#if categories?? && categories?size gt 0>
@@ -22,7 +22,7 @@
                         <#if categories?? && categories?size gt 0>
                             <#list categories as cate>
                                 <li class="category-list-item">
-                                    <a class="category-list-link" href="${options.blog_url!}/categories/${cate.cateUrl}/">${cate.cateName}</a>
+                                    <a class="category-list-link" href="${options.blog_url!}/categories/${cate.slugName}/">${cate.name}</a>
                                     <span class="category-list-count">${cate.posts?size}</span>
                                 </li>
                             </#list>

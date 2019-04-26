@@ -32,7 +32,7 @@
 <script type="text/javascript" src="/${themeName}/source/lib/three/canvas_sphere.min.js"></script>
 </#if>
 
-<#if (options.next_other_canvas_ribbon_enable!'false')=='true' && (options.next_general_scheme!'Muse')=='Pisces'>
+<#if (options.next_other_canvas_ribbon_enable!'false')=='true' && (settings.scheme!'Muse')=='Pisces'>
 <script id="ribbon" type="text/javascript" size="${options.next_other_canvas_ribbon_size!'300'}" alpha="${options.next_other_canvas_ribbon_alpha!'0.6'}"  zIndex="${options.next_other_canvas_ribbon_zindex!'-1'}" src="/${themeName}/source/lib/canvas-ribbon/canvas-ribbon.js"></script>
 </#if>
 

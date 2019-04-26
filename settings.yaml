@@ -1,0 +1,670 @@
+general:
+  label: 基本设置
+  items:
+    scheme:
+      name: scheme
+      label: 主题
+      type: select
+      default: Muse
+      options:
+        - value: Muse
+          label: Muse
+        - value: Mist
+          label: Mist
+        - value: Pisces
+          label: Pisces
+        - value: Gemini
+          label: Gemini
+    favicon_small:
+      name: favicon_small
+      label: Favicon（小）
+      type: text
+    favicon_medium:
+      name: favicon_medium
+      label: Favicon（中）
+      type: text
+    apple_touch_icon:
+      name: apple_touch_icon
+      label: iOS 快捷键图标
+      type: text
+    safari_pinned_tab:
+      name: safari_pinned_tab
+      label: Safari 图标
+      type: text
+    android_chrome_color:
+      name: android_chrome_color
+      label: Chrome 顶部颜色
+      type: text
+    subtitle:
+      name: subtitle
+      label: 网站副标题
+      type: text
+    footer_icon:
+      name: footer_icon
+      label: 页脚图标
+      type: text
+      default: 'user'
+    footer_since:
+      name: footer_since
+      label: 页脚网站创建年份
+      type: text
+    footer_copyright:
+      name: footer_copyright
+      label: 页脚版权
+      type: text
+    footer_powered:
+      name: footer_powered
+      label: 是否显示网站程序名称
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    footer_theme_enable:
+      name: footer_theme_enable
+      label: 是否显示主题名称
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    footer_theme_version:
+      name: footer_theme_version
+      label: 是否显示主题版本
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    wechat_subscriber_enable:
+      name: wechat_subscriber_enable
+      label: 文章底部微信二维码显示
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    wechat_subscriber_qcode:
+      name: wechat_subscriber_qcode
+      label: 文章底部微信二维码
+      type: text
+    wechat_subscriber_description:
+      name: wechat_subscriber_description
+      label: 文章底部微信二维码描述
+      type: text
+    creative_commons:
+      name: creative_commons
+      label: 文章版权图标
+      type: text
+      default: 'by-nc-sa'
+    links_icon:
+      name: links_icon
+      label: 友情链接图标
+      type: text
+      default: 'link'
+    links_title:
+      name: links_title
+      label: 友情链接标题
+      type: text
+      default: 'Links'
+    links_layout:
+      name: links_layout
+      label: 友情链接样式
+      type: radio
+      default: inline
+      options:
+        - value: block
+          label: block
+        - value: inline
+          label: inline
+style:
+  label: 样式设置
+  items:
+    local_search_enable:
+      name: local_search_enable
+      label: 菜单搜索按钮
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_position:
+      name: sidebar_position
+      label: 侧栏位置
+      type: radio
+      default: left
+      options:
+        - value: left
+          label: 左侧
+        - value: right
+          label: 右侧
+    sidebar_display:
+      name: sidebar_display
+      label: 侧栏显示时机
+      type: select
+      default: left
+      options:
+        - value: post
+          label: 文章页面
+        - value: always
+          label: 所有页面
+        - value: hide
+          label: 所有页面中都隐藏
+        - value: remove
+          label: 完全移除
+    footer_offset:
+      name: footer_offset
+      label: 侧栏偏移量
+      type: text
+    sidebar_b2t:
+      name: sidebar_b2t
+      label: 侧栏返回顶部按钮（仅Pisces | Gemini）
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_scrollpercent:
+      name: sidebar_scrollpercent
+      label: 页面内容下拉百分比
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    sidebar_onmobile:
+      name: sidebar_onmobile
+      label: Sidebar-onmobile（仅Muse | Mist）
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    custom_logo_enable:
+      name: custom_logo_enable
+      label: Logo显示
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    custom_logo_image:
+      name: custom_logo_image
+      label: Logo地址
+      type: text
+    toc_enable:
+      name: toc_enable
+      label: 文章TOC显示
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    rss:
+      name: rss
+      label: 侧边栏显示RSS按钮
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    highlight:
+      name: highlight
+      label: 文章代码高亮主题
+      type: select
+      default: Default
+      options:
+        - value: Default
+          label: Default
+        - value: Coy
+          label: Coy
+        - value: Dark
+          label: Dark
+        - value: Okaidia
+          label: Okaidia
+        - value: Solarized Light
+          label: Solarized Light
+        - value: Tomorrow Night
+          label: Tomorrow Night
+        - value: Twilight
+          label: Twilight
+plugins:
+  label: 插件设置
+  items:
+    pace:
+      name: pace
+      label: 加载进度条
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    pace_theme:
+      name: pace_theme
+      label: 加载进度条主题
+      type: select
+      default: pace-theme-minimal
+      options:
+        - value: pace-theme-big-counter
+          label: pace-theme-big-counter
+        - value: pace-theme-bounce
+          label: pace-theme-bounce
+        - value: pace-theme-barber-shop
+          label: pace-theme-barber-shop
+        - value: pace-theme-center-atom
+          label: pace-theme-center-atom
+        - value: pace-theme-center-circle
+          label: pace-theme-center-circle
+        - value: pace-theme-center-radar
+          label: pace-theme-center-radar
+        - value: pace-theme-center-simple
+          label: pace-theme-center-simple
+        - value: pace-theme-corner-indicator
+          label: pace-theme-corner-indicator
+        - value: pace-theme-fill-left
+          label: pace-theme-fill-left
+        - value: pace-theme-flash
+          label: pace-theme-flash
+        - value: pace-theme-loading-bar
+          label: pace-theme-loading-bar
+        - value: pace-theme-mac-osx
+          label: pace-theme-mac-osx
+        - value: pace-theme-minimal
+          label: pace-theme-minimal
+    han:
+      name: han
+      label: 汉字标准格式字体
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    fancybox:
+      name: fancybox
+      label: Fancybox
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    exturl:
+      name: exturl
+      label: exturl
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    save_scroll:
+      name: save_scroll
+      label: save_scroll
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+sns:
+  label: 插件设置
+  items:
+    social_enable:
+      name: social_enable
+      label: 侧边栏社交显示
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    social_icon_enable:
+      name: social_icon_enable
+      label: 侧边栏社交图标显示
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    social_icon_only:
+      name: social_icon_only
+      label: 侧边栏社交只显示图标
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    social_icon_transition:
+      name: social_icon_transition
+      label: 侧边栏社交过渡
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    social_github:
+      name: social_github
+      label: Github地址
+      type: text
+    social_github_icon:
+      name: social_github_icon
+      label: Github图标
+      type: text
+      default: 'github'
+    social_email:
+      name: social_email
+      label: E-Mail地址
+      type: text
+    social_email_icon:
+      name: social_email_icon
+      label: E-Mail图标
+      type: text
+      default: 'envelope'
+    social_google:
+      name: social_google
+      label: Google Plus地址
+      type: text
+    social_google_icon:
+      name: social_google_icon
+      label: Google Plus图标
+      type: text
+      default: 'google'
+    social_twitter:
+      name: social_twitter
+      label: Twitter地址
+      type: text
+    social_twitter_icon:
+      name: social_twitter_icon
+      label: Twitter图标
+      type: text
+      default: 'twitter'
+    social_fb_pager:
+      name: social_fb_pager
+      label: FB Page地址
+      type: text
+    social_fb_pager_icon:
+      name: social_fb_pager_icon
+      label: FB Page图标
+      type: text
+      default: 'facebook'
+    social_stack_over_flow:
+      name: social_stack_over_flow
+      label: StackOverflow地址
+      type: text
+    social_stack_over_flow_icon:
+      name: social_stack_over_flow_icon
+      label: StackOverflow图标
+      type: text
+      default: 'stack-overflow'
+    social_instagram:
+      name: social_instagram
+      label: Instagram地址
+      type: text
+    social_instagram_icon:
+      name: social_instagram_icon
+      label: Instagram图标
+      type: text
+      default: 'instagram'
+
+other:
+  label: 其他设置
+  items:
+    baidu_push:
+      name: baidu_push
+      label: 百度自动提交
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    post_copyright:
+      name: post_copyright
+      label: 文章版权信息显示
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    post_copyright_license:
+      name: post_copyright_license
+      label: 文章版权信息
+      type: text
+      default: 'CC BY-NC-SA 3.0'
+    post_copyright_license_url:
+      name: post_copyright_license_url
+      label: 文章版权链接
+      type: text
+      default: 'https://creativecommons.org/licenses/by-nc-sa/3.0/'
+    canvas_ribbon_enable:
+      name: canvas_ribbon_enable
+      label: Ribbon 特效
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    canvas_ribbon_size:
+      name: canvas_ribbon_size
+      label: Canvas ribbon大小
+      type: text
+      default: '300'
+    canvas_ribbon_alpha:
+      name: canvas_ribbon_alpha
+      label: Canvas ribbon alpha
+      type: text
+      default: '0.6'
+    canvas_ribbon_zindex:
+      name: canvas_ribbon_zindex
+      label: Canvas ribbon zindex
+      type: text
+      default: '-1'
+    canvas_nest:
+      name: canvas_nest
+      label: Canvas nest特效
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    three_waves:
+      name: three_waves
+      label: Three waves特效
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    canvas_lines:
+      name: canvas_lines
+      label: Canvas lines
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    canvas_sphere:
+      name: canvas_sphere
+      label: Canvas sphere
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    motion_enable:
+      name: motion_enable
+      label: Motion enable
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    motion_async:
+      name: motion_async
+      label: Motion async
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    motion_transition_post_block:
+      name: motion_transition_post_block
+      label: Motion transition post block
+      type: text
+      default: 'fadeIn'
+    motion_transition_post_header:
+      name: motion_transition_post_header
+      label: Motion transition post header
+      type: text
+      default: 'slideDownIn'
+    motion_transition_post_body:
+      name: motion_transition_post_body
+      label: Motion transition post body
+      type: text
+      default: 'slideDownIn'
+    motion_transition_sidebar:
+      name: motion_transition_sidebar
+      label: Motion transition sidebar
+      type: text
+      default: 'slideUpIn'
+    canonical:
+      name: canonical
+      label: Canonical
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    seo:
+      name: seo
+      label: Seo
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+    reward_comment:
+      name: reward_comment
+      label: 捐赠提示
+      type: text
+      default: 'Donate comment here'
+    wechatpay:
+      name: wechatpay
+      label: 微信支付二维码
+      type: text
+    other_alipay:
+      name: other_alipay
+      label: 支付宝二维码
+      type: text
+    bitcoin:
+      name: bitcoin
+      label: 比特币二维码
+      type: text
+    baidu_share_type:
+      name: baidu_share_type
+      label: 百度分享类型
+      type: select
+      default: ''
+      options:
+        - value: button
+          label: 按钮
+        - value: slide
+          label: 按钮
+        - value: ''
+          label: 禁用
+    jiathis_uid:
+      name: jiathis_uid
+      label: Jiathis uid
+      type: text
+    add_this_id:
+      name: add_this_id
+      label: Addthis uid
+      type: text

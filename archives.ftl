@@ -1,7 +1,7 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
-<@html title="归档 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_desc!'Next'}" ogtype="website" url="${options.blog_url!}/archives">page-archive</@html>
+<@html title="归档 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${options.blog_url!}/archives">page-archive</@html>
 
 <@main useComment=false>
   <div class="post-block archive">
@@ -27,7 +27,7 @@
       <@articleTag method="archivesLess">
           <#list archivesLess as archive>
               <div class="collection-title">
-                  <<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if> class="archive-year" id="archive-year-${archive.year}">${archive.year}</<#if (options.next_other_seo!'false')=='true'>h2<#else>h1</#if>>
+                  <<#if settings.seo!false>h2<#else>h1</#if> class="archive-year" id="archive-year-${archive.year}">${archive.year}</<#if settings.seo!false>h2<#else>h1</#if>>
               </div>
               <@post_collapase archive.posts></@post_collapase>
           </#list>
