@@ -30,7 +30,7 @@
                        itemtype="http://schema.org/Person">
                       <#if user.avatar??>
                       <img class="site-author-image" itemprop="image"
-                           src="${user.avatar!'/${themeName}/source/images/avatar.gif'}"
+                           src="${user.avatar!'/${theme.folderName}/source/images/avatar.gif'}"
                            alt="${user.nickName!}"/>
                       </#if>
                       <p class="site-author-name" itemprop="name">${user.nickName!}</p>
@@ -42,21 +42,21 @@
                     <nav class="site-state motion-element">
                         <div class="site-state-item site-state-posts">
                             <a href="${options.blog_url!}/archives/">
-                            <span class="site-state-item-count"><@articleTag method="postsCount">${postsCount!0}</@articleTag></span>
+                            <span class="site-state-item-count"><@postTag method="count">${count!0}</@postTag></span>
                             <span class="site-state-item-name">日志</span>
                             </a>
                         </div>
 
                         <div class="site-state-item site-state-categories">
                             <a href="${options.blog_url!}/categories/">
-                            <span class="site-state-item-count"><@commonTag method="categories">${categories?size}</@commonTag></span>
+                            <span class="site-state-item-count"><@categoryTag method="count">${count!0}</@categoryTag></span>
                             <span class="site-state-item-name">分类</span>
                             </a>
                         </div>
 
                         <div class="site-state-item site-state-tags">
                             <a href="${options.blog_url!}/tags/">
-                            <span class="site-state-item-count"><@commonTag method="tags">${tags?size}</@commonTag></span>
+                            <span class="site-state-item-count"><@tagTag method="count">${count!0}</@tagTag></span>
                             <span class="site-state-item-name">标签</span>
                             </a>
                         </div>
@@ -164,11 +164,11 @@
                   <div class="cc-license motion-element" itemprop="license">
                       <a href="https://creativecommons.org/<#if (settings.creative_commons!'by-nc-sa')=='zero'>publicdomain/zero/1.0<#else>licenses/${settings.creative_commons!'by-nc-sa'}/4.0</#if>/"
                          class="cc-opacity" target="_blank">
-                          <img src="/${themeName}/source/images/cc-${settings.creative_commons!'by-nc-sa'}.svg"
+                          <img src="/${theme.folderName}/source/images/cc-${settings.creative_commons!'by-nc-sa'}.svg"
                                alt="Creative Commons"/>
                       </a>
                   </div>
-                  <@commonTag method="links">
+                  <@linkTag method="list">
                       <#if links?? && links?size gt 0>
                           <div class="links-of-blogroll motion-element links-of-blogroll-${settings.links_layout!'inline'}">
                               <div class="links-of-blogroll-title">
@@ -184,7 +184,7 @@
                               </ul>
                           </div>
                       </#if>
-                  </@commonTag>
+                  </@linkTag>
 
           <#include "../_custom/sidebar.ftl">
       </div>
@@ -199,10 +199,10 @@
       </section>
       <!--/noindex-->
 
-      <#if (settings.sidebar_b2t!'false')=='true'>
+      <#if settings.sidebar_b2t!false>
       <div class="back-to-top" style="width: initial">
           <i class="fa fa-arrow-up"></i>
-          <#if (settings.sidebar_scrollpercent!'false')=='true'>
+          <#if settings.sidebar_scrollpercent!false>
           <span id="scrollpercent"><span>0</span>%</span>
           </#if>
       </div>

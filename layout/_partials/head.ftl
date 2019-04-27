@@ -7,12 +7,12 @@
 </#if>
 
 <#if (options.next_plugins_pace!'false')=='true'>
-  <script src="/${themeName}/source/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/${themeName}/source/lib/pace/${options.next_plugins_pace_theme!'pace-theme-minimal'}.min.css?v=1.0.2" rel="stylesheet">
+  <script src="/${theme.folderName}/source/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/${theme.folderName}/source/lib/pace/${options.next_plugins_pace_theme!'pace-theme-minimal'}.min.css?v=1.0.2" rel="stylesheet">
 </#if>
 
 <#if (options.next_plugins_han!'false')=='true'>
-  <link rel="stylesheet" media="all" href="/${themeName}/source/lib/Han/dist/han.min.css?v=3.3">
+  <link rel="stylesheet" media="all" href="/${theme.folderName}/source/lib/Han/dist/han.min.css?v=3.3">
 </#if>
 
 
@@ -22,44 +22,44 @@
 <@verification />
 
 <#if (options.next_plugins_fancybox!'true')=='true'>
-  <link href="/${themeName}/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/${theme.folderName}/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 </#if>
 
 <#include "head/external-fonts.ftl">
 
-<link href="/${themeName}/source/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/${theme.folderName}/source/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <#switch '${settings.scheme!"Muse"}'>
 <#case 'Muse'>
-<link href="/${themeName}/source/css/Muse/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${theme.folderName}/source/css/Muse/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Mist'>
-<link href="/${themeName}/source/css/Mist/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${theme.folderName}/source/css/Mist/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Pisces'>
-<link href="/${themeName}/source/css/Pisces/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${theme.folderName}/source/css/Pisces/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 <#case 'Gemini'>
-<link href="/${themeName}/source/css/Gemini/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+<link href="/${theme.folderName}/source/css/Gemini/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 <#break >
 </#switch>
 
 <#if post??>
-<link rel="stylesheet" type="text/css" href="/${themeName}/source/lib/prism/css/prism-${options.next_general_highlight!'Default'}.css" />
-<script type="text/javascript" src="/${themeName}/source/lib/prism/js/prism.js"></script>
+<link rel="stylesheet" type="text/css" href="/${theme.folderName}/source/lib/prism/css/prism-${options.next_general_highlight!'Default'}.css" />
+<script type="text/javascript" src="/${theme.folderName}/source/lib/prism/js/prism.js"></script>
 </#if>
 
-<#if (options.next_general_apple_touch_icon!'/${themeName}/source/images/apple-touch-icon-next.png') !=''>
-  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon!'/${themeName}/source/images/apple-touch-icon-next.png'}?v=5.1.4">
+<#if (options.next_general_apple_touch_icon!'/${theme.folderName}/source/images/apple-touch-icon-next.png') !=''>
+  <link rel="apple-touch-icon" sizes="180x180" href="${options.next_general_apple_touch_icon!'/${theme.folderName}/source/images/apple-touch-icon-next.png'}?v=5.1.4">
 </#if>
-<#if (options.next_general_favicon_medium!'/${themeName}/source/images/favicon-32x32-next.png')!=''>
-  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium!'/${themeName}/source/images/favicon-32x32-next.png'}?v=5.1.4">
+<#if (options.next_general_favicon_medium!'/${theme.folderName}/source/images/favicon-32x32-next.png')!=''>
+  <link rel="icon" type="image/png" sizes="32x32" href="${options.next_general_favicon_medium!'/${theme.folderName}/source/images/favicon-32x32-next.png'}?v=5.1.4">
 </#if>
-<#if (options.next_general_favicon_small!'/${themeName}/source/images/favicon-16x16-next.png')!=''>
-  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small!'/${themeName}/source/images/favicon-16x16-next.png'}v=5.1.4">
+<#if (options.next_general_favicon_small!'/${theme.folderName}/source/images/favicon-16x16-next.png')!=''>
+  <link rel="icon" type="image/png" sizes="16x16" href="${options.next_general_favicon_small!'/${theme.folderName}/source/images/favicon-16x16-next.png'}v=5.1.4">
 </#if>
-<#if (options.next_general_safari_pinned_tab!'/${themeName}/source/images/logo.svg')!=''>
-  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab!'/${themeName}/source/images/logo.svg'}?v=5.1.4" color="${options.next_general_android_chrome_color!}">
+<#if (options.next_general_safari_pinned_tab!'/${theme.folderName}/source/images/logo.svg')!=''>
+  <link rel="mask-icon" href="${options.next_general_safari_pinned_tab!'/${theme.folderName}/source/images/logo.svg'}?v=5.1.4" color="${options.next_general_android_chrome_color!}">
 </#if>
 
 <meta name="keywords" content="${keywords!}" />

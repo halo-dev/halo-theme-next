@@ -10,16 +10,16 @@
         <div class="post-body<#if (options.next_plugins_han!'false')=='true'> han-init-context</#if>">
             <div class="tag-cloud">
                 <div class="tag-cloud-title">
-                    <@commonTag method="tags">
+                    <@tagTag method="list">
                     <#if tags?? && tags?size gt 0>
                         目前共计 ${tags?size} 个标签
                     <#else>
                         暂无标签
                     </#if>
-                    </@commonTag>
+                    </@tagTag>
                 </div>
                 <div class="tag-cloud-tags">
-                    <@commonTag method="tags">
+                    <@tagTag method="list">
                     <#if tags?? && tags?size gt 0>
                         <#list tags as tag>
                             <#if (tag.posts?size gt 0 && tag.posts?size lt 3) || tag.posts?size == 0>
@@ -41,7 +41,7 @@
                             </#if>
                         </#list>
                     </#if>
-                    </@commonTag>
+                    </@tagTag>
                 </div>
             </div>
         </div>

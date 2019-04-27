@@ -34,18 +34,20 @@
 
 <nav class="site-nav">
     <ul id="menu" class="menu">
-      <@commonTag method="menus">
-      <#list menus?sort_by('menuSort') as menu>
-        <li class="menu-item menu-item-${menu.menuUrl!}">
-          <a href="${menu.menuUrl!}" rel="section">
-            <#if (menu.menuIcon!)!=''>
-              <i class="menu-item-icon fa fa-fw fa-${menu.menuIcon!}"></i> <br />
-            </#if>
-            ${menu.menuName!}
-          </a>
-        </li>
-      </#list>
-      </@commonTag>
+      <@menuTag method="list">
+      <#if menus?? && menus?size gt 0>
+          <#list menus?sort_by('priority') as menu>
+            <li class="menu-item menu-item-${menu.url!}">
+              <a href="${menu.url!}" rel="section">
+                <#if (menu.icon!)!=''>
+                  <i class="menu-item-icon fa fa-fw fa-${menu.icon!}"></i> <br />
+                </#if>
+                ${menu.name!}
+              </a>
+            </li>
+          </#list>
+      </#if>
+      </@menuTag>
         <#if (options.next_search_local_search_enable!'false')=='true'>
         <li class="menu-item menu-item-search">
             <a href="javascript:;" class="popup-trigger">

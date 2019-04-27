@@ -12,7 +12,7 @@
     </div>
     <div id="local-search-result">
         <div class="tag-cloud-tags">
-            <@commonTag method="tags">
+            <@tagTag method="list">
                 <#if tags?? && tags?size gt 0>
                     <#list tags as tag>
                         <#if (tag.posts?size gt 0 && tag.posts?size lt 3) || tag.posts?size == 0>
@@ -34,7 +34,7 @@
                         </#if>
                     </#list>
                 </#if>
-            </@commonTag>
+            </@tagTag>
         </div>
     </div>
 </div>

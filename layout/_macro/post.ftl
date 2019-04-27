@@ -44,7 +44,7 @@
                         <i class="fa fa-comment-o"></i>
                     </span>
                     <a href="${options.blog_url!}/archives/${post.url}#comments" itemprop="discussionUrl">
-                        <span class="valine-comment-count" data-xid="${options.blog_url!}/archives/${post.url}/" itemprop="commentsCount">${post.comments?size}</span>
+                        <span class="valine-comment-count" data-xid="${options.blog_url!}/archives/${post.url}/" itemprop="commentsCount">${post.commentCount!0}</span>
                     </a>
                     <span id="${options.blog_url!}/archives/${post.url}/" class="leancloud_visitors" data-flag-title="${post.title}">
                         <span class="post-meta-divider">|</span>
@@ -89,8 +89,8 @@
         <footer class="post-footer">
             <div class="post-tags">
                 <#if !is_index?? && !is_search??>
-                    <#if post.tags?size gt 0>
-                    <#list post.tags as tag>
+                    <#if tags?size gt 0>
+                    <#list tags as tag>
                     <a href="${options.blog_url!}/tags/${tag.slugName}" rel="tag"># ${tag.name}</a>
                     </#list>
                     </#if>
