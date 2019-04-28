@@ -7,7 +7,7 @@
 <div id="posts" class="posts-expand">
     <div class="post-block page">
         <@page_header '标签'></@page_header>
-        <div class="post-body<#if (options.next_plugins_han!'false')=='true'> han-init-context</#if>">
+        <div class="post-body<#if settings.han!false> han-init-context</#if>">
             <div class="tag-cloud">
                 <div class="tag-cloud-title">
                     <@tagTag method="list">

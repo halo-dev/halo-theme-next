@@ -35,7 +35,7 @@
                       </#if>
                       <p class="site-author-name" itemprop="name">${user.nickName!}</p>
                       <p class="site-description motion-element" itemprop="description">
-                          ${user.userDesc!}
+                          ${user.description!}
                       </p>
                   </div>
 

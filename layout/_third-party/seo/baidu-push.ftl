@@ -1,4 +1,4 @@
-<#if (options.next_other_baidu_push!'true')=='true'>
+<#if settings.baidu_push!true>
 <script>
 (function(){
     var bp = document.createElement('script');

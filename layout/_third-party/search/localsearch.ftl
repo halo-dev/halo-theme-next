@@ -1,4 +1,4 @@
-<#if (options.next_search_local_search_enable!'false')=='true'>
+<#if settings.local_search_enable!false>
   <script type="text/javascript">
 
       var onPopupClose = function (e) {

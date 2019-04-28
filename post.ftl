@@ -7,11 +7,11 @@
     <div id="posts" class="posts-expand">
         <@post_template post></@post_template>
         <div class="post-spread">
-            <#if options.next_other_jiathis_uid??>
+            <#if settings.jiathis_uid??>
             <#include "layout/_partials/share/jiathis.ftl">
-            <#elseif options.baidu_share_type??>
+            <#elseif settings.baidu_share_type??>
             <#include "layout/_partials/share/baidushare.ftl">
-            <#elseif options.next_other_add_this_id??>
+            <#elseif settings.add_this_id??>
             <#include "layout/_partials/share/add-this.ftl">
             </#if>
         </div>

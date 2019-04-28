@@ -1,9 +1,9 @@
 <div class="site-brand-wrapper">
-  <div class="site-meta <#if (options.next_style_custom_logo_enable!'false')=='true'>custom-logo</#if>">
-    <#if (options.next_style_custom_logo_enable!'false')=='true' && (settings.scheme!'Muse')=='Muse'>
+  <div class="site-meta <#if settings.custom_logo_enable!false>custom-logo</#if>">
+    <#if settings.custom_logo_enable!false && (settings.scheme!'Muse')=='Muse'>
       <div class="site-meta-headline">
         <a>
-          <img class="custom-logo-image" src="${options.next_style_custom_logo_image!}"
+          <img class="custom-logo-image" src="${settings.custom_logo_image!}"
                alt="${options.blog_title!}"/>
         </a>
       </div>
@@ -17,9 +17,9 @@
       </a>
     </div>
       <#if settings.seo!false>
-        <h1 class="site-subtitle" itemprop="description">${options.next_general_subtitle!}</h1>
+        <h1 class="site-subtitle" itemprop="description">${settings.subtitle!}</h1>
       <#else>
-        <p class="site-subtitle">${options.next_general_subtitle!}</p>
+        <p class="site-subtitle">${settings.subtitle!}</p>
       </#if>
   </div>
 
@@ -48,7 +48,7 @@
           </#list>
       </#if>
       </@menuTag>
-        <#if (options.next_search_local_search_enable!'false')=='true'>
+        <#if settings.local_search_enable!false>
         <li class="menu-item menu-item-search">
             <a href="javascript:;" class="popup-trigger">
             <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -58,7 +58,7 @@
         </#if>
     </ul>
 
-<#if (options.next_search_local_search_enable!'false')=='true'>
+<#if settings.local_search_enable!false>
     <div class="site-search">
       <#include "search.ftl">
     </div>

@@ -352,7 +352,7 @@ plugins:
         - value: false
           label: 关闭
 sns:
-  label: 插件设置
+  label: 社交设置
   items:
     social_enable:
       name: social_enable
@@ -640,8 +640,8 @@ other:
       name: wechatpay
       label: 微信支付二维码
       type: text
-    other_alipay:
-      name: other_alipay
+    alipay:
+      name: alipay
       label: 支付宝二维码
       type: text
     bitcoin:

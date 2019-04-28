@@ -2,7 +2,7 @@
 <#macro html title,keywords,desc,ogtype,url>
 <!DOCTYPE html>
 
-<html class="theme-next ${(settings.scheme!'Muse')?lower_case} <#if (options.next_other_motion_enable!'true')=='true'>use-motion</#if>"
+<html class="theme-next ${(settings.scheme!'Muse')?lower_case} <#if settings.motion_enable!true>use-motion</#if>"
       lang="zh-Hans">
 <head>
   <#include "_partials/head.ftl">

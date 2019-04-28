@@ -1,3 +1,3 @@
-<#if (options.next_search_local_search_enable!'false')=='true'>
+<#if settings.local_search_enable!false>
     <#include "search/localsearch.ftl">
 </#if>
