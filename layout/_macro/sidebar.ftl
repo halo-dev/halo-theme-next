@@ -76,23 +76,23 @@
                       <div class="links-of-author motion-element">
                           <#if settings.social_github??>
                             <span class="links-of-author-item">
-                                <a href="${settings.next_social_github!}" target="_blank" title="Github">
-                                <#if (settings.next_social_icon_enable!'true')=='true'>
-                                    <i class="fa fa-fw fa-${settings.next_social_github_icon!'globe'}"></i>
+                                <a href="${settings.social_github!}" target="_blank" title="Github">
+                                <#if settings.social_icon_enable!true>
+                                    <i class="fa fa-fw fa-${settings.social_github_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     Github
                                 </#if>
                                 </a>
                             </span>
                           </#if>
-                          <#if settings.next_social_email??>
+                          <#if settings.social_email??>
                             <span class="links-of-author-item">
                                 <a href="${settings.social_email!}" target="_blank" title="E-mail">
-                                <#if (settings.social_icon_enable!'true')=='true'>
+                                <#if settings.social_icon_enable!true>
                                     <i class="fa fa-fw fa-${settings.social_email_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     E-mail
                                 </#if>
                                 </a>
@@ -101,10 +101,10 @@
                           <#if settings.social_google??>
                             <span class="links-of-author-item">
                                 <a href="${settings.social_google}" target="_blank" title="Google Plus">
-                                <#if (settings.social_icon_enable!'true')=='true'>
+                                <#if settings.social_icon_enable!true>
                                     <i class="fa fa-fw fa-${settings.social_google_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     Google+
                                 </#if>
                                 </a>
@@ -113,10 +113,10 @@
                           <#if settings.social_twitter??>
                             <span class="links-of-author-item">
                                 <a href="${settings.social_twitter}" target="_blank" title="Twitter">
-                                <#if (settings.social_icon_enable!'true')=='true'>
+                                <#if settings.social_icon_enable!true>
                                     <i class="fa fa-fw fa-${settings.social_twitter_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     Twitter
                                 </#if>
                                 </a>
@@ -125,10 +125,10 @@
                           <#if settings.social_fb_pager??>
                             <span class="links-of-author-item">
                                 <a href="${settings.social_fb_pager}" target="_blank" title="Facebook Page">
-                                <#if (settings.social_icon_enable!'true')=='true'>
+                                <#if settings.social_icon_enable!true>
                                     <i class="fa fa-fw fa-${settings.social_fb_pager_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     Facebook
                                 </#if>
                                 </a>
@@ -137,10 +137,10 @@
                           <#if settings.social_stack_over_flow??>
                             <span class="links-of-author-item">
                                 <a href="${settings.social_stack_over_flow}" target="_blank" title="StackOverflow">
-                                <#if (settings.social_icon_enable!'true')=='true'>
+                                <#if settings.social_icon_enable!true>
                                     <i class="fa fa-fw fa-${settings.social_stack_over_flow_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     StackOverflow
                                 </#if>
                                 </a>
@@ -149,10 +149,10 @@
                           <#if settings.social_instagram??>
                             <span class="links-of-author-item">
                                 <a href="${settings.social_instagram}" target="_blank" title="Instagram">
-                                <#if (settings.social_icon_enable!'true')=='true'>
+                                <#if settings.social_icon_enable!true>
                                     <i class="fa fa-fw fa-${settings.social_instagram_icon!'globe'}"></i>
                                 </#if>
-                                <#if !settings.next_social_icon_only!false>
+                                <#if !settings.social_icon_only!false>
                                     Instagram
                                 </#if>
                                 </a>

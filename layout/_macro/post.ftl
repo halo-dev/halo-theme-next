@@ -81,7 +81,7 @@
             <#include "reward.ftl">
         </div>
         </#if>
-        <#if settings.next_other_post_copyright!true && !is_index?? && !is_search??>
+        <#if settings.post_copyright!true && !is_index?? && !is_search??>
         <div>
             <#include "post-copyright.ftl">
         </div>

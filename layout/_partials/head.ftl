@@ -85,18 +85,18 @@
             version: '5.1.4',
             sidebar: {
                 "position": "${settings.sidebar_position!'left'}",
-                "display": "${settings.next_style_sidebar_display!'post'}",
+                "display": "${settings.sidebar_display!'post'}",
                 "offset":${settings.footer_offset!'12'},
                 "offset_float": 0,
-                "b2t":${settings.next_style_sidebar_b2t!'false'},
-                "scrollpercent":${settings.sidebar_scrollpercent!'false'},
-                "onmobile":${settings.sidebar_onmobile!'false'}
+                "b2t":${(settings.sidebar_b2t!false)?c},
+                "scrollpercent":${(settings.sidebar_scrollpercent!false)?c},
+                "onmobile":${(settings.sidebar_onmobile!false)?c}
             },
-            fancybox: ${settings.fancybox!'true'},
+            fancybox: ${(settings.fancybox!true)?c},
             tabs: true,
             motion: {
-                "enable":${settings.motion_enable!'true'},
-                "async":${settings.motion_async!'false'},
+                "enable":${(settings.motion_enable!true)?c},
+                "async":${(settings.motion_async!false)?c},
                 "transition": {
                     "post_block": "${settings.motion_transition_post_block!'fadeIn'}",
                     "post_header": "${settings.motion_transition_post_header!'slideDownIn'}",
@@ -119,7 +119,7 @@
         };
     </script>
 
-    <#if (settings.canonical!'true')=='true'>
+    <#if settings.canonical!true>
         <link rel="canonical" href="${options.blog_url!}"/>
     </#if>
     <#include "head/custom-head.ftl">
