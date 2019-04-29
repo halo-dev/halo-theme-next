@@ -8,30 +8,30 @@
       <div id="posts" class="posts-collapse">
           <span class="archive-move-on"></span>
           <span class="archive-page-counter">
-              <@articleTag method = "postsCount">
-                  <#if postsCount gt 210>
+              <@postTag method = "count">
+                  <#if count gt 210>
                         太棒了!
-                  <#elseif postsCount gt 130>
+                  <#elseif count gt 130>
                         非常好!
-                  <#elseif postsCount gt 80>
+                  <#elseif count gt 80>
                         很好!
-                  <#elseif postsCount gt 50>
+                  <#elseif count gt 50>
                         好!
-                  <#elseif postsCount gt 30>
+                  <#elseif count gt 30>
                         OK!
                   <#else>
                         嗯..
-                  </#if> 目前共计 ${postsCount} 篇日志。 继续努力。
-              </@articleTag>
+                  </#if> 目前共计 ${count} 篇日志。 继续努力。
+              </@postTag>
           </span>
-      <@articleTag method="archivesLess">
-          <#list archivesLess as archive>
+      <@postTag method="archiveYear">
+          <#list archives as archive>
               <div class="collection-title">
                   <<#if settings.seo!false>h2<#else>h1</#if> class="archive-year" id="archive-year-${archive.year}">${archive.year}</<#if settings.seo!false>h2<#else>h1</#if>>
               </div>
               <@post_collapase archive.posts></@post_collapase>
           </#list>
-      </@articleTag>
+      </@postTag>
   </div>
   </div>
     <#--<#include "layout/_partials/pagination.ftl">-->
