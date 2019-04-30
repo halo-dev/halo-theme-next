@@ -657,7 +657,7 @@ other:
         - value: button
           label: 按钮
         - value: slide
-          label: 按钮
+          label: 侧边
         - value: ''
           label: 禁用
     jiathis_uid:

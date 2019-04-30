@@ -178,7 +178,7 @@
                               <ul class="links-of-blogroll-list">
                                   <#list links as link>
                                       <li class="links-of-blogroll-item">
-                                          <a href="${link.linkUrl!}" title="${link.linkName!}" target="_blank">${link.linkName!}</a>
+                                          <a href="${link.url!}" title="${link.name!}" target="_blank">${link.name!}</a>
                                       </li>
                                   </#list>
                               </ul>

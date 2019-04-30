@@ -27,7 +27,7 @@
       <@postTag method="archiveYear">
           <#list archives as archive>
               <div class="collection-title">
-                  <<#if settings.seo!false>h2<#else>h1</#if> class="archive-year" id="archive-year-${archive.year}">${archive.year}</<#if settings.seo!false>h2<#else>h1</#if>>
+                  <<#if settings.seo!false>h2<#else>h1</#if> class="archive-year" id="archive-year-${archive.year?c}">${archive.year?c}</<#if settings.seo!false>h2<#else>h1</#if>>
               </div>
               <@post_collapase archive.posts></@post_collapase>
           </#list>

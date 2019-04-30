@@ -9,7 +9,7 @@
         <div class="post-spread">
             <#if settings.jiathis_uid??>
             <#include "layout/_partials/share/jiathis.ftl">
-            <#elseif settings.baidu_share_type??>
+            <#elseif settings.baidu_share_type!=''>
             <#include "layout/_partials/share/baidushare.ftl">
             <#elseif settings.add_this_id??>
             <#include "layout/_partials/share/add-this.ftl">
