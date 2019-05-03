@@ -9,7 +9,7 @@
     <#if settings.footer_copyright??>
         ${settings.footer_copyright}
     <#else>
-    ${user.nickName!}
+    ${user.nickname!}
     </#if>
     </span>
 </div>

@@ -1,7 +1,7 @@
 <ul class="post-copyright">
     <li class="post-copyright-author">
         <strong>本文作者：</strong>
-        ${user.nickName!}
+        ${user.nickname!}
     </li>
     <li class="post-copyright-link">
         <strong>本文链接：</strong>

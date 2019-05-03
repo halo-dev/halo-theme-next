@@ -6,21 +6,21 @@
     <div id="QR" style="display: none;">
     <#if settings.wechatpay??>
         <div id="wechat" style="display: inline-block">
-            <img id="wechat_qr" src="${settings.wechatpay}" alt="${user.nickName!} 微信支付"/>
+            <img id="wechat_qr" src="${settings.wechatpay}" alt="${user.nickname!} 微信支付"/>
             <p>微信支付</p>
         </div>
     </#if>
 
     <#if settings.alipay??>
         <div id="alipay" style="display: inline-block">
-            <img id="alipay_qr" src="${settings.alipay}" alt="${user.nickName!} 支付宝"/>
+            <img id="alipay_qr" src="${settings.alipay}" alt="${user.nickname!} 支付宝"/>
             <p>支付宝</p>
         </div>
     </#if>
 
     <#if settings.bitcoin??>
         <div id="bitcoin" style="display: inline-block">
-            <img id="bitcoin_qr" src="${settings.bitcoin}" alt="${user.nickName!} 比特币"/>
+            <img id="bitcoin_qr" src="${settings.bitcoin}" alt="${user.nickname!} 比特币"/>
             <p>比特币</p>
         </div>
     </#if>

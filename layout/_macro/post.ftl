@@ -3,7 +3,7 @@
     <div class="post-block">
         <link itemprop="mainEntityOfPage" href="${options.blog_url!}/archives/${post.url}">
         <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            <meta itemprop="name" content="${user.nickName!}">
+            <meta itemprop="name" content="${user.nickname!}">
             <meta itemprop="description" content="${post.summary!}">
             <meta itemprop="image" content="${user.avatar!}">
         </span>

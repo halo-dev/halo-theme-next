@@ -31,9 +31,9 @@
                       <#if user.avatar??>
                       <img class="site-author-image" itemprop="image"
                            src="${user.avatar!'/${theme.folderName}/source/images/avatar.gif'}"
-                           alt="${user.nickName!}"/>
+                           alt="${user.nickname!}"/>
                       </#if>
-                      <p class="site-author-name" itemprop="name">${user.nickName!}</p>
+                      <p class="site-author-name" itemprop="name">${user.nickname!}</p>
                       <p class="site-description motion-element" itemprop="description">
                           ${user.description!}
                       </p>
