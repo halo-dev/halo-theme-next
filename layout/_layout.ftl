@@ -44,7 +44,6 @@
     <footer id="footer" class="footer">
         <div class="footer-inner">
           <#include "_partials/footer.ftl">
-            <@statistics></@statistics>
           <#nested />
         </div>
     </footer>

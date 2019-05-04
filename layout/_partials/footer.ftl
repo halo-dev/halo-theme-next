@@ -35,6 +35,6 @@
 </#if>
 
 <div class="footer-custom">
-  <@footer_info></@footer_info>
+  <@globalFooter />
 </div>
 
