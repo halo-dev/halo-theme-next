@@ -24,20 +24,20 @@
                         ${post.createTime?string('yyyy-MM-dd')}
                     </time>
                 </span>
-                <span class="post-category">
-                    <span class="post-meta-divider">|</span>
-                    <span class="post-meta-item-icon">
-                        <i class="fa fa-folder-o"></i>
-                    </span>
-                    <span class="post-meta-item-text">分类于</span>
-                    <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                        <#if post.categories?? && post.categories?size gt 0>
+                <#if post.categories?? && post.categories?size gt 0>
+                    <span class="post-category">
+                        <span class="post-meta-divider">|</span>
+                        <span class="post-meta-item-icon">
+                            <i class="fa fa-folder-o"></i>
+                        </span>
+                        <span class="post-meta-item-text">分类于</span>
+                        <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                             <a href="${options.blog_url!}/categories/${post.categories[0].slugName}/" itemprop="url" rel="index">
                                 <span itemprop="name">${post.categories[0].name}</span>
                             </a>
-                        </#if>
+                        </span>
                     </span>
-                </span>
+                </#if>
                 <span class="post-comments-count">
                     <span class="post-meta-divider">|</span>
                     <span class="post-meta-item-icon">
@@ -58,7 +58,7 @@
             </div>
         </header>
         <div class="post-body" itemprop="articleBody">
-            <#if is_index?? || is_search??>
+            <#if (is_index??) || (is_search??)>
                 ${post.summary}
                 <!--noindex-->
                 <div class="post-button text-center">
@@ -71,24 +71,24 @@
                 ${post.formatContent}
             </#if>
         </div>
-        <#if settings.wechat_subscriber_enable!false && !is_index?? && !is_search??>
+        <#if (settings.wechat_subscriber_enable!false) && (!is_index??) && (!is_search??)>
         <div>
             <#include "wechat-subscriber.ftl">
         </div>
         </#if>
-        <#if (settings.alipay?? || settings.wechatpay?? || settings.bitcoin??) && !is_index?? && !is_search??>
+        <#if (settings.alipay?? || settings.wechatpay?? || settings.bitcoin??) && (!is_index??) && (!is_search??)>
         <div>
             <#include "reward.ftl">
         </div>
         </#if>
-        <#if settings.post_copyright!true && !is_index?? && !is_search??>
+        <#if (settings.post_copyright!true) && (!is_index??) && (!is_search??)>
         <div>
             <#include "post-copyright.ftl">
         </div>
         </#if>
         <footer class="post-footer">
             <div class="post-tags">
-                <#if !is_index?? && !is_search??>
+                <#if (!is_index??) && (!is_search??)>
                     <#if tags?size gt 0>
                     <#list tags as tag>
                     <a href="${options.blog_url!}/tags/${tag.slugName}" rel="tag"># ${tag.name}</a>
@@ -96,7 +96,7 @@
                     </#if>
                 </#if>
             </div>
-            <#if (nextPost?? || prePost??) && !is_index?? && !is_search??>
+            <#if (nextPost?? || prePost??) && (!is_index??) && (!is_search??)>
             <div class="post-nav">
 
                 <div class="post-nav-next post-nav-item">
@@ -118,7 +118,7 @@
                 </div>
             </div>
             </#if>
-            <#if is_index?? || is_search??>
+            <#if (is_index??) || (is_search??)>
             <div class="post-eof"></div>
             </#if>
         </footer>

@@ -13,7 +13,7 @@
       </#if>
       <div class="sidebar-inner">
 
-          <#if is_post && settings.toc_enable!true>
+          <#if is_post && (settings.toc_enable!true)>
           <ul class="sidebar-nav motion-element">
               <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
                   文章目录
@@ -24,7 +24,7 @@
           </ul>
           </#if>
 
-          <section class="site-overview-wrap sidebar-panel <#if !is_post || !settings.toc_enable!true>sidebar-panel-active</#if>">
+          <section class="site-overview-wrap sidebar-panel <#if !is_post || (!settings.toc_enable!true)>sidebar-panel-active</#if>">
               <div class="site-overview">
                   <div class="site-author motion-element" itemprop="author" itemscope
                        itemtype="http://schema.org/Person">

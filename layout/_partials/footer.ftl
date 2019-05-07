@@ -1,7 +1,6 @@
 <div class="copyright">
-    <#assign current="${.now}">
-    &copy; <#if settings.footer_since?? && settings.footer_since?if_exists !=current?substring(0,4)>${settings.footer_since!} &mdash;</#if>
-    <span itemprop="copyrightYear">${current?substring(0,4)}</span>
+    &copy; <#if settings.footer_since?? && (settings.footer_since!) !='${.now?string("yyyy")}'>${settings.footer_since!} &mdash;</#if>
+    <span itemprop="copyrightYear">${.now?string("yyyy")}</span>
     <span class="with-love">
     <i class="fa fa-${settings.footer_icon!'user'}"></i>
     </span>
@@ -20,7 +19,7 @@
   </div>
 </#if>
 
-<#if settings.footer_powered!true && settings.footer_theme_enable!true>
+<#if (settings.footer_powered!true) && (settings.footer_theme_enable!true)>
     <span class="post-meta-divider">|</span>
 </#if>
 

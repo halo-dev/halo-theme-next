@@ -1,6 +1,6 @@
 <div class="site-brand-wrapper">
   <div class="site-meta <#if settings.custom_logo_enable!false>custom-logo</#if>">
-    <#if settings.custom_logo_enable!false && (settings.scheme!'Muse')=='Muse'>
+    <#if (settings.custom_logo_enable!false) && (settings.scheme!'Muse')=='Muse'>
       <div class="site-meta-headline">
         <a>
           <img class="custom-logo-image" src="${settings.custom_logo_image!}"

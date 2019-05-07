@@ -50,7 +50,7 @@
 </#macro>
 
 <#macro button>
-    <#if settings.sidebar_b2t!false>
+    <#if !settings.sidebar_b2t!false>
         <div class="back-to-top" style="width: initial">
             <i class="fa fa-arrow-up"></i>
           <#if settings.sidebar_scrollpercent!false>

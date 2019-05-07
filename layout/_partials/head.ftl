@@ -8,10 +8,10 @@
 
     <#if settings.pace!false>
         <script src="/${theme.folderName}/source/lib/pace/pace.min.js?v=1.0.2"></script>
-        <link href="/${theme.folderName}/source/lib/pace/${options.pace_theme!'pace-theme-minimal'}.min.css?v=1.0.2" rel="stylesheet">
+        <link href="/${theme.folderName}/source/lib/pace/${settings.pace_theme!'pace-theme-minimal'}.min.css?v=1.0.2" rel="stylesheet">
     </#if>
 
-    <#if options.han!false>
+    <#if settings.han!false>
         <link rel="stylesheet" media="all" href="/${theme.folderName}/source/lib/Han/dist/han.min.css?v=3.3">
     </#if>
 
@@ -21,7 +21,7 @@
 
     <@verification />
 
-    <#if options.fancybox!true>
+    <#if settings.fancybox!true>
         <link href="/${theme.folderName}/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
     </#if>
 
@@ -104,17 +104,6 @@
                     "coll_header": "${settings.motion_transition_coll_header!'slideLeftIn'}",
                     "sidebar": "${settings.motion_transition_sidebar!'slideUpIn'}"
                 }
-            },
-            duoshuo: {
-                userId: '0',
-                author: '博主'
-            },
-            algolia: {
-                applicationID: '0',
-                apiKey: '0',
-                indexName: '0',
-                hits: {},
-                labels: {}
             }
         };
     </script>

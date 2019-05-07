@@ -90,7 +90,7 @@ general:
       label: 文章底部微信二维码显示
       type: radio
       data-type: bool
-      default: true
+      default: false
       options:
         - value: true
           label: 开启
@@ -157,7 +157,7 @@ style:
       name: sidebar_display
       label: 侧栏显示时机
       type: select
-      default: left
+      default: post
       options:
         - value: post
           label: 文章页面
@@ -171,6 +171,7 @@ style:
       name: footer_offset
       label: 侧栏偏移量
       type: text
+      default: '12'
     sidebar_b2t:
       name: sidebar_b2t
       label: 侧栏返回顶部按钮（仅Pisces | Gemini）
