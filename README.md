@@ -25,7 +25,7 @@
 
 ## 使用方法
 
-1. 克隆或者[下载](https://github.com/ruibaby/next-halo/releases)。
+1. 克隆或者[下载](https://github.com/halo-dev/next-halo/releases)。
 2. 压缩为zip压缩包之后在后台的主题设置直接上传即可使用。
 
 
