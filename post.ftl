@@ -3,7 +3,8 @@
 <#include "layout/_macro/sidebar.ftl">
 
 <@html title="${post.title} | ${options.blog_title!'Next'}" keywords="${tagWords!}" desc="${post.summary!}" ogtype="article" url="${options.blog_url!}/archives/${post.url!}"></@html>
-<@main useComment=true>
+<@main>
+<div id="content" class="content">
     <div id="posts" class="posts-expand">
         <@post_template post></@post_template>
         <div class="post-spread">
@@ -16,6 +17,9 @@
             </#if>
         </div>
     </div>
+    <#include "layout/_partials/comments.ftl">
+    <@comment post,'post'/>
+</div>
 </@main>
 
 <@sidebar>

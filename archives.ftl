@@ -3,7 +3,8 @@
 <#include "layout/_macro/sidebar.ftl">
 <@html title="归档 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${options.blog_url!}/archives">page-archive</@html>
 
-<@main useComment=false>
+<@main>
+<div id="content" class="content">
   <div class="post-block archive">
       <div id="posts" class="posts-collapse">
           <span class="archive-move-on"></span>
@@ -34,6 +35,7 @@
       </@postTag>
   </div>
   </div>
+</div>
     <#--<#include "layout/_partials/pagination.ftl">-->
 </@main>
 

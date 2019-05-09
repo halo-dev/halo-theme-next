@@ -5,7 +5,8 @@
 <@html title="分类: ${category.name!} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${options.blog_url!}/categories/${category.slugName!}">
 </@html>
 
-<@main useComment=false>
+<@main>
+<div id="content" class="content">
     <div class="post-block category">
         <div id="posts" class="posts-collapse">
             <div class="collection-title">
@@ -44,6 +45,7 @@
         </#if>
     </nav>
     </#if>
+</div>
 </@main>
 
 <@sidebar>

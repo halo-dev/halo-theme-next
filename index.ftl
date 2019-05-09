@@ -4,7 +4,8 @@
 
 <@html title="${options.blog_title!'NexT'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${options.blog_url!}"></@html>
 
-<@main useComment=false>
+<@main>
+<div id="content" class="content">
     <section id="posts" class="posts-expand">
         <#if posts??>
             <#list posts.content as post>
@@ -39,6 +40,7 @@
         </#if>
     </nav>
     </#if>
+</div>
 </@main>
 
 <@sidebar>

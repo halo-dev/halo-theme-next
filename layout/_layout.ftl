@@ -20,16 +20,11 @@
     </header>
 </#macro>
 
-<#macro main useComment>
+<#macro main>
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-            <div id="content" class="content">
             <#nested />
-            </div>
-            <#if useComment>
-            <#include "_partials/comments.ftl">
-            </#if>
         </div>
 </#macro>
 <#macro sidebar>
