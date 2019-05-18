@@ -10,7 +10,7 @@
     </#if>
 
     <div class="custom-logo-site-title">
-      <a href="${options.blog_url!}/"  class="brand" rel="start">
+      <a href="${ctx!}/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">${options.blog_title!'NexT Theme'}</span>
         <span class="logo-line-after"><i></i></span>

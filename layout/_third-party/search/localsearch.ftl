@@ -28,7 +28,7 @@
       $(document).keydown(function (event) {
           var keyword = $("#local-search-input").val();
           if (event.keyCode === 13) {
-              window.location.href="${options.blog_url!}/search?keyword="+keyword;
+              window.location.href="${ctx!}/search?keyword="+keyword;
           }
       });
   </script>
