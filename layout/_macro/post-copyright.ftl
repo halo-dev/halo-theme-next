@@ -5,7 +5,7 @@
     </li>
     <li class="post-copyright-link">
         <strong>本文链接：</strong>
-        <a href="${ctx!}/archives/${post.url!}" title="${post.title!}">${ctx!}/archives/${post.url!}</a>
+        <a href="${context!}/archives/${post.url!}" title="${post.title!}">${context!}/archives/${post.url!}</a>
     </li>
     <li class="post-copyright-license">
         <strong>版权声明：</strong>

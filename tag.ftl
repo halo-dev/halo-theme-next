@@ -2,7 +2,7 @@
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title="标签: ${tag.name} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${ctx!}/tags/${tag.slugName!}">
+<@html title="标签: ${tag.name} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${context!}/tags/${tag.slugName!}">
 
 </@html>
 <@main>
@@ -22,11 +22,11 @@
         <nav class="pagination">
             <#if posts.hasPrevious()>
                 <#if posts.number == 1>
-                    <a class="extend prev" rel="prev" href="${ctx!}/tags/${tag.slugName}">
+                    <a class="extend prev" rel="prev" href="${context!}/tags/${tag.slugName}">
                         <i class="fa fa-angle-left" aria-label="Previous page"></i>
                     </a>
                 <#else>
-                    <a class="extend prev" rel="prev" href="${ctx!}/tags/${tag.slugName}/page/${posts.number}">
+                    <a class="extend prev" rel="prev" href="${context!}/tags/${tag.slugName}/page/${posts.number}">
                         <i class="fa fa-angle-left" aria-label="Previous page"></i>
                     </a>
                 </#if>
@@ -35,11 +35,11 @@
                 <#if r == posts.number+1>
                     <span class="page-number current">${posts.number+1}</span>
                 <#else>
-                    <a class="page-number" href="${ctx!}/tags/${tag.slugName}/page/${r}">${r}</a>
+                    <a class="page-number" href="${context!}/tags/${tag.slugName}/page/${r}">${r}</a>
                 </#if>
             </#list>
             <#if posts.hasNext()>
-                <a class="extend next" rel="next" href="${ctx!}/tags/${tag.slugName}/page/${posts.number+2}/">
+                <a class="extend next" rel="next" href="${context!}/tags/${tag.slugName}/page/${posts.number+2}/">
                     <i class="fa fa-angle-right" aria-label="Next page"></i>
                 </a>
             </#if>

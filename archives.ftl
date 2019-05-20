@@ -1,7 +1,7 @@
 <#include "layout/_layout.ftl">
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
-<@html title="归档 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${ctx!}/archives">page-archive</@html>
+<@html title="归档 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${context!}/archives">page-archive</@html>
 
 <@main>
 <div id="content" class="content">

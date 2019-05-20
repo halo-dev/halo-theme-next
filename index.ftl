@@ -2,7 +2,7 @@
 <#include "layout/_macro/post.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title="${options.blog_title!'NexT'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${ctx!}"></@html>
+<@html title="${options.blog_title!'NexT'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${context!}"></@html>
 
 <@main>
 <div id="content" class="content">
@@ -17,11 +17,11 @@
     <nav class="pagination">
         <#if posts.hasPrevious()>
             <#if posts.number == 1>
-                <a class="extend prev" rel="prev" href="${ctx!}/">
+                <a class="extend prev" rel="prev" href="${context!}/">
                     <i class="fa fa-angle-left" aria-label="Previous page"></i>
                 </a>
             <#else>
-                <a class="extend prev" rel="prev" href="${ctx!}/page/${posts.number}">
+                <a class="extend prev" rel="prev" href="${context!}/page/${posts.number}">
                     <i class="fa fa-angle-left" aria-label="Previous page"></i>
                 </a>
             </#if>
@@ -30,11 +30,11 @@
             <#if r == posts.number+1>
                 <span class="page-number current">${posts.number+1}</span>
             <#else>
-                <a class="page-number" href="${ctx!}/page/${r}">${r}</a>
+                <a class="page-number" href="${context!}/page/${r}">${r}</a>
             </#if>
         </#list>
         <#if posts.hasNext()>
-            <a class="extend next" rel="next" href="${ctx!}/page/${posts.number+2}/">
+            <a class="extend next" rel="next" href="${context!}/page/${posts.number+2}/">
                 <i class="fa fa-angle-right" aria-label="Next page"></i>
             </a>
         </#if>

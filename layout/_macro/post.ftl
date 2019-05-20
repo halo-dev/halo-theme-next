@@ -1,7 +1,7 @@
 <#macro post_template post>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
     <div class="post-block">
-        <link itemprop="mainEntityOfPage" href="${ctx!}/archives/${post.url}">
+        <link itemprop="mainEntityOfPage" href="${context!}/archives/${post.url}">
         <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             <meta itemprop="name" content="${user.nickname!}">
             <meta itemprop="description" content="${post.summary!}">
@@ -12,7 +12,7 @@
         </span>
         <header class="post-header">
             <<#if settings.seo!false>h2<#else>h1</#if> class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="${ctx!}/archives/${post.url}" itemprop="url">${post.title}</a>
+                <a class="post-title-link" href="${context!}/archives/${post.url}" itemprop="url">${post.title}</a>
             </<#if settings.seo!false>h2<#else>h1</#if>>
             <div class="post-meta">
                 <span class="post-time">
@@ -32,7 +32,7 @@
                         </span>
                         <span class="post-meta-item-text">分类于</span>
                         <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                            <a href="${ctx!}/categories/${post.categories[0].slugName}/" itemprop="url" rel="index">
+                            <a href="${context!}/categories/${post.categories[0].slugName}/" itemprop="url" rel="index">
                                 <span itemprop="name">${post.categories[0].name}</span>
                             </a>
                         </span>
@@ -43,10 +43,10 @@
                     <span class="post-meta-item-icon">
                         <i class="fa fa-comment-o"></i>
                     </span>
-                    <a href="${ctx!}/archives/${post.url}#comments" itemprop="discussionUrl">
-                        <span class="valine-comment-count" data-xid="${ctx!}/archives/${post.url}/" itemprop="commentsCount">${post.commentCount!0}</span>
+                    <a href="${context!}/archives/${post.url}#comments" itemprop="discussionUrl">
+                        <span class="valine-comment-count" data-xid="${context!}/archives/${post.url}/" itemprop="commentsCount">${post.commentCount!0}</span>
                     </a>
-                    <span id="${ctx!}/archives/${post.url}/" class="leancloud_visitors" data-flag-title="${post.title}">
+                    <span id="${context!}/archives/${post.url}/" class="leancloud_visitors" data-flag-title="${post.title}">
                         <span class="post-meta-divider">|</span>
                         <span class="post-meta-item-icon">
                             <i class="fa fa-eye"></i>
@@ -62,7 +62,7 @@
                 ${post.summary}
                 <!--noindex-->
                 <div class="post-button text-center">
-                    <a class="btn" href="${ctx!}/archives/${post.url}/" rel="contents">
+                    <a class="btn" href="${context!}/archives/${post.url}/" rel="contents">
                         阅读全文 »
                     </a>
                 </div>
@@ -91,7 +91,7 @@
                 <#if (!is_index??) && (!is_search??)>
                     <#if tags?size gt 0>
                     <#list tags as tag>
-                    <a href="${ctx!}/tags/${tag.slugName}" rel="tag"># ${tag.name}</a>
+                    <a href="${context!}/tags/${tag.slugName}" rel="tag"># ${tag.name}</a>
                     </#list>
                     </#if>
                 </#if>
@@ -101,7 +101,7 @@
 
                 <div class="post-nav-next post-nav-item">
                     <#if nextPost??>
-                    <a href="${ctx!}/archives/${nextPost.url}" rel="next" title="${nextPost.title}">
+                    <a href="${context!}/archives/${nextPost.url}" rel="next" title="${nextPost.title}">
                         <i class="fa fa-chevron-left"></i> ${nextPost.title}
                     </a>
                     </#if>
@@ -111,7 +111,7 @@
 
                 <div class="post-nav-prev post-nav-item">
                     <#if prePost??>
-                    <a href="${ctx!}/archives/${prePost.url}" rel="prev" title="${prePost.title}">
+                    <a href="${context!}/archives/${prePost.url}" rel="prev" title="${prePost.title}">
                         ${prePost.title} <i class="fa fa-chevron-right"></i>
                     </a>
                     </#if>

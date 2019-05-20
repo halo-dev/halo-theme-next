@@ -2,7 +2,7 @@
 <#include "layout/_macro/post.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title="${post.title} | ${options.blog_title!'Next'}" keywords="${tagWords!}" desc="${post.summary!}" ogtype="article" url="${ctx!}/archives/${post.url!}"></@html>
+<@html title="${post.title} | ${options.blog_title!'Next'}" keywords="${tagWords!}" desc="${post.summary!}" ogtype="article" url="${context!}/archives/${post.url!}"></@html>
 <@main>
 <div id="content" class="content">
     <div id="posts" class="posts-expand">
