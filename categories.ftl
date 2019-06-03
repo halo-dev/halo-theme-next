@@ -12,22 +12,26 @@
             <div class="post-body<#if settings.han!false> han-init-context</#if>">
                 <div class="category-all-page">
                     <div class="category-all-title">
-                        <#if categories?? && categories?size gt 0>
-                            目前共计 ${categories?size} 个分类
-                        <#else>
-                            暂无分类
-                        </#if>
+                        <@categoryTag method="list">
+                            <#if categories?? && categories?size gt 0>
+                                目前共计 ${categories?size} 个分类
+                            <#else>
+                                暂无分类
+                            </#if>
+                        </@categoryTag>
                     </div>
                     <div class="category-all">
                         <ul class="category-list">
-                            <#if categories?? && categories?size gt 0>
-                                <#list categories as cate>
-                                    <li class="category-list-item">
-                                        <a class="category-list-link" href="${context!}/categories/${cate.slugName}/">${cate.name}</a>
-                                        <span class="category-list-count">${cate.postCount!0}</span>
-                                    </li>
-                                </#list>
-                            </#if>
+                            <@categoryTag method="list">
+                                <#if categories?? && categories?size gt 0>
+                                    <#list categories as cate>
+                                        <li class="category-list-item">
+                                            <a class="category-list-link" href="${context!}/categories/${cate.slugName}/">${cate.name}</a>
+                                            <span class="category-list-count">${cate.postCount!0}</span>
+                                        </li>
+                                    </#list>
+                                </#if>
+                            </@categoryTag>
                         </ul>
                     </div>
                 </div>
