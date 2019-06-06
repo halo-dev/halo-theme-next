@@ -52,7 +52,7 @@
                             <i class="fa fa-eye"></i>
                         </span>
                         <span class="post-meta-item-text">阅读次数 </span>
-                        <span class="leancloud-visitors-count">${(post.views!0)?c}</span>
+                        <span class="leancloud-visitors-count">${(post.visits!0)?c}</span>
                     </span>
                 </span>
             </div>
