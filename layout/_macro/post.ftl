@@ -44,7 +44,7 @@
                         <i class="fa fa-comment-o"></i>
                     </span>
                     <a href="${context!}/archives/${post.url}#comments" itemprop="discussionUrl">
-                        <span class="valine-comment-count" data-xid="${context!}/archives/${post.url}/" itemprop="commentsCount">${post.commentCount!0}</span>
+                        <span class="valine-comment-count" data-xid="${context!}/archives/${post.url}/" itemprop="commentsCount">${comments.getTotalElements()!0}</span>
                     </a>
                     <span id="${context!}/archives/${post.url}/" class="leancloud_visitors" data-flag-title="${post.title}">
                         <span class="post-meta-divider">|</span>
