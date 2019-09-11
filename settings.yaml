@@ -18,23 +18,23 @@ general:
     favicon_small:
       name: favicon_small
       label: Favicon（小）
-      type: text
+      type: attachment
     favicon_medium:
       name: favicon_medium
       label: Favicon（中）
-      type: text
+      type: attachment
     apple_touch_icon:
       name: apple_touch_icon
       label: iOS 快捷键图标
-      type: text
+      type: attachment
     safari_pinned_tab:
       name: safari_pinned_tab
       label: Safari 图标
-      type: text
+      type: attachment
     android_chrome_color:
       name: android_chrome_color
       label: Chrome 顶部颜色
-      type: text
+      type: color
     subtitle:
       name: subtitle
       label: 网站副标题
@@ -99,7 +99,7 @@ general:
     wechat_subscriber_qcode:
       name: wechat_subscriber_qcode
       label: 文章底部微信二维码
-      type: text
+      type: attachment
     wechat_subscriber_description:
       name: wechat_subscriber_description
       label: 文章底部微信二维码描述
@@ -219,7 +219,7 @@ style:
     custom_logo_image:
       name: custom_logo_image
       label: Logo地址
-      type: text
+      type: attachment
     toc_enable:
       name: toc_enable
       label: 文章TOC显示
@@ -640,15 +640,15 @@ other:
     wechatpay:
       name: wechatpay
       label: 微信支付二维码
-      type: text
+      type: attachment
     alipay:
       name: alipay
       label: 支付宝二维码
-      type: text
+      type: attachment
     bitcoin:
       name: bitcoin
       label: 比特币二维码
-      type: text
+      type: attachment
     baidu_share_type:
       name: baidu_share_type
       label: 百度分享类型
