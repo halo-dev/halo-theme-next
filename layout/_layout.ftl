@@ -66,6 +66,7 @@
     <#include "_third-party/seo/baidu-push.ftl">
     <#include "_third-party/scroll-cookie.ftl">
     <#include "_third-party/exturl.ftl">
+    <#include "_third-party/mathjax.ftl">
 </body>
 </html>
 </#macro>

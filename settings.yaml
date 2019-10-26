@@ -352,6 +352,17 @@ plugins:
           label: 开启
         - value: false
           label: 关闭
+    mathjax:
+      name: mathjax
+      label: mathjax渲染公式
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
 sns:
   label: 社交设置
   items:
