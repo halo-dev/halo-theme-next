@@ -34,6 +34,6 @@
 </#if>
 
 <div class="footer-custom">
-  <@globalFooter />
+  <@global.footer />
 </div>
 

@@ -15,11 +15,10 @@
         <link rel="stylesheet" media="all" href="${static!}/source/lib/Han/dist/han.min.css?v=3.3">
     </#if>
 
+    <@global.head />
 
     <meta http-equiv="Cache-Control" content="no-transform"/>
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
-    <@verification />
 
     <#if settings.fancybox!true>
         <link href="${static!}/source/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
