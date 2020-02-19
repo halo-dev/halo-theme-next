@@ -13,7 +13,7 @@
       </#if>
       <div class="sidebar-inner">
 
-          <#if is_post && (settings.toc_enable!true)>
+          <#if is_post?? && (settings.toc_enable!true)>
           <ul class="sidebar-nav motion-element">
               <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
                   文章目录

@@ -15,7 +15,7 @@
 
 <#if settings.footer_powered!true>
   <div class="powered-by">
-      由 <a class="theme-link" target="_blank" href="https://github.com/halo-dev/halo">Halo</a> 强力驱动
+      由 <a class="theme-link" target="_blank" href="https://halo.run">Halo</a> 强力驱动
   </div>
 </#if>
 
