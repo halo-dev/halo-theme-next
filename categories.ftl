@@ -2,7 +2,7 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title="分类 | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${context!}/categories"></@html>
+<@html title="分类 | ${blog_title!}" ogtype="website" url="${categories_url!}"></@html>
 
 <@main>
 <div id="content" class="content">
@@ -24,10 +24,10 @@
                         <ul class="category-list">
                             <@categoryTag method="list">
                                 <#if categories?? && categories?size gt 0>
-                                    <#list categories as cate>
+                                    <#list categories as category>
                                         <li class="category-list-item">
-                                            <a class="category-list-link" href="${context!}/categories/${cate.slugName}/">${cate.name}</a>
-                                            <span class="category-list-count">${cate.postCount!0}</span>
+                                            <a class="category-list-link" href="${category.fullPath!}">${category.name}</a>
+                                            <span class="category-list-count">${category.postCount!0}</span>
                                         </li>
                                     </#list>
                                 </#if>

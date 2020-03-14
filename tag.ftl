@@ -2,9 +2,7 @@
 <#include "layout/_macro/post-collapse.ftl">
 <#include "layout/_macro/sidebar.ftl">
 
-<@html title="标签: ${tag.name} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="website" url="${context!}/tags/${tag.slugName!}">
-
-</@html>
+<@html title="标签: ${tag.name} | ${blog_title!}" ogtype="website" url="${tag.fullPath!}"></@html>
 <@main>
 <div id="content" class="content">
     <div class="post-block tag">
@@ -20,29 +18,25 @@
     </div>
     <#if posts.totalPages gt 1>
         <nav class="pagination">
-            <#if posts.hasPrevious()>
-                <#if posts.number == 1>
-                    <a class="extend prev" rel="prev" href="${context!}/tags/${tag.slugName}">
-                        <i class="fa fa-angle-left" aria-label="Previous page"></i>
-                    </a>
-                <#else>
-                    <a class="extend prev" rel="prev" href="${context!}/tags/${tag.slugName}/page/${posts.number}">
+            <@paginationTag method="tagPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${tag.slug!}">
+                <#if pagination.hasPrev>
+                    <a class="extend prev" rel="prev" href="${pagination.prevPageFullPath!}">
                         <i class="fa fa-angle-left" aria-label="Previous page"></i>
                     </a>
                 </#if>
-            </#if>
-            <#list rainbow as r>
-                <#if r == posts.number+1>
-                    <span class="page-number current">${posts.number+1}</span>
-                <#else>
-                    <a class="page-number" href="${context!}/tags/${tag.slugName}/page/${r}">${r}</a>
+                <#list pagination.rainbowPages as number>
+                    <#if number.isCurrent>
+                        <span class="page-number current">${number.page!}</span>
+                    <#else>
+                        <a class="page-number" href="${number.fullPath!}">${number.page!}</a>
+                    </#if>
+                </#list>
+                <#if pagination.hasNext>
+                    <a class="extend next" rel="next" href="${pagination.nextPageFullPath!}">
+                        <i class="fa fa-angle-right" aria-label="Next page"></i>
+                    </a>
                 </#if>
-            </#list>
-            <#if posts.hasNext()>
-                <a class="extend next" rel="next" href="${context!}/tags/${tag.slugName}/page/${posts.number+2}/">
-                    <i class="fa fa-angle-right" aria-label="Next page"></i>
-                </a>
-            </#if>
+            </@paginationTag>
         </nav>
     </#if>
 </div>

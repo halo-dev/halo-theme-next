@@ -1,18 +1,18 @@
 <#macro post_template post>
 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
     <div class="post-block">
-        <link itemprop="mainEntityOfPage" href="${context!}/archives/${post.url}">
+        <link itemprop="mainEntityOfPage" href="${post.fullPath!}">
         <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             <meta itemprop="name" content="${user.nickname!}">
             <meta itemprop="description" content="${post.summary!}">
             <meta itemprop="image" content="${user.avatar!}">
         </span>
         <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-            <meta itemprop="name" content="${options.blog_title!}">
+            <meta itemprop="name" content="${blog_title!}">
         </span>
         <header class="post-header">
             <<#if settings.seo!false>h2<#else>h1</#if> class="post-title" itemprop="name headline">
-                <a class="post-title-link" href="${context!}/archives/${post.url}" itemprop="url">${post.title}</a>
+                <a class="post-title-link" href="${post.fullPath!}" itemprop="url">${post.title!}</a>
             </<#if settings.seo!false>h2<#else>h1</#if>>
             <div class="post-meta">
                 <span class="post-time">
@@ -32,7 +32,7 @@
                         </span>
                         <span class="post-meta-item-text">分类于</span>
                         <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                            <a href="${context!}/categories/${post.categories[0].slugName}/" itemprop="url" rel="index">
+                            <a href="${post.categories[0].fullPath!}" itemprop="url" rel="index">
                                 <span itemprop="name">${post.categories[0].name}</span>
                             </a>
                         </span>
@@ -43,8 +43,8 @@
                     <span class="post-meta-item-icon">
                         <i class="fa fa-comment-o"></i>
                     </span>
-                    <a href="${context!}/archives/${post.url}#comments" itemprop="discussionUrl">
-                        <span class="valine-comment-count" data-xid="${context!}/archives/${post.url}/" itemprop="commentsCount">
+                    <a href="${post.fullPath!}#comments" itemprop="discussionUrl">
+                        <span class="valine-comment-count" data-xid="${post.fullPath!}" itemprop="commentsCount">
                             <#if is_index??>
                                 ${post.commentCount!0}
                             <#elseif is_post?? || is_sheet?? >
@@ -52,7 +52,7 @@
                             </#if>
                         </span>
                     </a>
-                    <span id="${context!}/archives/${post.url}/" class="leancloud_visitors" data-flag-title="${post.title}">
+                    <span id="${post.fullPath!}" class="leancloud_visitors" data-flag-title="${post.title!}">
                         <span class="post-meta-divider">|</span>
                         <span class="post-meta-item-icon">
                             <i class="fa fa-eye"></i>
@@ -68,13 +68,13 @@
                 ${post.summary}
                 <!--noindex-->
                 <div class="post-button text-center">
-                    <a class="btn" href="${context!}/archives/${post.url}/" rel="contents">
+                    <a class="btn" href="${post.fullPath!}" rel="contents">
                         阅读全文 »
                     </a>
                 </div>
                 <!--/noindex-->
             <#else>
-                ${post.formatContent}
+                ${post.formatContent!}
             </#if>
         </div>
         <#if (settings.wechat_subscriber_enable!false) && (!is_index??) && (!is_search??)>
@@ -97,29 +97,29 @@
                 <#if (!is_index??) && (!is_search??)>
                     <#if tags?size gt 0>
                     <#list tags as tag>
-                    <a href="${context!}/tags/${tag.slugName}" rel="tag"># ${tag.name}</a>
+                    <a href="${tag.fullPath!}" rel="tag"># ${tag.name}</a>
                     </#list>
                     </#if>
                 </#if>
             </div>
-            <#if (nextPost?? || prePost??) && (!is_index??) && (!is_search??)>
+            <#if (nextPost?? || prevPost??) && (!is_index??) && (!is_search??)>
             <div class="post-nav">
 
                 <div class="post-nav-next post-nav-item">
                     <#if nextPost??>
-                    <a href="${context!}/archives/${nextPost.url}" rel="next" title="${nextPost.title}">
-                        <i class="fa fa-chevron-left"></i> ${nextPost.title}
-                    </a>
+                        <a href="${nextPost.fullPath!}" rel="next" title="${nextPost.title}">
+                            <i class="fa fa-chevron-left"></i> ${nextPost.title}
+                        </a>
                     </#if>
                 </div>
 
                 <span class="post-nav-divider"></span>
 
                 <div class="post-nav-prev post-nav-item">
-                    <#if prePost??>
-                    <a href="${context!}/archives/${prePost.url}" rel="prev" title="${prePost.title}">
-                        ${prePost.title} <i class="fa fa-chevron-right"></i>
-                    </a>
+                    <#if prevPost??>
+                        <a href="${prevPost.fullPath!}" rel="prev" title="${prevPost.title}">
+                            ${prevPost.title} <i class="fa fa-chevron-right"></i>
+                        </a>
                     </#if>
                 </div>
             </div>

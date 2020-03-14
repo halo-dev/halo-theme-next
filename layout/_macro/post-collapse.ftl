@@ -4,8 +4,8 @@
         <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
             <header class="post-header">
             <<#if settings.seo!false>h2<#else>h1</#if> class="post-title">
-                <a class="post-title-link" href="${context!}/archives/${post.url}" itemprop="url">
-                    <span itemprop="name">${post.title}</span>
+                <a class="post-title-link" href="${post.fullPath!}" itemprop="url">
+                    <span itemprop="name">${post.title!}</span>
                 </a>
             </<#if settings.seo!false>h2<#else>h1</#if>>
             <div class="post-meta">

@@ -2,7 +2,7 @@
 <#include "layout/_macro/sidebar.ftl">
 <#include "layout/_partials/page-header.ftl">
 
-<@html title="${post.title} | ${options.blog_title!'Next'}" keywords="${options.seo_keywords!'Next'}" desc="${options.seo_description!'Next'}" ogtype="article" url="${context!}/s/${post.url!}"></@html>
+<@html title="${post.title!} | ${blog_title!}" ogtype="article" url="${sheet.fullPath!}"></@html>
 
 <@main>
 <div id="content" class="content">

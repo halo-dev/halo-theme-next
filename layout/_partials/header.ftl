@@ -4,7 +4,7 @@
       <div class="site-meta-headline">
         <a>
           <img class="custom-logo-image" src="${settings.custom_logo_image!}"
-               alt="${options.blog_title!}"/>
+               alt="${blog_title!}"/>
         </a>
       </div>
     </#if>
