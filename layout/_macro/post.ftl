@@ -45,11 +45,7 @@
                     </span>
                     <a href="${post.fullPath!}#comments" itemprop="discussionUrl">
                         <span class="valine-comment-count" data-xid="${post.fullPath!}" itemprop="commentsCount">
-                            <#if is_index??>
-                                ${post.commentCount!0}
-                            <#elseif is_post?? || is_sheet?? >
-                                ${comments.getTotalElements()!0}
-                            </#if>
+                            ${post.commentCount!0}
                         </span>
                     </a>
                     <span id="${post.fullPath!}" class="leancloud_visitors" data-flag-title="${post.title!}">

@@ -63,13 +63,13 @@
 
     <meta name="keywords" content="${meta_keywords!}"/>
 
-    <link rel="alternate" href="${rss_url!}" title="${options.blog_title!'Next'}" type="application/atom+xml"/>
+    <link rel="alternate" href="${rss_url!}" title="${blog_title!}" type="application/atom+xml"/>
 
     <meta name="description" content="${meta_description!}">
     <meta property="og:type" content="${ogtype!}">
     <meta property="og:title" content="${title!}">
     <meta property="og:url" content="${url!}">
-    <meta property="og:site_name" content="${options.blog_title!'Next'}">
+    <meta property="og:site_name" content="${blog_title!}">
     <meta property="og:description" content="${meta_description!}">
     <meta property="og:locale" content="zh-Hans">
     <meta name="twitter:card" content="summary">

@@ -13,15 +13,15 @@
       </#if>
       <div class="sidebar-inner">
 
-          <#if is_post?? && (settings.toc_enable!true)>
-          <ul class="sidebar-nav motion-element">
-              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                  文章目录
-              </li>
-              <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-                  站点概览
-              </li>
-          </ul>
+          <#if is_post && (settings.toc_enable!true)>
+              <ul class="sidebar-nav motion-element">
+                  <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                      文章目录
+                  </li>
+                  <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                      站点概览
+                  </li>
+              </ul>
           </#if>
 
           <section class="site-overview-wrap sidebar-panel <#if !is_post || (!settings.toc_enable!true)>sidebar-panel-active</#if>">

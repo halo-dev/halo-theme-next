@@ -10,9 +10,9 @@
     </#if>
 
     <div class="custom-logo-site-title">
-      <a href="${context!}/"  class="brand" rel="start">
+      <a href="${blog_url!}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">${options.blog_title!'NexT Theme'}</span>
+        <span class="site-title">${blog_title!}</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>

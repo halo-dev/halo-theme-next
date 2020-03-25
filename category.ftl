@@ -20,7 +20,7 @@
     </div>
     <#if posts.totalPages gt 1>
         <nav class="pagination">
-            <@categoryTag method="pagination" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
+            <@paginationTag method="categoryPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${category.slug!}">
                 <#if pagination.hasPrev>
                     <a class="extend prev" rel="prev" href="${pagination.prevPageFullPath!}">
                         <i class="fa fa-angle-left" aria-label="Previous page"></i>
@@ -38,7 +38,7 @@
                         <i class="fa fa-angle-right" aria-label="Next page"></i>
                     </a>
                 </#if>
-            </@categoryTag>
+            </@paginationTag>
         </nav>
     </#if>
 </div>
