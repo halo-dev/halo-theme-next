@@ -13,15 +13,15 @@
       </#if>
       <div class="sidebar-inner">
 
-          <#if is_post?? && (settings.toc_enable!true)>
-          <ul class="sidebar-nav motion-element">
-              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                  文章目录
-              </li>
-              <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-                  站点概览
-              </li>
-          </ul>
+          <#if is_post && (settings.toc_enable!true)>
+              <ul class="sidebar-nav motion-element">
+                  <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                      文章目录
+                  </li>
+                  <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                      站点概览
+                  </li>
+              </ul>
           </#if>
 
           <section class="site-overview-wrap sidebar-panel <#if !is_post || (!settings.toc_enable!true)>sidebar-panel-active</#if>">
@@ -30,7 +30,7 @@
                        itemtype="http://schema.org/Person">
                       <#if user.avatar??>
                       <img class="site-author-image" itemprop="image"
-                           src="${user.avatar!'${static!}/source/images/avatar.gif'}"
+                           src="${user.avatar!'${theme_base!}/source/images/avatar.gif'}"
                            alt="${user.nickname!}"/>
                       </#if>
                       <p class="site-author-name" itemprop="name">${user.nickname!}</p>
@@ -41,21 +41,21 @@
 
                     <nav class="site-state motion-element">
                         <div class="site-state-item site-state-posts">
-                            <a href="${context!}/archives/">
+                            <a href="${archives_url!}">
                             <span class="site-state-item-count"><@postTag method="count">${count!0}</@postTag></span>
                             <span class="site-state-item-name">日志</span>
                             </a>
                         </div>
 
                         <div class="site-state-item site-state-categories">
-                            <a href="${context!}/categories/">
+                            <a href="${categories_url!}">
                             <span class="site-state-item-count"><@categoryTag method="count">${count!0}</@categoryTag></span>
                             <span class="site-state-item-name">分类</span>
                             </a>
                         </div>
 
                         <div class="site-state-item site-state-tags">
-                            <a href="${context!}/tags/">
+                            <a href="${tags_url!}">
                             <span class="site-state-item-count"><@tagTag method="count">${count!0}</@tagTag></span>
                             <span class="site-state-item-name">标签</span>
                             </a>
@@ -65,7 +65,7 @@
 
                   <#if settings.rss!true>
                   <div class="feed-link motion-element">
-                      <a href="${context!}/feed.xml" rel="alternate">
+                      <a href="${rss_url!}" rel="alternate">
                           <i class="fa fa-rss"></i>
                           RSS
                       </a>
@@ -164,7 +164,7 @@
                   <div class="cc-license motion-element" itemprop="license">
                       <a href="https://creativecommons.org/<#if (settings.creative_commons!'by-nc-sa')=='zero'>publicdomain/zero/1.0<#else>licenses/${settings.creative_commons!'by-nc-sa'}/4.0</#if>/"
                          class="cc-opacity" target="_blank">
-                          <img src="${static!}/source/images/cc-${settings.creative_commons!'by-nc-sa'}.svg"
+                          <img src="${theme_base!}/source/images/cc-${settings.creative_commons!'by-nc-sa'}.svg"
                                alt="Creative Commons"/>
                       </a>
                   </div>

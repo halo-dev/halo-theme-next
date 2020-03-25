@@ -4,15 +4,15 @@
       <div class="site-meta-headline">
         <a>
           <img class="custom-logo-image" src="${settings.custom_logo_image!}"
-               alt="${options.blog_title!}"/>
+               alt="${blog_title!}"/>
         </a>
       </div>
     </#if>
 
     <div class="custom-logo-site-title">
-      <a href="${context!}/"  class="brand" rel="start">
+      <a href="${blog_url!}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">${options.blog_title!'NexT Theme'}</span>
+        <span class="site-title">${blog_title!}</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>

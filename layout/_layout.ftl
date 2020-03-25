@@ -1,12 +1,11 @@
 <#include "/common/macro/common_macro.ftl">
-<#macro html title,keywords,desc,ogtype,url>
+<#macro html title,ogtype,url>
 <!DOCTYPE html>
 
-<html class="theme-next ${(settings.scheme!'Muse')?lower_case} <#if settings.motion_enable!true>use-motion</#if>"
-      lang="zh-Hans">
+<html class="theme-next ${(settings.scheme!'Muse')?lower_case} <#if settings.motion_enable!true>use-motion</#if>" lang="zh-Hans">
 <head>
   <#include "_partials/head.ftl">
-    <@head title,keywords,desc,ogtype,url></@head>
+    <@head title,ogtype,url></@head>
     <title>${title}</title>
 </head>
 
