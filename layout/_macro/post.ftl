@@ -91,8 +91,8 @@
         <footer class="post-footer">
             <div class="post-tags">
                 <#if (!is_index??) && (!is_search??)>
-                    <#if tags?size gt 0>
-                    <#list tags as tag>
+                    <#if post.tags?size gt 0>
+                    <#list post.tags as tag>
                     <a href="${tag.fullPath!}" rel="tag"># ${tag.name}</a>
                     </#list>
                     </#if>
