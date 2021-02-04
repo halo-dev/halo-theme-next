@@ -1,7 +1,5 @@
 <h1><a href="https://github.com/halo-dev" target="_blank">halo-theme-next</a></h1>
 
-# 主分支的代码已经不适用于 Halo 0.x ，请移步 release 下载旧版本
-
 ## 说明
 
 该主题的原作者为 [iissnan](https://github.com/iissnan)，非常感谢做出这么优秀的主题。
