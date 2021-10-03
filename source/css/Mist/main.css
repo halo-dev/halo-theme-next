@@ -2888,3 +2888,17 @@ hr {
     text-align: center;
   }
 }
+code {
+  padding: 2px 4px;
+  word-wrap: break-word;
+  color: #555;
+  background: #eee;
+  border-radius: 3px;
+  font-size: 13px;
+}
+pre code {
+  padding: 0;
+  color: #4d4d4c;
+  background: none;
+  text-shadow: none;
+}
